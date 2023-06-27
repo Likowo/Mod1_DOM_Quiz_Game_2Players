@@ -5,8 +5,13 @@
     width: 100%;
 }
 
-.startGame{
-    text-align: center;
-        
-   
+.startGameButton{
+    text-align: center; 
 }
+
+.startGameButton :hover{
+     cursor: pointer;
+     background-color: lightgreen;
+    text-align: center; 
+}
+

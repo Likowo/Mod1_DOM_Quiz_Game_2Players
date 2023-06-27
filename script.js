@@ -9,18 +9,32 @@
       //     ` ;
      //     document.body.innerHTML = welcomeButton;
 
+
+//  - Write a function called startGameButton that makes the start quiz button clickable  
+// let enterNameP1 =
+// let enterNameP2 =
+   const startGameButton = {
+        enterNameP1 = window.prompt(`Welcome Player1 to FES-B ! : Enter Name to Start Game`),
+         console.log(enterNameP1),
+        enterNameP2 = window.prompt(`Welcome Player2 to FES-B ! : Enter Name to Start Game`),
+        console.log(enterNameP2),
+
+   }
+
 // -	Window-prompt for player (s) to enter name(s)
         // - Write a function called enterName that enables the player(s) type in their name(s).Then hide prompt .
 
-        let enterNameP1 = window.prompt(`Welcome Player1 to FES-B ! : Enter Name to Start Game`)
-        console.log(enterNameP1)
-        let enterNameP2 = window.prompt(`Welcome Player2 to FES-B ! : Enter Name to Start Game`)
-        console.log(enterNameP2)
+        // let enterNameP1 = window.prompt(`Welcome Player1 to FES-B ! : Enter Name to Start Game`)
+        // console.log(enterNameP1)
+        // let enterNameP2 = window.prompt(`Welcome Player2 to FES-B ! : Enter Name to Start Game`)
+        // console.log(enterNameP2)
 
-//  - Write a function called startGame that makes the start quiz clickable    
+  
 // -	Write a function called nextQuestion that enables player to click and proceed to next question
 // -	Write a function called selectAnwser that allows player to click on answer of choice.
-// -   Write a gobal fxn called points that allocates points to current player. 
+                // use  <input type="checkbox" name="" id=""> to get box to click in
+                
+// -   Write a gobal fxn called points that allocates points to current player.
 // -	Create an array of  5 – 10 questions with multiple choice answers and  Boolean. ( Randomize the array)
 // -	Write a function called resetGame  that enables player to restart the game to round One when both rounds are completed with a draw (i.e. players can keep playing until one player wins. - Requirement 4)
 // -    Write a function winOrLose that allows questionBox to be replaced with result of winner, ELSE Game over ( i.e. both players loss - requirement 5)   
