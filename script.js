@@ -1,12 +1,15 @@
-//  <!-- Blank Main Screen with welcome prompt -->
-      // -	clickable button  “ Welcome to FrontEnd-Stack Basics – Enter Game”  or 
-       // - Write a function called welcomeButton that enables player to click and Enter Game .
-    //    const welcomeButn = () => {
-    //     console.log(welcomeButn)
-    //    }
+//  <!-- Blank Main Screen with welcome button -->
+      // -	clickable button  “ Welcome to FrontEnd-Stack Basics (FES-B) – Enter Game”  
+       // - Dynamically Create a constant called welcomeButton that enables player to click to Enter Game .
+    //  use ES6 Backticks
+    const welcomeButton = `
+    <div class="button">
+    <button>   Welcome to FrontEnd-Stack Basics (FES-B), Enter Game </button>
+   </div>   
+    ` ;
+    document.body.innerHTML = welcomeButton;
+    
 
-
-       
 
 // -	Window-prompt for player (s) to enter name(s)
         // - Write a function called enterName that enables the player(s) type in their name(s) .
