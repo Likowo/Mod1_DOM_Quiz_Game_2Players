@@ -3,58 +3,73 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title> QUIZ GAME APP : 2 Players</title>
+        <title>Quiz App Game Called FES-B: 2 Players</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <!-- Blank Main Screen with welcome Button -->
-           <!-- clickable button, `Welcome to FrontEnd-Stack Basics(FES-B) :Click to Enter Game, in div  -->
-        
-         
+        <!-- Blank main screen with clickable welcome button -->
+        <!-- `Welcome to FrontEnd-Stack Basics(FES-B) :Click to Enter Game, dynamically created in JavaScript using ES6 Backticks,then hides -->
 
-<!--    -	Onclick startGame button “ Start Quiz”
--	Game  begins with instructions/rules for the game  e,g, h2 “ Game Rules”
--	Onclick Exit Quiz button
--	Onclick Continue Quiz button
--	First set of Questions 1 to 5 with multiple choice answers OR  True/False --- p   tag
--	Two side score boards – Player1 and player 2
--	A green flashing alert button stating who gets the point when the right answer is chosen by either player or both players. E.g. “ You both get 1 point!” OR “ Player1.name gets 1 point!” OR “ Player2.name gets 1 point!” 
+         <!-- Onclick startGame button “ Start Quiz”  -->
+
+         <!-- h2 Game Rules; rules in p tags, 15secs in span tag -->
+
+         <!-- 2 input tags for names,player1 and player2 -->
+
+         <!-- navBar with 2 divs; time process bar and count down timer -->
+
+        <!-- Gameboard Container --contains all game info -->
+            <div class="gameBoardContainer"></div>
+       
+
+          <!-- gameBoard Container  -->
+
+             <!-- row1 resultScreen in a div(green flashing alert button stating who gets the point when the right answer is chosen by either player or both players. E.g. “ You both get 1 point!” OR “ Player1.name gets 1 point!” OR “ Player2.name gets 1 point!” ; Red X button pops up when both players choose the wrong answers
 NB: Timer stops when two answers are selected, or time runs out.
--	A count down timer (15 secs) with a progress bar.
--	A red  X pop up button when both players chose the wrong answers
--	
+) -->
 
-/// End of Game – A win and lose state ( Requirement 2 and 3) ///
--	An alert “Winner is player….”  With total points won ,At the end of  round one
---- Alert “ Sorry player …. You  lose  but You can bounce back in the next round !”
--	Enter next round button
--	Quit Quiz Button
-	
+             <!-- row2 with 3 divs; player1 ( name div, pointsBox (input tag)) --First 5 set of questions (p tags in a div called questionBox) -- player2 (namediv, pointsBox(input tag) -->
 
-///  A way to keep playing if the game is not over  ( Requirement 4 ) ///
--	If all answers are answered correctly, Next set of questions clickable button,
-- “ Great Job!! Enter next round”
+             <!-- row3 with 2 divs; onclick quit quiz button and onclick Ride On! button -->
 
+             <!-- End of Game (Round One) inside a hiden div – A win and lose state ( Requirement 2 and 3) ; If there is a winner in round one,  Replace questionBox with 2 pop ups ;“Winner is player….”  With total points ... , and
+            “ Sorry player …. You  lose  but You can bounce back in the next round !”
 
+            OR 
+             A way to keep playing if the game is not over  ( Requirement 4 ) ; -	If both players draw, Replace questionBox  with text “ Great Job!! Enter next round”
 
-/// Multiple rounds to play i.e. a round must begin, end, and there must be a way to check if the game should continue or the overall game is won or lost  ( Requirement 5)  /////
+             OR
+             Multiple rounds to play i.e. a round must begin, end, and there must be a way to check if the game should continue or the overall game is won or lost  ( Requirement 5) ; -
+             - Replace questionBox with text "Game Over" !! if both players loss 
 
--	 Player with highest  points after round two wins the game.
--	List of correct answers “ Review Correct Answers”
--	Restart Button “ TRY AGAIN” ( Stretch Goal)
--	Quit Quiz Button
--	
- -->
-          
+             row4 with 2 divs;  onclick button Quit Quiz  and onclick  button Continue to Round Two. -->
 
+             <!-- End of Game (Round Two) inside a hiden div; Player with highest  points after round two wins the game. -->
 
+             <!-- -	 Add ons
+                  -	List of correct answers “ Review Correct Answers”
+                  -	Restart Button “ TRY AGAIN” ( Stretch Goal)
+                  
+  -->
 
+           
 
-
+      
 
 
+
+
+
+
+
+
+
+
+
+
+        
         <script src="script.js" async defer></script>
     </body>
 </html>

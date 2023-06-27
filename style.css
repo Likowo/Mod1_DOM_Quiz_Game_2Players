@@ -1,0 +1,6 @@
+.gameBoardContainer{
+    border: solid 4px red;
+    background-color: aqua;
+    height: 1000px;
+    width: 100%;
+}
