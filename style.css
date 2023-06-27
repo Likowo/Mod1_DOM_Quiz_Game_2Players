@@ -7,6 +7,7 @@
 
 .startGameButton{
     text-align: center; 
+    margin: 25%;
 }
 
 .startGameButton :hover{
@@ -15,3 +16,10 @@
     text-align: center; 
 }
 
+.gameRules{
+    border: solid black 3px;
+    background-color: antiquewhite;
+    font-size: 20px;
+    text-align: center;
+    /* text-indent: 2%; */
+}
