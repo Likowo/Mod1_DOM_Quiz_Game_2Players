@@ -1,13 +1,17 @@
 .gameBoardContainer{
-    border: solid 4px red;
+    border: solid 1px red;
     background-color: aqua;
-    height: 1000px;
+    height: 1200px;
     width: 100%;
 }
 
 .startGameButton{
     text-align: center; 
     margin: 25%;
+    border-radius: 5px;
+    /* display: none; */
+    /* font-size: 25px;
+    font-weight: 500; */
 }
 
 .startGameButton :hover{
@@ -24,10 +28,39 @@
     /* text-indent: 2%; */
 }
 
+.navBar.{
+     border: 5px solid brown;
+     height: 300px;
+     width: 300px;
+}
+
 .gameScreen{
     border: solid 10px navy;
     height: 800px;
     width: 800px;
     margin-top: -45%;
     margin-left: 30%;
+    display: flex;
+}
+
+.row1{
+    border: 5px solid magenta;
+    height: 200px;
+    width: 200px;
+}
+
+.player1{
+    border: 2px solid coral;
+    height: 200px;
+    width: 200px;
+}
+.questionBox{
+    border: 2px solid black;
+    height: 500px;
+    width: 500px;
+}
+.player2{
+    border: 2px solid coral;
+    height: 200px;
+    width: 200px;
 }

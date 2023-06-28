@@ -23,37 +23,67 @@
          <!-- h2 Game Rules; rules in p tags, 15secs in span tag -->
               <div class="gameRules">
                 <h2> Game Rules ( 2 Players) </h2>
-                <p>Each player takes turns and must answer all questions (5) before timer runs out, <span> 15 seconds </span> per question </p>
-                <p> Player can not change selected answer </p>
-                <p> Player gets 1 point for each correct answer</p>
-                <p>Player with highest points wins the round</p>
+                <p>1.Each player takes turns and must answer all questions (5) before timer runs out, <span> 15 seconds </span> per question </p>
+                <p>2. Player can not change selected answer </p>
+                <p> 3.Player gets 1 point for each correct answer</p>
+                <p>4.Player with highest points wins the round</p>
               </div> 
 
          
 
         <!-- Gameboard Container --contains all game info -->
               <!-- Onclick startGameButton “ Start Quiz” ; choose your player,Player1 or Player2 ;  2 input tags for names,player1 and player2  -->
-                <!-- navBar with 2 divs; time process bar and count down timer -->
+
             <div class="gameBoardContainer">
                 <div class="startGameButton">
                     <button> START QUIZ </button>
-                    <input type="Enter Your name Player1">
-                    <input type="Enter Your Player2">
+                    <input type="Enter Your Name Player1">
+                    <input type="Enter Your Name Player2">
                 </div>               
-            </div>
+            </div>      
 
-       
-
-          <!-- gameScreen Conatiner  -->
-                <div class="gameScreen"></div>
-
-             <!-- row1 resultScreen in a div(green flashing alert button stating who gets the point when the right answer is chosen by either player or both players. E.g. “ You both get 1 point!” OR “ Player1.name gets 1 point!” OR “ Player2.name gets 1 point!” ; Red X button pops up when both players choose the wrong answers
+          <!-- gameScreen  -->
+                 <!-- navBar with 2 divs; time process bar and count down timer. Put header i-->
+                 
+             <!-- row1 resultScreen in a div(green flashing alert button stating who gets the point when the right answer is chosen by player or both players. E.g. “ You both get 1 point!” OR “ Player1.name gets 1 point!” OR “ Player2.name gets 1 point!” ; Red X button pops up when both players choose the wrong answers
 NB: Timer stops when two answers are selected, or time runs out.
 ) -->
+               
 
              <!-- row2 with 3 divs; player1 ( name div, pointsBox (input tag)) --First 5 set of questions (p tags in a div called questionBox) -- player2 (namediv, pointsBox(input tag) -->
 
+                
+
              <!-- row3 with 2 divs; onclick quit quiz button and onclick Ride On! button -->
+
+             <div class="narbar">
+                <p id="Time Left"></p>
+            </div>
+
+             <div class="row1">
+                <button onclick="onePoint()" >Result Screen</button>
+              </div>
+
+                <div class="gameScreen">      
+                   <div class="player1">
+                      <div class="name">
+                        <input type="number" name="" id="">
+                      </div>
+                   </div>
+            <div class="row2"></div>
+                   
+                <div class="questionBox">
+
+                </div>
+                <div class="player2"></div>
+   
+   
+                   </div>
+
+
+
+                </div>
+
 
              <!-- End of Game (Round One) inside a hiden div – A win and lose state ( Requirement 2 and 3) ; If there is a winner in round one,  Replace questionBox with 2 pop ups ;“Winner is player….”  With total points ... , and
             “ Sorry player …. You  lose  but You can bounce back in the next round !”
