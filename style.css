@@ -10,8 +10,6 @@
     margin: 25%;
     border-radius: 5px;
     /* display: none; */
-    /* font-size: 25px;
-    font-weight: 500; */
 }
 
 .startGameButton :hover{
@@ -45,6 +43,9 @@
     height: 180px;
     width: 800px;
     border-radius: 6%;
+    text-align: center;
+    /* font-size: 28px;
+    font-style: oblique; */
 }
 
 .timer{
@@ -52,8 +53,13 @@
     height: 60px;
     width: 600px;
     border-radius: 20%;
-    margin-left: 10%;
+    margin-left: 11%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    font-size: 28px;
+    font-style: oblique;
 }
+
 .row1{
     border: 5px solid magenta;
     height: 100px;
@@ -72,17 +78,18 @@
 
 .player1{
     border: 3px solid coral;
-    height: 200px;
+    height: 610px;
     width: 200px;
+  
 }
 .questionBox{
     border: 5px solid black;
-    height: 500px;
+    height: 610px;
     width: 500px;
 }
 .player2{
     border: 3px solid coral;
-    height: 200px;
+    height: 610px;
     width: 200px;
 }
 

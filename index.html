@@ -10,15 +10,14 @@
     </head>
     <body>
         <!-- Blank main screen with clickable welcome button -->
-        <!-- `Welcome to FrontEnd-Stack Basics(FES-B) :Click to Enter Game, dynamically created in JavaScript using ES6 Backticks,then hides OR a Window-prompt for player (s) to enter name(s) (2 Players and 2 Rounds  (Requirement 1)) -->
-
-         
-            <!-- <div class="startGameButton">
+            <!-- `Welcome to FrontEnd-Stack Basics(FES-B) :Click to Enter Game, dynamically created in JavaScript using ES6 Backticks,then hides OR a Window-prompt for player (s) to enter name(s) (2 Players and 2 Rounds  (Requirement 1)) --> 
+                      <!-- Exit quiz button  -->
+            <div class="startGameButton">
                 <button> START QUIZ </button>
                 <input type="Enter Your name Player1">
                 <input type="Enter Your Player2">
-                
-            </div> -->
+                <button> EXIT QUIZ </button>  
+            </div>
 
          <!-- h2 Game Rules; rules in p tags, 15secs in span tag -->
               <div class="gameRules">
@@ -60,7 +59,7 @@ NB: Timer stops when two answers are selected, or time runs out.
                 
                 <div class="resultScreen">
                     <div class="timer">
-                        <p id="Time Left"></p>
+                        <p id="Time Left"> TIMER </p>
                     </div>             
                     <div class="row1">
                         <button onclick="onePoint()" >Round Result</button>
@@ -68,11 +67,9 @@ NB: Timer stops when two answers are selected, or time runs out.
                 </div>
                 
                 <div class="quizScreen">
-                    <div class="player1"></div>
+                    <div class="player1"> PLAYER 1 POINTS</div>
                     <div class="questionBox"></div>
-                    <div class="player2"></div>
-    
-
+                    <div class="player2"> PLAYER 2  POINTS</div>
                 </div>
 
                
@@ -98,27 +95,6 @@ NB: Timer stops when two answers are selected, or time runs out.
                   -	Restart Button “ TRY AGAIN” ( Stretch Goal)
                   
   -->
-
-  <!-- <div class="quizScreen">
-    <div class="row2">
-        <div class="player1"></div>
-        <div class="questionBox"></div>
-        <div class="player2"></div>
-    </div>
-</div> -->
-
-      
-
-
-
-
-
-
-
-
-
-
-
 
         
         <script src="script.js" async defer></script>
