@@ -52,7 +52,7 @@
 
 // -	Write a function called nextQuestion that enables player to click and proceed to next question
           //
-// -	Write a function called selectAnwser that allows player to click on answer of choice.
+// -	Write a function called selectAnwser that allows player to click on answer of choice.Next question auto pops up when Ride On button is clicked
                 // use  <input type="checkbox" name="" id=""> to get box to click in
 
 
