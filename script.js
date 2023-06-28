@@ -33,7 +33,7 @@
 
          // set date we are counting down to
            const countDownDate = new Date ().getTime();
-        // Update thhe count down every 1 second
+        // Update the count down every 1 second
           const x = setInterval(function(){
 
           })
@@ -54,7 +54,7 @@
           //
 // -	Write a function called selectAnwser that allows player to click on answer of choice.
                 // use  <input type="checkbox" name="" id=""> to get box to click in
-                
+
 
 // -   Write a gobal fxn called points that allocates points to current player.
 // -	Create an array of  5 – 10 questions with multiple choice answers and  Boolean. ( Randomize the array)

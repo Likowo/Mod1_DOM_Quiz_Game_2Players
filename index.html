@@ -27,20 +27,18 @@
                 <p>2. Player can not change selected answer </p>
                 <p> 3.Player gets 1 point for each correct answer</p>
                 <p>4.Player with highest points wins the round</p>
-              </div> 
-
-         
+              </div>        
 
         <!-- Gameboard Container --contains all game info -->
-              <!-- Onclick startGameButton “ Start Quiz” ; choose your player,Player1 or Player2 ;  2 input tags for names,player1 and player2  -->
+              <!-- Onclick startGameButton “ Start Quiz” ; choose your player,Player1 or Player2 ;  2 input tags for names,player1 and player2 . Then hides -->
 
-            <div class="gameBoardContainer">
+        <div class="gameBoardContainer">
                 <div class="startGameButton">
                     <button> START QUIZ </button>
                     <input type="Enter Your Name Player1">
                     <input type="Enter Your Name Player2">
                 </div>               
-            </div>      
+        </div>      
 
           <!-- gameScreen  -->
                  <!-- navBar with 2 divs; time process bar and count down timer. Put header i-->
@@ -50,39 +48,35 @@ NB: Timer stops when two answers are selected, or time runs out.
 ) -->
                
 
-             <!-- row2 with 3 divs; player1 ( name div, pointsBox (input tag)) --First 5 set of questions (p tags in a div called questionBox) -- player2 (namediv, pointsBox(input tag) -->
+             <!-- row2 ( quiz Screen) with 3 divs; player1 ( name div, pointsBox (input tag)) --First 5 set of questions (p tags in a div called questionBox) -- player2 (namediv, pointsBox(input tag) -->
 
                 
 
              <!-- row3 with 2 divs; onclick quit quiz button and onclick Ride On! button -->
 
-             <div class="narbar">
-                <p id="Time Left"></p>
-            </div>
-
-             <div class="row1">
-                <button onclick="onePoint()" >Result Screen</button>
-              </div>
-
-                <div class="gameScreen">      
-                   <div class="player1">
-                      <div class="name">
-                        <input type="number" name="" id="">
-                      </div>
-                   </div>
-            <div class="row2"></div>
-                   
-                <div class="questionBox">
+            
+           
+        <div class="gameScreen">  
+                
+                <div class="resultScreen">
+                    <div class="timer">
+                        <p id="Time Left"></p>
+                    </div>             
+                    <div class="row1">
+                        <button onclick="onePoint()" >Round Result</button>
+                    </div>
+                </div>
+                
+                <div class="quizScreen">
+                    <div class="player1"></div>
+                    <div class="questionBox"></div>
+                    <div class="player2"></div>
+    
 
                 </div>
-                <div class="player2"></div>
-   
-   
-                   </div>
 
-
-
-                </div>
+               
+        </div>
 
 
              <!-- End of Game (Round One) inside a hiden div – A win and lose state ( Requirement 2 and 3) ; If there is a winner in round one,  Replace questionBox with 2 pop ups ;“Winner is player….”  With total points ... , and
@@ -105,7 +99,13 @@ NB: Timer stops when two answers are selected, or time runs out.
                   
   -->
 
-           
+  <!-- <div class="quizScreen">
+    <div class="row2">
+        <div class="player1"></div>
+        <div class="questionBox"></div>
+        <div class="player2"></div>
+    </div>
+</div> -->
 
       
 

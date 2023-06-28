@@ -28,39 +28,62 @@
     /* text-indent: 2%; */
 }
 
-.navBar.{
-     border: 5px solid brown;
-     height: 300px;
-     width: 300px;
-}
-
 .gameScreen{
     border: solid 10px navy;
+    border-radius: 6%;
     height: 800px;
     width: 800px;
-    margin-top: -45%;
+    margin-top: -55%;
     margin-left: 30%;
-    display: flex;
+     /* display: flex; 
+    flex-direction:column;
+   justify-items: center;   */
 }
 
+.resultScreen{
+    /* border: 5px solid brown; */
+    height: 180px;
+    width: 800px;
+    border-radius: 6%;
+}
+
+.timer{
+    border: 5px solid magenta;
+    height: 60px;
+    width: 600px;
+    border-radius: 20%;
+    margin-left: 10%;
+}
 .row1{
     border: 5px solid magenta;
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 797px;
+    border-radius: 0.5%;
+}
+
+.quizScreen{
+    /* border: solid 10px yellow; */
+    border-radius: 6%;
+    height: 600px;
+    width: 800px;
+    display: flex;
+    justify-content: center;
 }
 
 .player1{
-    border: 2px solid coral;
+    border: 3px solid coral;
     height: 200px;
     width: 200px;
 }
 .questionBox{
-    border: 2px solid black;
+    border: 5px solid black;
     height: 500px;
     width: 500px;
 }
 .player2{
-    border: 2px solid coral;
+    border: 3px solid coral;
     height: 200px;
     width: 200px;
 }
+
+
