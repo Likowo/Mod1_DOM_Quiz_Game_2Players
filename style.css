@@ -14,7 +14,7 @@ body{
     background-color: lemonchiffon;
 }
 
-.welcomeBtn{
+.welcomeButton{
     border: solid goldenrod 2px;
     margin-top: 40%;
     margin-left: 10%;
@@ -23,13 +23,12 @@ body{
     animation-duration: 3s;
     color:navy;
     font-size: 20px;
-
 }
 
 .pointingFinger{
     height: 30px;
-   background-color: green;
 }
+
 .gameBoardContainer{
     border: solid 1px red;
     background-color: aqua;

@@ -12,13 +12,14 @@
     let gameScreen =document.querySelector(`.gameScreen`)
 
 // Button Variables
-  let welcomeBtn = document.querySelector(".welcomeBtn")
+  let welcomeButton = document.querySelector(".welcomeButton")
   let startQuizButton = document.querySelector(`.startQuizButton`)
+  let quitQuizButton = document.querySelector(`.quitQuizButton`)
   
-  console.log(welcomeBtn,startQuizButton)
+  console.log(welcomeButton,startQuizButton,quitQuizButton)
 
   // To show the next screens, use an event listener method
-    welcomeBtn.addEventListener(`click`, () => {
+    welcomeButton.addEventListener(`click`, () => {
         // Hide Welcome Screen
         welcomeScreen.classList.add(`hidden`)
         // Show Game Rules and gameBoardContainer Screens
@@ -32,9 +33,16 @@
     gameScreen.classList.remove(`hidden`)
     })
 
+     // Event listenner for quitQuizButton
+     quitQuizButton.addEventListener(`click`, () => {
+     startGameButton.classList.add(`hidden`)
+     gameRuleScreen.classList.add(`hidden`)
+     gameBoardContainerScreen.classList.add(`hidden`)
+     welcomeScreen.classList.remove(`hidden`)     
+     } )
      
 
-      // Hide Start Quiz 
+   
 
 // console.log(gameBoardContainerScreen.classList.value)
 
