@@ -33,9 +33,7 @@
     width: 800px;
     margin-top: -55%;
     margin-left: 30%;
-     /* display: flex; 
-    flex-direction:column;
-   justify-items: center;   */
+    background-color: lightblue;
 }
 
 .resultScreen{
@@ -58,6 +56,7 @@
     margin-top: 1%;
     font-size: 28px;
     font-style: oblique;
+    background-color: white;
 }
 
 .row1{
