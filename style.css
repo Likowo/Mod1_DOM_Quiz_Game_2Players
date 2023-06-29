@@ -132,6 +132,12 @@ body{
     cursor: pointer;
 }
 
+.winLoseState{
+    color: green;
+    font-size: 20px;
+    font-style: oblique;
+}
+
 .player2{
     border: 3px solid black;
     height: 508px;

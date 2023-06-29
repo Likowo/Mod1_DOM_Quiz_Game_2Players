@@ -3,18 +3,21 @@
        // - Dynamically Create a constant called welcomeButton that enables player to click to Enter Game. Then hide button .
     //  use ES6 Backticks i.e Create a constant and add a pair of back-ticks. Write your HTML code exactly as you do inside the HTML page.Assign it to the innerHTML property of the document.body.
 
- // These are the variables for my screens
+ // These are the variables for my screens (i.e any div given the class, hidden,  needs to be made a variable and accessed via an event listenner)
     let welcomeScreen = document.querySelector(".welcomeScreen")
     let gameRuleScreen = document.querySelector(".gameRules")
     let gameBoardContainerScreen = document.querySelector(".gameBoardContainer")
     console.log(gameRuleScreen,gameBoardContainerScreen)
     let startGameButton = document.querySelector(`.startGameButton`)
     let gameScreen =document.querySelector(`.gameScreen`)
+    let winLoseState =document.querySelector(`.winLoseState`)
 
 // Button Variables
   let welcomeButton = document.querySelector(".welcomeButton")
   let startQuizButton = document.querySelector(`.startQuizButton`)
   let quitQuizButton = document.querySelector(`.quitQuizButton`)
+  let round1resultButton = document.querySelector(`.round1resultButton`)
+
   
   console.log(welcomeButton,startQuizButton,quitQuizButton)
 
@@ -22,24 +25,41 @@
     welcomeButton.addEventListener(`click`, () => {
         // Hide Welcome Screen
         welcomeScreen.classList.add(`hidden`)
-        // Show Game Rules and gameBoardContainer Screens
+        // Show Game Rules,gameBoardContainer Screens and startGameButton
       gameRuleScreen.classList.remove(`hidden`)
       gameBoardContainerScreen.classList.remove(`hidden`)
       startGameButton.classList.remove(`hidden`)
     })
       //Event Listenner for startQuizButton
     startQuizButton.addEventListener(`click`, () => {
+       //Hide startGameButton
     startGameButton.classList.add(`hidden`)
+       // show gameScreen
     gameScreen.classList.remove(`hidden`)
     })
 
      // Event listenner for quitQuizButton
      quitQuizButton.addEventListener(`click`, () => {
+         // Hide  startGameButton, gameRuleScreen and gameBoardContainerScreen (must be hidden in other to go back to the Welcome screen)
      startGameButton.classList.add(`hidden`)
      gameRuleScreen.classList.add(`hidden`)
      gameBoardContainerScreen.classList.add(`hidden`)
+         // Show welcomeScreen  ( This takes you back to the Welcome screen!)
      welcomeScreen.classList.remove(`hidden`)     
      } )
+
+     //1st Event listenner for round1resultButton
+    round1resultButton.addEventListener(`click`, () => {
+        // Show winLoseState text
+      winLoseState.classList.remove(`hidden`)
+    }) 
+    // 2nd Event listenner for round1resultButton  
+    // round1resultButton.addEventListener(`click`, () => {
+    //    // Hide winLoseState text
+    //   winLoseState.classList.add(`hidden`)
+    // })
+
+      
      
 
    
