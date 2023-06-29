@@ -18,12 +18,14 @@
     let quizScreen = document.querySelector(`.quizScreen`);
     let counter = document.getElementById(`counter`);
     let questionBox = document.querySelector(`.questionBox`);
+    let gameOver = document.querySelector(`.gameOver `);
 
 // Button Variables
   const welcomeButton = document.querySelector(`.welcomeButton`);
   const startQuizButton = document.querySelector(`.startQuizButton`);
   const quitQuizButton1 = document.querySelector(`.quitQuizButton1`);
   const round1resultButton = document.querySelector(`.round1resultButton`);
+  const quitQuizButton2 = document.querySelector(`.quitQuizButton2`);
 
   
   console.log(welcomeButton,startQuizButton,quitQuizButton1)
@@ -45,7 +47,7 @@
     gameScreen.classList.remove(`hidden`)
     })
 
-     // Event listenner for quitQuizButton
+     // Event listenner for quitQuizButton1
      quitQuizButton1.addEventListener(`click`, () => {
          // Hide  startGameButton, gameRuleScreen and gameBoardContainerScreen (must be hidden in other to go back to the Welcome screen)
      startGameButton.classList.add(`hidden`)
@@ -65,6 +67,25 @@
     //    // Hide winLoseState text
     //   winLoseState.classList.add(`hidden`)
     // })
+
+     // Event listenner for quitQuizButton2
+    quitQuizButton2.addEventListener(`click`, () => {
+      //Hide questionBox
+    questionBox.classList.add(`hidden`) 
+      // Show gameOver text ( This replaces the questionBox) 
+    gameOver.classList.remove(`hidden`)     
+  } )
+  //    // 2nd Event listenner for quitQuizButton2
+  //    quitQuizButton2.addEventListener(`click`, () => {
+  //     // Hide  startGameButton, gameRuleScreen and gameBoardContainerScreen (must be hidden in other to go back to the Welcome screen)
+  // startGameButton.classList.add(`hidden`)
+  // gameRuleScreen.classList.add(`hidden`)
+  // gameBoardContainerScreen.classList.add(`hidden`)
+  //     // Show welcomeScreen  ( This takes you back to the Welcome screen!)
+  // welcomeScreen.classList.remove(`hidden`)     
+  // } )
+
+
 // console.log(gameBoardContainerScreen.classList.value)
 
 // - Write a function called enterName that enables the player(s) type in their name(s).Then hide prompt . ( This has been done in html using input tags under; <div class="startGameButton hidden"> )

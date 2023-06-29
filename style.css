@@ -159,16 +159,29 @@ body{
 }
 .gameOver{
         /* border: solid 10px yellow; */
+        border: 5px solid black;
+        height: 508px;
+        width: 500px;
+        font-size: 30px;
+        margin: auto;
+        margin-top: -76.5%;
+        text-align: center;
+        color: red;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
+      /* background-color: white;
         border-radius: 6%;
         height: 600px;
-        width: 800px;
-        display: flex;
+        width: 800px; */
+        /* display: flex;
         justify-content: center;
-        text-align: center;
-        font-size: 30px;
-        color: Red;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        /* display: none; */
+        text-align: center; */
+        
+    
+
+       
+          
+        
 }
 
 .buttons{
