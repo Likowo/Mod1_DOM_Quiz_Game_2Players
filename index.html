@@ -55,6 +55,10 @@ NB: Timer stops when two answers are selected, or time runs out.
              - Replace questionBox with text "Game Over" !! if both players loss  -->
 
              <!-- row3 (quit and Ride On buttons) with 2 divs; onclick quit quiz button and onclick Ride On! button -->
+                             
+             <!-- row4 with 2 divs;  onclick button Quit Quiz  and onclick  button Continue to Round Two. ( *** Can use the Ride On button for this with an event listener after round One ***) -->
+            
+             <!-- End of Game (Round Two) inside a hiden div ( i.e. add a second class called "hidden"); Player with highest  points after round two wins the game. -->
 
             
            
@@ -73,30 +77,37 @@ NB: Timer stops when two answers are selected, or time runs out.
                             </div>
                         </div>
                     </div>
+
+                    <div class="buttons">
+                        <button class="nextQuestionButton" > RIDE ON</button>
+                        <button> QUIT QUIZ </button>
+                    </div>
                     
                     <div class="quizScreen">
-                        <div class="player1"> PLAYER 1 POINTS</div>
+                        <div class="player1Points"> PLAYER 1 POINTS</div>
+                        <!-- <div id="time">
+                            <div id="counter"> 15 </div>
+                        </div> -->
+                        
 
                         <div class="questionBox">
-                            <span> Q1: A git command and function is? </span>
+                            <p> Q1: A git command and function is? </p>
                         
                             <div class="ansOptions">
-                                <span>1. Git Open:  Initialize a local Git repository</span>
-                                <div class="input"> <input type="checkbox" name="" id=""> </div>
-                                <!-- <div class="icon cross"><i class="fas fa-times"></i></div> -->
-                            </div>
+                                <p>1. Git Open:  Initialize a local Git repository</p>
+                                <div class="input"><input type="checkbox" name="" id="1" onclick="checkAnswer(`1`)">1</div>
+                           </div>
                             <div class="ansOptions">
-                                <span>2. Git Pull:  Fetch and download content from a remote repository</span>
-                                <div class="input"><input type="checkbox" name="" id=""></div>
-                                <!-- <div class="icon tick"><i class="fas fa-check"></i></div> -->
-                            </div>
+                                <p>2. Git Pull:  Fetch and download content from a remote repository</p>
+                                <div class="input"><input type="checkbox" name="" id="2">2</div>
+                           </div>
                             <div class="ansOptions">
-                                <span>3. Git Upload:  Upload content from the local repository to a remote repository</span>
-                                <div class="input"> <input type="checkbox" name="" id=""> </div>
+                                <p>3. Git Upload:  Upload content from the local repository to a remote repository</p>
+                                <div class="input"> <input type="checkbox" name="" id="3">3</div>
                             </div>
                     </div>
 
-                        <div class="player2"> PLAYER 2  POINTS</div>
+                        <div class="player2Points"> PLAYER 2  POINTS</div>
                     </div>
 
                     <div class="keepPlaying hidden">
@@ -107,22 +118,21 @@ NB: Timer stops when two answers are selected, or time runs out.
                         <p> GAME OVER!! </p>
                     </div>
         
-                    <div class="buttons">
-                        <button> QUIT QUIZ </button>
-                        <button> RIDE ON</button>
-                    </div>
+                    <div class="endOfRoundTwo hidden">
+                        <p> WINNER!! Player.name !! </p>
+                            <BUtton> TRY AGAIN </BUtton>
+                      </div>
 
                 
             </div>
         </div>
+             
 
-                               
-    
-                        
-
-             <!-- row4 with 2 divs;  onclick button Quit Quiz  and onclick  button Continue to Round Two. -->
-
-             <!-- End of Game (Round Two) inside a hiden div; Player with highest  points after round two wins the game. -->
+          
+              <!-- <div class="endOfRoundTwo hidden">
+                <p> WINNER!! Player.name !! </p>
+                    <BUtton> TRY AGAIN </BUtton>
+              </div> -->
 
              <!-- -	 Add ons
                   -	List of correct answers “ Review Correct Answers”
