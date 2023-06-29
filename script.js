@@ -2,24 +2,53 @@
       // -	clickable button  “ Welcome to FrontEnd-Stack Basics (FES-B) – Are you ready to Ride”  
        // - Dynamically Create a constant called welcomeButton that enables player to click to Enter Game. Then hide button .
     //  use ES6 Backticks i.e Create a constant and add a pair of back-ticks. Write your HTML code exactly as you do inside the HTML page.Assign it to the innerHTML property of the document.body.
-        //       const welcomeButton = `
-        //      <div class="button">
-        //     <button> Welcome to FrontEnd-Stack Basics (FES-B), Are You Ready to Ride? </button>
-        //   </div>   
-        //   ` ;
-        //  document.body.innerHTML = welcomeButton;
 
+ // These are the variables for my screens
+    let welcomeScreen = document.querySelector(".welcomeScreen")
+    let gameRuleScreen = document.querySelector(".gameRules")
+    let gameBoardContainerScreen = document.querySelector(".gameBoardContainer")
+    console.log(gameRuleScreen,gameBoardContainerScreen)
+    let startGameButton = document.querySelector(`.startGameButton`)
+    let gameScreen =document.querySelector(`.gameScreen`)
+
+// Button Variables
+  let welcomeBtn = document.querySelector(".welcomeBtn")
+  let startQuizButton = document.querySelector(`.startQuizButton`)
+  
+  console.log(welcomeBtn,startQuizButton)
+
+  // To show the next screens, use an event listener method
+    welcomeBtn.addEventListener(`click`, () => {
+        // Hide Welcome Screen
+        welcomeScreen.classList.add(`hidden`)
+        // Show Game Rules and gameBoardContainer Screens
+      gameRuleScreen.classList.remove(`hidden`)
+      gameBoardContainerScreen.classList.remove(`hidden`)
+      startGameButton.classList.remove(`hidden`)
+    })
+      //Event Listenner for startQuizButton
+    startQuizButton.addEventListener(`click`, () => {
+    startGameButton.classList.add(`hidden`)
+    gameScreen.classList.remove(`hidden`)
+    })
+
+     
+
+      // Hide Start Quiz 
+
+// console.log(gameBoardContainerScreen.classList.value)
 
 //  - Write a function called startGameButton that makes the start quiz button clickable  
-// let enterNameP1 =
-// let enterNameP2 =
-//    const startGameButton = {
-//         enterNameP1 = window.prompt(`Welcome Player1 to FES-B ! : Enter Name to Start Game`),
-//          console.log(enterNameP1),
-//         enterNameP2 = window.prompt(`Welcome Player2 to FES-B ! : Enter Name to Start Game`),
-//         console.log(enterNameP2),
 
+
+// let enterNameP1 
+// let enterNameP2 
+//    const startGameButton = () => {
+//         enterNameP1 = window.prompt(`Welcome Player1 to FES-B ! : Enter Name to Start Game`);
+        
+//         enterNameP2 = window.prompt(`Welcome Player2 to FES-B ! : Enter Name to Start Game`);      
 //    }
+//    startGameButton()
 
 // -	Window-prompt for player (s) to enter name(s)
         // - Write a function called enterName that enables the player(s) type in their name(s).Then hide prompt .
@@ -32,20 +61,20 @@
 // -  Write a funtion called seconds that sets a count down timer from 15 seconds to 0 seconds. Use Math.floor() or Date.now()
 
          // set date we are counting down to
-           const countDownDate = new Date ().getTime();
+        //    const countDownDate = new Date ().getTime();
         // Update the count down every 1 second
-          const x = setInterval(function(){
+        //   const x = setInterval(function(){
 
-          })
+        //   })
         //Time calculation for seconds
-        const seconds = Math.floor( (distance % (1000 * 60)) / 1000);
+        // const seconds = Math.floor( (distance % (1000 * 60)) / 1000);
         //Display result in the element with id="Time Left"
-        document.getElementById("Time left").innerHTML = seconds + "s"
+        // document.getElementById("Time left").innerHTML = seconds + "s"
         //When count down is finished, write some text
-        if (distance < 0 ){
-            clearInterval(x);
-            document.getElementById("Time left").innerHTML = "Time Up";
-        }
+        // if (distance < 0 ){
+        //     clearInterval(x);
+        //     document.getElementById("Time left").innerHTML = "Time Up";
+        // }
 
         // let milliSeconds = Date.now()
         // document.getElementById(`timer`).innerHTML = milliSeconds

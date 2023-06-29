@@ -7,20 +7,20 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        <script src="script.js" async defer></script>
     </head>
     <body>
         <!-- Blank main screen with clickable welcome button -->
             <!-- `Welcome to FrontEnd-Stack Basics(FES-B) :Click to Enter Game, dynamically created in JavaScript using ES6 Backticks,then hides OR a Window-prompt for player (s) to enter name(s) (2 Players and 2 Rounds  (Requirement 1)) --> 
-                      <!-- Exit quiz button  -->
-            <!-- <div class="startGameButton">
-                <button> START QUIZ </button>
-                <input type="Enter Your name Player1">
-                <input type="Enter Your Player2">
-                <button> EXIT QUIZ </button>  
-            </div> -->
-
+         
+               <div class="welcomeScreen">
+                  <button class="welcomeBtn" > Welcome to FrontEnd-Stack Basics (FES-B), Are You Ready to Ride? </button>
+               </div> 
+           
+                   
          <!-- h2 Game Rules; rules in p tags, 15secs in span tag -->
-              <div class="gameRules">
+
+              <div class="gameRules hidden">
                 <h2> Game Rules ( 2 Players) </h2>
                 <p>1.Each player takes turns and must answer all questions (5) before timer runs out, <span> 15 seconds </span> per question </p>
                 <p>2. Player can not change selected answer </p>
@@ -31,13 +31,13 @@
         <!-- Gameboard Container --contains all game info -->
               <!-- Onclick startGameButton “ Start Quiz” ; choose your player,Player1 or Player2 ;  2 input tags for names,player1 and player2 . Then hides -->
 
-        <div class="gameBoardContainer">
-                <div class="startGameButton">
-                    <button> START QUIZ </button>
-                    <input type="Enter Your Name Player1">
-                    <input type="Enter Your Name Player2">
-                </div>               
-        </div>      
+        <div class="gameBoardContainer hidden">
+                <div class="startGameButton hidden">
+                    <button class="startQuizButton"> START QUIZ </button>
+                    <input type="text" placeholder=" Enter Your Name Player1">
+                    <input type="text" placeholder=" Enter Your Name Player2">
+                    <button> QUIT QUIZ </button>
+                </div>                    
 
           <!-- gameScreen  -->
                  <!-- navBar with 2 divs; time process bar and count down timer. -->
@@ -58,61 +58,62 @@ NB: Timer stops when two answers are selected, or time runs out.
 
             
            
-        <div class="gameScreen">  
-                
-                <div class="resultScreen">
-                    <div class="timer">
-                        <p id="Time Left"> TIMER : 15 Secs </p>
-                    </div> 
-                                
-                    <div class="row1">
-                        <button >Round Result</button>
-                        <div class="winLoseState">
-                            <div class="winnerRoundOne"> Winner is player ____, With total points ____</div>
-                            <div class="loserRoundOne"> Sorry player …. You  lose, but You can bounce back in the next round ! Are you Ready to Ride On?</div>
+            <div class="gameScreen hidden">  
+                    
+                    <div class="resultScreen">
+                        <div class="timer">
+                            <p id="Time Left"> TIMER : 15 Secs </p>
+                        </div> 
+                                    
+                        <div class="row1">
+                            <button >Round Result</button>
+                            <div class="winLoseState hidden">
+                                <div class="winnerRoundOne"> Winner is player ____, With total points ____</div>
+                                <div class="loserRoundOne"> Sorry player …. You  lose, but You can bounce back in the next round ! Are you Ready to Ride On?</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="quizScreen">
-                    <div class="player1"> PLAYER 1 POINTS</div>
-
-                    <div class="questionBox">
-                        <span> Q1: A git command and function is? </span>
                     
-                        <div class="ansOptions">
-                            <span>1. Git Open:  Initialize a local Git repository</span>
-                            <div class="input"> <input type="checkbox" name="" id=""> </div>
-                            <!-- <div class="icon cross"><i class="fas fa-times"></i></div> -->
-                        </div>
-                        <div class="ansOptions">
-                            <span>2. Git Pull:  Fetch and download content from a remote repository</span>
-                            <div class="input"><input type="checkbox" name="" id=""></div>
-                            <!-- <div class="icon tick"><i class="fas fa-check"></i></div> -->
-                        </div>
-                        <div class="ansOptions">
-                            <span>3. Git Upload:  Upload content from the local repository to a remote repository</span>
-                            <div class="input"> <input type="checkbox" name="" id=""> </div>
-                        </div>
-                   </div>
+                    <div class="quizScreen">
+                        <div class="player1"> PLAYER 1 POINTS</div>
 
-                    <div class="player2"> PLAYER 2  POINTS</div>
-                </div>
+                        <div class="questionBox">
+                            <span> Q1: A git command and function is? </span>
+                        
+                            <div class="ansOptions">
+                                <span>1. Git Open:  Initialize a local Git repository</span>
+                                <div class="input"> <input type="checkbox" name="" id=""> </div>
+                                <!-- <div class="icon cross"><i class="fas fa-times"></i></div> -->
+                            </div>
+                            <div class="ansOptions">
+                                <span>2. Git Pull:  Fetch and download content from a remote repository</span>
+                                <div class="input"><input type="checkbox" name="" id=""></div>
+                                <!-- <div class="icon tick"><i class="fas fa-check"></i></div> -->
+                            </div>
+                            <div class="ansOptions">
+                                <span>3. Git Upload:  Upload content from the local repository to a remote repository</span>
+                                <div class="input"> <input type="checkbox" name="" id=""> </div>
+                            </div>
+                    </div>
 
-                <div class="keepPlaying">
-                    <p> You Both Rock!! Round One is a Draw! <br> Ride On To Next Round. </p>
-                </div>
+                        <div class="player2"> PLAYER 2  POINTS</div>
+                    </div>
 
-                <div class="gameOver">
-                    <p> GAME OVER!! </p>
-                </div>
-    
-                <div class="buttons">
-                    <button> QUIT QUIZ </button>
-                    <button> RIDE ON</button>
-                </div>
+                    <div class="keepPlaying hidden">
+                        <p> You Both Rock!! Round One is a Draw! <br> Ride On To Next Round. </p>
+                    </div>
 
-               
+                    <div class="gameOver hidden">
+                        <p> GAME OVER!! </p>
+                    </div>
+        
+                    <div class="buttons">
+                        <button> QUIT QUIZ </button>
+                        <button> RIDE ON</button>
+                    </div>
+
+                
+            </div>
         </div>
 
                                
@@ -128,6 +129,6 @@ NB: Timer stops when two answers are selected, or time runs out.
                   -	Restart Button “ TRY AGAIN” ( Stretch Goal) -->
 
         
-        <script src="script.js" async defer></script>
+       
     </body>
 </html>
