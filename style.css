@@ -73,8 +73,7 @@
     width: 800px;
     display: flex;
     justify-content: center;
-    text-align: center;
-    
+    text-align: center;  
 }
 
 .player1{
@@ -108,6 +107,20 @@
     height: 508px;
     width: 200px;
     font-size: 20px;
+}
+
+.keepPlaying{
+        /* border: solid 10px yellow; */
+        border-radius: 6%;
+        height: 600px;
+        width: 800px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 25px;
+        color: green;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        /* display: none; */
 }
 
 .buttons{

@@ -40,13 +40,16 @@
         </div>      
 
           <!-- gameScreen  -->
-                 <!-- navBar with 2 divs; time process bar and count down timer. Put header i-->
+                 <!-- navBar with 2 divs; time process bar and count down timer. -->
+                    <!-- End of Game (Round One) inside a hiden div – A win and lose state ( Requirement 2 and 3) ; If there is a winner in round one,  Replace questionBox with 2 pop ups ;“Winner is player….”  With total points ... , and
+            “ Sorry player …. You  lose  but You can bounce back in the next round !” -->
                  
              <!-- row1 resultScreen in a div(green flashing alert button stating who gets the point when the right answer is chosen by player or both players. E.g. “ You both get 1 point!” OR “ Player1.name gets 1 point!” OR “ Player2.name gets 1 point!” ; Red X button pops up when both players choose the wrong answers
 NB: Timer stops when two answers are selected, or time runs out.
 ) -->
-             <!-- row2 ( quiz Screen) with 3 divs; player1 ( name div, pointsBox (input tag)) --First 5 set of questions (p tags in a div called questionBox), Next question auto pops up when Ride On button is clicked -- player2 (namediv, pointsBox(input tag) -->              
-
+             <!-- row2 ( quiz Screen) with 3 divs; player1 ( name div, pointsBox (input tag)) --First 5 set of questions (p tags in a div called questionBox), Next question auto pops up when Ride On button is clicked -- player2 (namediv, pointsBox(input tag) -->               
+            <!-- 
+             A way to keep playing if the game is not over  ( Requirement 4 ) ; -	If both players draw, Replace questionBox  with text “  You Both Rock!! Round One is a Draw! <br> Ride On To Next Round.” -->
              <!-- row3 (quit and Ride On buttons) with 2 divs; onclick quit quiz button and onclick Ride On! button -->
 
             
@@ -80,7 +83,7 @@ NB: Timer stops when two answers are selected, or time runs out.
                         </div>
                         <div class="ansOptions">
                             <span>2. Git Pull:  Fetch and download content from a remote repository</span>
-                            <div class="input"> <input type="checkbox" name="" id=""> </div>
+                            <div class="input"><input type="checkbox" name="" id=""></div>
                             <!-- <div class="icon tick"><i class="fas fa-check"></i></div> -->
                         </div>
                         <div class="ansOptions">
@@ -92,6 +95,10 @@ NB: Timer stops when two answers are selected, or time runs out.
                     <div class="player2"> PLAYER 2  POINTS</div>
                 </div>
 
+                <div class="keepPlaying">
+                    <p> You Both Rock!! Round One is a Draw! <br> Ride On To Next Round. </p>
+                </div>
+    
                 <div class="buttons">
                     <button> QUIT QUIZ </button>
                     <button> RIDE ON</button>
@@ -100,20 +107,11 @@ NB: Timer stops when two answers are selected, or time runs out.
                
         </div>
 
-     
-
-
-             <!-- End of Game (Round One) inside a hiden div – A win and lose state ( Requirement 2 and 3) ; If there is a winner in round one,  Replace questionBox with 2 pop ups ;“Winner is player….”  With total points ... , and
-            “ Sorry player …. You  lose  but You can bounce back in the next round !” -->
-            <!-- <div class="winLoseState">
-                <div class="complete-text"> Winner is player ____, With total points ____</div>
-                <div class="complete-text"> Sorry player …. You  lose  but You can bounce back in the next round ! Are you Ready to Ride on?</div>
-            </div> -->
-            
-
-    
+                               
             <!-- OR 
-             A way to keep playing if the game is not over  ( Requirement 4 ) ; -	If both players draw, Replace questionBox  with text “ Great Job!! Enter next round” -->
+             A way to keep playing if the game is not over  ( Requirement 4 ) ; -	If both players draw, Replace questionBox  with text “  You Both Rock!! Round One is a Draw! <br> Ride On To Next Round.” -->
+
+             
 
              <!-- OR
              Multiple rounds to play i.e. a round must begin, end, and there must be a way to check if the game should continue or the overall game is won or lost  ( Requirement 5) ; -
