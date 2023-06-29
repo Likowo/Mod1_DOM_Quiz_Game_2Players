@@ -59,7 +59,11 @@ NB: Timer stops when two answers are selected, or time runs out.
                     </div> 
                                 
                     <div class="row1">
-                        <button onclick="onePoint()" >Round Result</button>
+                        <button >Round Result</button>
+                        <div class="winLoseState">
+                            <div class="winnerRoundOne"> Winner is player ____, With total points ____</div>
+                            <div class="loserRoundOne"> Sorry player …. You  lose, but You can bounce back in the next round ! Are you Ready to Ride On?</div>
+                        </div>
                     </div>
                 </div>
                 
@@ -72,10 +76,12 @@ NB: Timer stops when two answers are selected, or time runs out.
                         <div class="ansOptions">
                             <span>1. Git Open:  Initialize a local Git repository</span>
                             <div class="input"> <input type="checkbox" name="" id=""> </div>
+                            <!-- <div class="icon cross"><i class="fas fa-times"></i></div> -->
                         </div>
                         <div class="ansOptions">
                             <span>2. Git Pull:  Fetch and download content from a remote repository</span>
                             <div class="input"> <input type="checkbox" name="" id=""> </div>
+                            <!-- <div class="icon tick"><i class="fas fa-check"></i></div> -->
                         </div>
                         <div class="ansOptions">
                             <span>3. Git Upload:  Upload content from the local repository to a remote repository</span>
@@ -94,18 +100,26 @@ NB: Timer stops when two answers are selected, or time runs out.
                
         </div>
 
+     
+
 
              <!-- End of Game (Round One) inside a hiden div – A win and lose state ( Requirement 2 and 3) ; If there is a winner in round one,  Replace questionBox with 2 pop ups ;“Winner is player….”  With total points ... , and
-            “ Sorry player …. You  lose  but You can bounce back in the next round !”
+            “ Sorry player …. You  lose  but You can bounce back in the next round !” -->
+            <!-- <div class="winLoseState">
+                <div class="complete-text"> Winner is player ____, With total points ____</div>
+                <div class="complete-text"> Sorry player …. You  lose  but You can bounce back in the next round ! Are you Ready to Ride on?</div>
+            </div> -->
+            
 
-            OR 
-             A way to keep playing if the game is not over  ( Requirement 4 ) ; -	If both players draw, Replace questionBox  with text “ Great Job!! Enter next round”
+    
+            <!-- OR 
+             A way to keep playing if the game is not over  ( Requirement 4 ) ; -	If both players draw, Replace questionBox  with text “ Great Job!! Enter next round” -->
 
-             OR
+             <!-- OR
              Multiple rounds to play i.e. a round must begin, end, and there must be a way to check if the game should continue or the overall game is won or lost  ( Requirement 5) ; -
-             - Replace questionBox with text "Game Over" !! if both players loss 
+             - Replace questionBox with text "Game Over" !! if both players loss  -->
 
-             row4 with 2 divs;  onclick button Quit Quiz  and onclick  button Continue to Round Two. -->
+             <!-- row4 with 2 divs;  onclick button Quit Quiz  and onclick  button Continue to Round Two. -->
 
              <!-- End of Game (Round Two) inside a hiden div; Player with highest  points after round two wins the game. -->
 
