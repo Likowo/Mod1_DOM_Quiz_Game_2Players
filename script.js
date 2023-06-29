@@ -7,23 +7,26 @@
                   // </div>  `
                   // welcomeScreen.document.body.innerHTML
 
- // These are the variables for my screens (i.e any div given the class, hidden,  needs to be made a variable and accessed via an event listenner)
-    let welcomeScreen = document.querySelector(".welcomeScreen")
-    let gameRuleScreen = document.querySelector(".gameRules")
-    let gameBoardContainerScreen = document.querySelector(".gameBoardContainer")
-    console.log(gameRuleScreen,gameBoardContainerScreen)
-    let startGameButton = document.querySelector(`.startGameButton`)
-    let gameScreen =document.querySelector(`.gameScreen`)
-    let winLoseState =document.querySelector(`.winLoseState`)
+ // These are the variables for my screens (i.e any div given the class, hidden,  needs to be made a variable and accessed via an event listenner) ( i.e. I will need to update the inner HTML of my elements(tags) e.g divs, id,img, etc)
+    let welcomeScreen = document.querySelector(".welcomeScreen");
+    let gameRuleScreen = document.querySelector(".gameRules");
+    let gameBoardContainerScreen = document.querySelector(".gameBoardContainer");
+    console.log(gameRuleScreen,gameBoardContainerScreen);
+    let startGameButton = document.querySelector(`.startGameButton`);
+    let gameScreen =document.querySelector(`.gameScreen`);
+    let winLoseState =document.querySelector(`.winLoseState`);
+    let quizScreen = document.querySelector(`.quizScreen`);
+    let counter = document.getElementById(`counter`);
+    let questionBox = document.querySelector(`.questionBox`);
 
 // Button Variables
-  const welcomeButton = document.querySelector(".welcomeButton")
-  const startQuizButton = document.querySelector(`.startQuizButton`)
-  const quitQuizButton = document.querySelector(`.quitQuizButton`)
-  const round1resultButton = document.querySelector(`.round1resultButton`)
+  const welcomeButton = document.querySelector(`.welcomeButton`);
+  const startQuizButton = document.querySelector(`.startQuizButton`);
+  const quitQuizButton1 = document.querySelector(`.quitQuizButton1`);
+  const round1resultButton = document.querySelector(`.round1resultButton`);
 
   
-  console.log(welcomeButton,startQuizButton,quitQuizButton)
+  console.log(welcomeButton,startQuizButton,quitQuizButton1)
 
   // To show the next screens, use an event listener method
     welcomeButton.addEventListener(`click`, () => {
@@ -43,7 +46,7 @@
     })
 
      // Event listenner for quitQuizButton
-     quitQuizButton.addEventListener(`click`, () => {
+     quitQuizButton1.addEventListener(`click`, () => {
          // Hide  startGameButton, gameRuleScreen and gameBoardContainerScreen (must be hidden in other to go back to the Welcome screen)
      startGameButton.classList.add(`hidden`)
      gameRuleScreen.classList.add(`hidden`)
@@ -136,7 +139,7 @@ let questions = [
   },
   {
       Q5: "Which function removes the last element from an array object and returns that element?",
-      CorrectAnswer: pop(),
+      CorrectAnswer:` pop()`,
       ansOptions: [
           " 1)pop() ",
           " 2) Push() ",
