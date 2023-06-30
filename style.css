@@ -121,15 +121,14 @@ body{
   background-color: white;
 }
 
-/* .answerOptions{
+.answerOptions{
     background-color: lightcyan;
-    display: flex;
-    justify-content: space-evenly;
+    /* display: flex;
+    justify-content: space-evenly; */
     font-size: 25px;
     margin: auto;
-    margin-top: 0.2%;
     cursor: pointer;
-} */
+}
 
 .winLoseState{
     color: green;
@@ -167,20 +166,7 @@ body{
         text-align: center;
         color: red;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-   
-      /* background-color: white;
-        border-radius: 6%;
-        height: 600px;
-        width: 800px; */
-        /* display: flex;
-        justify-content: center;
-        text-align: center; */
-        
-    
-
-       
-          
-        
+        text-align: center;         
 }
 
 .buttons{

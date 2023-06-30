@@ -19,6 +19,10 @@
     let counter = document.getElementById(`counter`);
     let questionBox = document.querySelector(`.questionBox`);
     let gameOver = document.querySelector(`.gameOver `);
+    let answerOptions = document.querySelector(`.answerOptions`);
+    let answer1 = document.getElementById(`1`);
+    let answer2 = document.getElementById(`2`);
+    let answer3 = document.getElementById(`3`);
 
 // Button Variables
   const welcomeButton = document.querySelector(`.welcomeButton`);
@@ -112,13 +116,7 @@
 
 // -	Write a function called nextQuestion that enables player to click and proceed to next question
     //Event listennerfor nextQuestionButton
-    nextQuestionButton.addEventListener(`click`, () => {
-      // Hide current question
-         Q1.classList.add(`hidden`)
-      //show next question
-         Q2.classList.remove(`hidden`)
-    })
-
+    
 
 // -	Write a function called selectAnwser that allows player to click on answer of choice.Next question auto pops up when Ride On button is clicked
                 // use  <input type="checkbox" name="" id=""> to get box to click in
@@ -140,45 +138,63 @@ let questions = [
   },
   {
       question: " CSS  stands for ?",
-      answer1:"Colorful Style Sheet ",
-      answer2:"Cascading Style Sheet",
-      answer3:"Computer style Sheet", 
+      answer1: "Colorful Style Sheet ",
+      answer2: "Cascading Style Sheet",
+      answer3: "Computer style Sheet", 
       CorrectAnswer: "2 ",        
   },
   {
       question: " Which is not a valid data type in Javascript?",
-      answer1:"Undefined ",
-      answer2:"Boolean",
-      answer3:"float",
+      answer1: "Undefined ",
+      answer2: "Boolean",
+      answer3: "float",
       CorrectAnswer: "3",
   },
   {
       question: " what tag is used to write the Javascript code?",
-      answer1:"<sp> ",
-      answer2:"<script>",
-      answer3:"<javascript>",
+      answer1: "<sp> ",
+      answer2: "<script>",
+      answer3: "<javascript>",
       CorrectAnswer: "2",
   },
   {
       question: "Which function removes the last element from an array object and returns that element?",
-     answer1:"pop() ",
-     answer2:"Push() ",
-     answer3:"Delete() ",
-     CorrectAnswer:"1",
+     answer1: "pop() ",
+     answer2: "Push() ",
+     answer3: "Delete() ",
+     CorrectAnswer: "1",
   },
   {
       question: " HTML stands for?",
-          answer1:" Hypermark language ",
-          answer2:" Hypertext Markup language ",
-          answer3:" Hypertension language",
+          answer1: " Hypermark language ",
+          answer2: " Hypertext Markup language ",
+          answer3: " Hypertension language",
       CorrectAnswer: "2",
   },
 ];
 
-// To access the properties in every element of the array, use the dot(.) notation. Remember array begins with index zero(0) i.e. question[0].question is question number 1.
+// To access the properties in every element of the array, use the dot(.) notation. Remember array begins with index zero(0) i.e. questions[0].question is question number 1.
 
-// To display question to player: create a variable for the last question using the index of the array i.e. array.length - 1 ( -1 because an array begins with index zero (0). so an array = [a,b,c,d] will have a length of 4 but an index of 3)
-// write a function called showQuestions
+// To display a question to player: create a variable for the last question using the index of the array i.e. array.length - 1 ( -1 because an array begins with index zero (0). so an array = [a,b,c,d] will have a length of 4 but an index of 3)
+let indexOfLastQuestion = questions.length - 1;
+let indexOfCurrentQuestion = 0;
+
+// write a function called showQuestion
+function showQuestion(){
+  let quest = questions[indexOfCurrentQuestion];
+  questionBox.innerHTML = `<p>` + quest.question + `<p>`;
+  answer1.innerHTML = quest.answer1;
+  answer2.innerHTML = quest.answer2;
+  answer3.innerHTML = quest.answer3;
+}
+indexOfCurrentQuestion = 0;
+showQuestion()
+
+ //To switch to next question
+// indexOfCurrentQuestion++
+// console.log(showQuestion())
+
+
 
 
 
