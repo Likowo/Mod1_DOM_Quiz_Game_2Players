@@ -35,6 +35,7 @@ let quitQuizButton1 = document.querySelector(`.quitQuizButton1`);
 let round1resultButton = document.querySelector(`.round1resultButton`);
 let quitQuizButton2 = document.querySelector(`.quitQuizButton2`);
 let nextQuestionButton = document.querySelector(`.nextQuestionButton`);
+// Creating an array to pass the questions,answer options and correct answer  
 let questions = [
     {
         question: " A git command and function is?", 
@@ -76,10 +77,12 @@ let questions = [
         correctAnswer: "2",
     },
   ];
+
+//* -	Write a function called nextQuestion that enables player to click and proceed to next question,but hides answer icons untill answer clicked.
 let indexOfLastQuestion = questions.length - 1;
 let indexOfCurrentQuestion = 0;
 let newIndex = indexOfCurrentQuestion+1
-  nextQuestionButton.setAttribute("onclick",`showQuestion(${newIndex})`);
+  nextQuestionButton.setAttribute("onclick",`showQuestion(${newIndex})`,`showQuestion()`);
   console.log(welcomeButton,startQuizButton,quitQuizButton1)
 
   // To show the next screens, use an event listener method
@@ -115,31 +118,34 @@ let newIndex = indexOfCurrentQuestion+1
       winLoseState.classList.remove(`hidden`)
     }) 
     // 2nd Event listenner for round1resultButton  
-    // round1resultButton.addEventListener(`click`, () => {
-    //    // Hide winLoseState text
-    //   winLoseState.classList.add(`hidden`)
-    // })
+         // round1resultButton.addEventListener(`click`, () => {
+         //    // Hide winLoseState text
+         //   winLoseState.classList.add(`hidden`)
+         // })
 
-     // Event listenner for quitQuizButton2
+   // Event listenner for quitQuizButton2
     quitQuizButton2.addEventListener(`click`, () => {
       //Hide questionBox
     questionBox.classList.add(`hidden`) 
       // Show gameOver text ( This replaces the questionBox) 
     gameOver.classList.remove(`hidden`)     
   } )
-  //    // 2nd Event listenner for quitQuizButton2
-  //    quitQuizButton2.addEventListener(`click`, () => {
-  //     // Hide  startGameButton, gameRuleScreen and gameBoardContainerScreen (must be hidden in other to go back to the Welcome screen)
-  // startGameButton.classList.add(`hidden`)
-  // gameRuleScreen.classList.add(`hidden`)
-  // gameBoardContainerScreen.classList.add(`hidden`)
-  //     // Show welcomeScreen  ( This takes you back to the Welcome screen!)
-  // welcomeScreen.classList.remove(`hidden`)     
-  // } )
+  //****** */
+ // 2nd Event listenner for quitQuizButton2
+    //    quitQuizButton2.addEventListener(`click`, () => {
+      // // Hide  startGameButton, gameRuleScreen and gameBoardContainerScreen (must be hidden in other to go back to the Welcome screen)
+    // startGameButton.classList.add(`hidden`)
+    // gameRuleScreen.classList.add(`hidden`)
+    // gameBoardContainerScreen.classList.add(`hidden`)
+    //     // Show welcomeScreen  ( This takes you back to the Welcome screen!)
+    // welcomeScreen.classList.remove(`hidden`)     
+    // } )
+//********* */
 // console.log(gameBoardContainerScreen.classList.value)
 
 // - Write a function called enterName that enables the player(s) type in their name(s).Then hide prompt . ( This has been done in html using input tags under; <div class="startGameButton hidden"> )
 
+//*** Create TIMER */
 // -  Write a funtion called seconds that sets a count down timer from 15 seconds to 0 seconds. Use Math.floor() or Date.now()
 
          // set date we are counting down to
@@ -160,35 +166,20 @@ let newIndex = indexOfCurrentQuestion+1
 
         // let milliSeconds = Date.now()
         // document.getElementById(`timer`).innerHTML = milliSeconds
+//********   End of Create TIMER *****/
 
-// -	Write a function called nextQuestion that enables player to click and proceed to next question
-
-// -	Write a function called selectAnwser that allows player to click on answer of choice.Next question auto pops up when Ride On button is clicked
-                // use  <input type="checkbox" name="" id=""> to get box to click in
+// -	Write a function called selectAnwser that allows player to click on answer of choice.Next question pops up when Ride On button is clicked
 // -   Write a gobal fxn called points that allocates points to current player.
 // -	Create an array of  5 – 10 questions with multiple choice answers and  Boolean. ( Randomize the array)
 // -	Write a function called resetGame  that enables player to restart the game to round One when both rounds are completed with a draw (i.e. players can keep playing until one player wins. - Requirement 4)
 // -    Write a function winOrLose that allows questionBox to be replaced with result of winner, ELSE Game over ( i.e. both players loss - requirement 5)   
 // - Write a fxn called winner that allows the questionBox to be replaced with text "WINNER" plus background image applause, if a player has more points at the end of round two.
 
-
-// Creating an array to pass the questions,answer options and correct answer  
-
+//*** */
 // To access the properties in every element of the array, use the dot(.) notation. Remember array begins with index zero(0) i.e. questions[0].question is question number 1.
-// Hide answerIcons
-// const HideAnswerIcons = () => {
-//   let img1 = document.getElementById(`answer1`);
-//   let img2 = document.getElementById(`answer2`);
-//   let img3 = document.getElementById(`answer3`);
-//   img1.setAttribute(`class`,`checkMark hide`);
-//   img2.setAttribute(`class`,`checkMark hide`);
-//   img3.setAttribute(`class`,`checkMark hide`);
-// }
-
-
 
 // To display a question to player: create a variable for the last question using the index of the array i.e. array.length - 1 ( -1 because an array begins with index zero (0). so an array = [a,b,c,d] will have a length of 4 but an index of 3)
-// write a function called showQuestion that returns current question and answer options.
+// write a function called showQuestion that returns current question and answer options.Then hides the answer Icons.
 function showQuestion(){
   let quest = questions[indexOfCurrentQuestion];
   questionDisplay.innerHTML = `<p>` + quest.question + `<p>`;
@@ -209,6 +200,7 @@ showQuestion()
 // indexOfCurrentQuestion++
 // console.log(showQuestion())
 
+//******* */
 // show time counter
 // const timeToAnswerQuestion = 15; //15 secs for every question
 // const gaugeWidth = 150;
@@ -234,14 +226,14 @@ showQuestion()
 
 // showTimeCounter()
 
-
 //Timer -- use setInvernal fxn
 // let TIMER = setInterval(showTimeCounter,1000); // 1000 milliseconds equals to 1 sec. i.e. the setInterval will call the counter every 1 second
+//**** */
 
-// using the checkAnswer() fxn
-
+// using the checkAnswer() fxn //
 const checkAnswer = (num) => {
   //sets answer value
+
   let answer = questions[indexOfCurrentQuestion].correctAnswer;
 
   //make a new variable and set it to img infor depending on click
@@ -254,6 +246,13 @@ const checkAnswer = (num) => {
   }else if (num===3){
     displayImg = document.getElementById(`answer3`);
   }
+   if(indexOfCurrentQuestion < indexOfLastQuestion){
+    counter = 0;
+    indexOfCurrentQuestion++;
+    showQuestion();
+    console.log(`this is the next question`)
+  }   
+  }
 
   //sets img tag source to whichever image is correct for the click
   if(answer===num){
@@ -264,21 +263,7 @@ const checkAnswer = (num) => {
     displayImg.setAttribute(`src`,`https://w7.pngwing.com/pngs/175/854/png-transparent-computer-icons-button-check-mark-cross-red-cross-photography-trademark-logo.png`);
     displayImg.setAttribute(`class`,`checkMark`)
   }
-
-
   console.log(`click`)
-}
-// // Hide answerIcons
-// const HideAnswerIcons = () => {
-//   // let img1 = document.getElementById(`answer1`);
-//   // let img2 = document.getElementById(`answer2`);
-//   // let img3 = document.getElementById(`answer3`);
-//   img1.setAttribute(`class`,`checkMark hide`);
-//   img2.setAttribute(`class`,`checkMark hide`);
-//   img3.setAttribute(`class`,`checkMark hide`);
-// }
-
-
 
 
 // let score = 0;
