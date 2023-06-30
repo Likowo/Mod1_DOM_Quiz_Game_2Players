@@ -26,6 +26,7 @@
     let answer3 = document.getElementById(`3`);
     let player1Points = document.querySelector(`.player1Points`);
     let player2Points = document.querySelector(`.player2Points`);
+ 
 
 
 // Button Variables
@@ -120,6 +121,14 @@
 
 // -	Write a function called nextQuestion that enables player to click and proceed to next question
     //Event listennerfor nextQuestionButton
+   let newIndex = indexOfCurrentQuestion+1
+    nextQuestionButton.setAttribute(`onclick`,`showQuestion(${newIndex})`)
+
+    // addEventListener(`click`, () => {
+    //   //change question 1 to question 2
+    //       showQuestion[1]
+    // }
+    // )
     
 
 // -	Write a function called selectAnwser that allows player to click on answer of choice.Next question auto pops up when Ride On button is clicked
@@ -138,6 +147,7 @@ let questions = [
       answer1: "Git Open: Initialize a local Git repository",
       answer2: "Git Pull: Fetch and download content from a remote repository",
       answer3: "Git Upload:  Upload content from the local repository to a remote repository ",
+          img: " ",
       correctAnswer: 2,
       
   },{
@@ -180,14 +190,14 @@ let indexOfLastQuestion = questions.length - 1;
 let indexOfCurrentQuestion = 0;
 
 // write a function called showQuestion that returns current question and answer options.
-function showQuestion(){
+function showQuestion(num){
   let quest = questions[indexOfCurrentQuestion];
   questionDisplay.innerHTML = `<p>` + quest.question + `<p>`;
   answer1.innerHTML = `1. ` + quest.answer1;
   answer2.innerHTML = `2. ` + quest.answer2;
   answer3.innerHTML = `3. ` + quest.answer3;
 }
-indexOfCurrentQuestion = 0;
+indexOfCurrentQuestion = num;
 showQuestion()
 
  //To switch to next question
@@ -195,37 +205,38 @@ showQuestion()
 // console.log(showQuestion())
 
 // show time counter
-const timeToAnswerQuestion = 15; //15 secs for every question
-const gaugeWidth = 150;
-let count = 0;
-const guageProgressUnit = gaugeWidth /timeToAnswerQuestion;
+// const timeToAnswerQuestion = 15; //15 secs for every question
+// const gaugeWidth = 150;
+// let count = 0;
+// const guageProgressUnit = gaugeWidth /timeToAnswerQuestion;
 
-function showTimeCounter(){
-  if(count <= timeToAnswerQuestion){
-    counter.innerHTML = count;
-    timeGauge.style.width = guageProgressUnit * count +`px`;
-    count++;
-  }else{
-    count = 0;
-    answerIsWrong();
-  } if ( indexOfCurrentQuestion < indexOfLastQuestion){
-    indexOfCurrentQuestion++
-    showQuestion();
-  }else{
-    clearInterval(TIMER);
-    showScore();
-  }
-}
+// function showTimeCounter(){
+//   if(count <= timeToAnswerQuestion){
+//     counter.innerHTML = count;
+//     timeGauge.style.width = guageProgressUnit * count +`px`;
+//     count++;
+//   }else{
+//     count = 0;
+//     answerIsWrong();
+//   } if ( indexOfCurrentQuestion < indexOfLastQuestion){
+//     indexOfCurrentQuestion++
+//     showQuestion();
+//   }else{
+//     clearInterval(TIMER);
+//     showScore();
+//   }
+// }
 
-showTimeCounter()
+// showTimeCounter()
 
 
 //Timer -- use setInvernal fxn
 let TIMER = setInterval(showTimeCounter,1000); // 1000 milliseconds equals to 1 sec. i.e. the setInterval will call the counter every 1 second
 
 // using the checkAnswer() fxn
-let score = 0;
+
 function checkAnswer(answer){
+  let score = 0;
   if(questions[indexOfCurrentQuestion].correctAnswer === answer){
     score++
     console.log(`worked`)
