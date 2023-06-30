@@ -121,16 +121,15 @@ body{
   background-color: white;
 }
 
-.ansOptions{
+/* .answerOptions{
     background-color: lightcyan;
     display: flex;
     justify-content: space-evenly;
     font-size: 25px;
     margin: auto;
     margin-top: 0.2%;
-    /* padding: 8px 10px;  */
     cursor: pointer;
-}
+} */
 
 .winLoseState{
     color: green;

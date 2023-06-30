@@ -7,7 +7,7 @@
                   // </div>  `
                   // welcomeScreen.document.body.innerHTML
 
- // These are the variables for my screens (i.e any div given the class, hidden,  needs to be made a variable and accessed via an event listenner) ( i.e. I will need to update the inner HTML of my elements(tags) e.g divs, id,img, etc)
+ // These are the variables for my screens (i.e any div given the class, hidden,  needs to be made a variable and accessed via an event listenner) ( i.e. I will need to update the inner HTML of my elements(tags) e.g divs, id,img, etc usung the document.querySelector method)
     let welcomeScreen = document.querySelector(".welcomeScreen");
     let gameRuleScreen = document.querySelector(".gameRules");
     let gameBoardContainerScreen = document.querySelector(".gameBoardContainer");
@@ -26,6 +26,7 @@
   const quitQuizButton1 = document.querySelector(`.quitQuizButton1`);
   const round1resultButton = document.querySelector(`.round1resultButton`);
   const quitQuizButton2 = document.querySelector(`.quitQuizButton2`);
+  const nextQuestionButton = document.querySelector(`.nextQuestionButton`);
 
   
   console.log(welcomeButton,startQuizButton,quitQuizButton1)
@@ -84,8 +85,6 @@
   //     // Show welcomeScreen  ( This takes you back to the Welcome screen!)
   // welcomeScreen.classList.remove(`hidden`)     
   // } )
-
-
 // console.log(gameBoardContainerScreen.classList.value)
 
 // - Write a function called enterName that enables the player(s) type in their name(s).Then hide prompt . ( This has been done in html using input tags under; <div class="startGameButton hidden"> )
@@ -112,6 +111,15 @@
         // document.getElementById(`timer`).innerHTML = milliSeconds
 
 // -	Write a function called nextQuestion that enables player to click and proceed to next question
+    //Event listennerfor nextQuestionButton
+    nextQuestionButton.addEventListener(`click`, () => {
+      // Hide current question
+         Q1.classList.add(`hidden`)
+      //show next question
+         Q2.classList.remove(`hidden`)
+    })
+
+
 // -	Write a function called selectAnwser that allows player to click on answer of choice.Next question auto pops up when Ride On button is clicked
                 // use  <input type="checkbox" name="" id=""> to get box to click in
 // -   Write a gobal fxn called points that allocates points to current player.
@@ -120,65 +128,61 @@
 // -    Write a function winOrLose that allows questionBox to be replaced with result of winner, ELSE Game over ( i.e. both players loss - requirement 5)   
 // - Write a fxn called winner that allows the questionBox to be replaced with text "WINNER" plus background image applause, if a player has more points at the end of round two.
 
-// Creating an array to pass the questions, correct answer and answer options
+// Creating an array to pass the questions,answer options and correct answer  
 let questions = [
   {
-      Q1: " A git command and function is?",
-      CorrectAnswer: "Git Pull:  Fetch and download content from a remote repository",
-      ansOptions: [
-          " 1)	Git Open: Initialize a local Git repository",
-          " 2)	Git Pull: Fetch and download content from a remote repository",
-          " 3)	Git Upload:  Upload content from the local repository to a remote repository "
-      ]
+      question: " A git command and function is?", 
+      answer1: "Git Open: Initialize a local Git repository",
+      answer2: "Git Pull: Fetch and download content from a remote repository",
+      answer3: "Git Upload:  Upload content from the local repository to a remote repository ",
+      CorrectAnswer: "2",
+      
   },
   {
-      Q2: " CSS  stands for ?",
-      CorrectAnswer: "Cascading Style Sheet ",
-      ansOptions: [
-          " 1) Colorful Style Sheet ",
-          " 2) Cascading Style Sheet",
-          " 3) Computer style Sheet"
-      ]
+      question: " CSS  stands for ?",
+      answer1:"Colorful Style Sheet ",
+      answer2:"Cascading Style Sheet",
+      answer3:"Computer style Sheet", 
+      CorrectAnswer: "2 ",        
   },
   {
-      Q3: " Which is not a valid data type in Javascript?",
-      CorrectAnswer: "float",
-      ansOptions: [
-          " 1) Undefined ",
-          " 2) Boolean",
-          " 3) float"
-      ]
+      question: " Which is not a valid data type in Javascript?",
+      answer1:"Undefined ",
+      answer2:"Boolean",
+      answer3:"float",
+      CorrectAnswer: "3",
   },
   {
-      Q4: " what tag is used to write the Javascript code?",
-      CorrectAnswer: "<script>",
-      ansOptions: [
-          " 1)<sp> ",
-          " 2) <script>",
-          " 3) <javascript>"
-      ]
+      question: " what tag is used to write the Javascript code?",
+      answer1:"<sp> ",
+      answer2:"<script>",
+      answer3:"<javascript>",
+      CorrectAnswer: "2",
   },
   {
-      Q5: "Which function removes the last element from an array object and returns that element?",
-      CorrectAnswer:` pop()`,
-      ansOptions: [
-          " 1)pop() ",
-          " 2) Push() ",
-          " 3) Delete() "
-      ]
+      question: "Which function removes the last element from an array object and returns that element?",
+     answer1:"pop() ",
+     answer2:"Push() ",
+     answer3:"Delete() ",
+     CorrectAnswer:"1",
   },
   {
-      Q6: " HTML stands for?",
-      CorrectAnswer: "Hypertext Markup Language",
-      ansOptions: [
-          " 1) Hypermark language ",
-          " 2) Hypertext Markup language ",
-          " 3) c)	Hypertension language"
-      ]
+      question: " HTML stands for?",
+          answer1:" Hypermark language ",
+          answer2:" Hypertext Markup language ",
+          answer3:" Hypertension language",
+      CorrectAnswer: "2",
   },
 ];
 
-// To display question and answers from the array, write a function called showQuestions
+// To access the properties in every element of the array, use the dot(.) notation. Remember array begins with index zero(0) i.e. question[0].question is question number 1.
+
+// To display question to player: create a variable for the last question using the index of the array i.e. array.length - 1 ( -1 because an array begins with index zero (0). so an array = [a,b,c,d] will have a length of 4 but an index of 3)
+// write a function called showQuestions
+
+
+
+
 
 
  
