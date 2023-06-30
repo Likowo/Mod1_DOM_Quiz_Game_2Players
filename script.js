@@ -7,7 +7,7 @@
                   // </div>  `
                   // welcomeScreen.document.body.innerHTML
 
- // These are the variables for my screens (i.e any div given the class, hidden,  needs to be made a variable and accessed via an event listenner) ( i.e. I will need to update the inner HTML of my elements(tags) e.g divs, id,img, etc usung the document.querySelector method)
+ // These are the variables for my screens (i.e any div given the class, hidden,  needs to be made a variable and accessed via an event listenner) ( i.e. I will need to update the inner HTML of my elements(tags) e.g divs, id,img, etc using the document.querySelector method or  document.getElementById)
     let welcomeScreen = document.querySelector(".welcomeScreen");
     let gameRuleScreen = document.querySelector(".gameRules");
     let gameBoardContainerScreen = document.querySelector(".gameBoardContainer");
@@ -17,8 +17,9 @@
     let winLoseState =document.querySelector(`.winLoseState`);
     let quizScreen = document.querySelector(`.quizScreen`);
     let counter = document.getElementById(`counter`);
-    let questionBox = document.querySelector(`.questionBox`);
     let gameOver = document.querySelector(`.gameOver `);
+    let questionBox = document.querySelector(`.questionBox`);
+    let questionDisplay = document.querySelector(`.questionDisplay`);
     let answerOptions = document.querySelector(`.answerOptions`);
     let answer1 = document.getElementById(`1`);
     let answer2 = document.getElementById(`2`);
@@ -129,6 +130,7 @@
 // -    Write a function winOrLose that allows questionBox to be replaced with result of winner, ELSE Game over ( i.e. both players loss - requirement 5)   
 // - Write a fxn called winner that allows the questionBox to be replaced with text "WINNER" plus background image applause, if a player has more points at the end of round two.
 
+
 // Creating an array to pass the questions,answer options and correct answer  
 let questions = [
   {
@@ -136,43 +138,38 @@ let questions = [
       answer1: "Git Open: Initialize a local Git repository",
       answer2: "Git Pull: Fetch and download content from a remote repository",
       answer3: "Git Upload:  Upload content from the local repository to a remote repository ",
-      CorrectAnswer: "2",
+      correctAnswer: 2,
       
-  },
-  {
+  },{
       question: " CSS  stands for ?",
       answer1: "Colorful Style Sheet ",
       answer2: "Cascading Style Sheet",
       answer3: "Computer style Sheet", 
-      CorrectAnswer: "2 ",        
-  },
-  {
+      correctAnswer: "2 ",        
+  },{
       question: " Which is not a valid data type in Javascript?",
       answer1: "Undefined ",
       answer2: "Boolean",
       answer3: "float",
-      CorrectAnswer: "3",
-  },
-  {
+      correctAnswer: "3",
+  },{
       question: " what tag is used to write the Javascript code?",
       answer1: "<sp> ",
       answer2: "<script>",
       answer3: "<javascript>",
-      CorrectAnswer: "2",
-  },
-  {
+      correctAnswer: "2",
+  }, {
       question: "Which function removes the last element from an array object and returns that element?",
      answer1: "pop() ",
-     answer2: "Push() ",
+     answer2: "Push() ", 
      answer3: "Delete() ",
-     CorrectAnswer: "1",
-  },
-  {
+     correctAnswer: "1",
+  },{
       question: " HTML stands for?",
           answer1: " Hypermark language ",
           answer2: " Hypertext Markup language ",
           answer3: " Hypertension language",
-      CorrectAnswer: "2",
+      correctAnswer: "2",
   },
 ];
 
@@ -185,10 +182,10 @@ let indexOfCurrentQuestion = 0;
 // write a function called showQuestion that returns current question and answer options.
 function showQuestion(){
   let quest = questions[indexOfCurrentQuestion];
-  questionBox.innerHTML = `<p>` + quest.question + `<p>`;
-  answer1.innerHTML = quest.answer1;
-  answer2.innerHTML = quest.answer2;
-  answer3.innerHTML = quest.answer3;
+  questionDisplay.innerHTML = `<p>` + quest.question + `<p>`;
+  answer1.innerHTML = `1. ` + quest.answer1;
+  answer2.innerHTML = `2. ` + quest.answer2;
+  answer3.innerHTML = `3. ` + quest.answer3;
 }
 indexOfCurrentQuestion = 0;
 showQuestion()
@@ -197,6 +194,48 @@ showQuestion()
 // indexOfCurrentQuestion++
 // console.log(showQuestion())
 
+// show time counter
+const timeToAnswerQuestion = 15; //15 secs for every question
+const gaugeWidth = 150;
+let count = 0;
+const guageProgressUnit = gaugeWidth /timeToAnswerQuestion;
+
+function showTimeCounter(){
+  if(count <= timeToAnswerQuestion){
+    counter.innerHTML = count;
+    timeGauge.style.width = guageProgressUnit * count +`px`;
+    count++;
+  }else{
+    count = 0;
+    answerIsWrong();
+  } if ( indexOfCurrentQuestion < indexOfLastQuestion){
+    indexOfCurrentQuestion++
+    showQuestion();
+  }else{
+    clearInterval(TIMER);
+    showScore();
+  }
+}
+
+showTimeCounter()
+
+
+//Timer -- use setInvernal fxn
+let TIMER = setInterval(showTimeCounter,1000); // 1000 milliseconds equals to 1 sec. i.e. the setInterval will call the counter every 1 second
+
+// using the checkAnswer() fxn
+let score = 0;
+function checkAnswer(answer){
+  if(questions[indexOfCurrentQuestion].correctAnswer === answer){
+    score++
+    console.log(`worked`)
+    answerIsCorrect();
+  }else{
+    answerIsWrong();
+  }
+  console.log(`click`)
+}
+checkAnswer()
 
 
 

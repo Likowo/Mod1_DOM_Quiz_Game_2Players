@@ -65,9 +65,12 @@ NB: Timer stops when two answers are selected, or time runs out.
             <div class="gameScreen hidden">  
                     
                     <div class="resultScreen">
-                        <div class="timer">
+                        <!-- <div class="timer">
                             <p id="Time Left"> TIMER : 15 Secs </p>
-                        </div> 
+                        </div>  -->
+                        <div id="time">
+                            <div id="counter"> 15 </div>
+                        </div>
                                     
                         <div class="row1">
                             <button class="round1resultButton" >Round Result</button>
@@ -79,22 +82,21 @@ NB: Timer stops when two answers are selected, or time runs out.
                     </div>
 
                     <div class="quizScreen">
-                         <!-- <div id="time">
-                            <div id="counter"> 15 </div>
-                        </div> -->
+                         
                         <div class="pointsContainer1">
                             <div class="player1Points"> 
                                 <p> </p>PLAYER 1 POINTS</div>                          
                         </div>
 
                         <div class="questionBox">
-                            <p> Question </p>
+                            <p class="questionDisplay"> Question </p>
+                            <div class="answerOptions">
+                                <div class="answer" id="1" onclick="checkAnswer(0)"> 1 </div>
+                                <div class="answer" id="2" onclick="checkAnswer(1)"> 2 </div>
+                                <div class="answer" id="3" onclick="checkAnswer(2)"> 3 </div>
+                            </div>
                         </div>
-                        <div class="answerOptions">
-                            <div class="answer" id="1" onclick="checkAnswer(`1`)"> 1 </div>
-                            <div class="answer" id="2" onclick="checkAnswer(`2`)"> 2 </div>
-                            <div class="answer" id="3" onclick="checkAnswer(`3`)"> 3 </div>
-                        </div>
+                        
                         
 
 
