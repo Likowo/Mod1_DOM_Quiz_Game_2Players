@@ -23,6 +23,9 @@
     let answer1 = document.getElementById(`1`);
     let answer2 = document.getElementById(`2`);
     let answer3 = document.getElementById(`3`);
+    let player1Points = document.querySelector(`.player1Points`);
+    let player2Points = document.querySelector(`.player2Points`);
+
 
 // Button Variables
   const welcomeButton = document.querySelector(`.welcomeButton`);
@@ -179,7 +182,7 @@ let questions = [
 let indexOfLastQuestion = questions.length - 1;
 let indexOfCurrentQuestion = 0;
 
-// write a function called showQuestion
+// write a function called showQuestion that returns current question and answer options.
 function showQuestion(){
   let quest = questions[indexOfCurrentQuestion];
   questionBox.innerHTML = `<p>` + quest.question + `<p>`;

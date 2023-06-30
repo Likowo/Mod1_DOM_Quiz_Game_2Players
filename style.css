@@ -122,6 +122,8 @@ body{
 }
 
 .answerOptions{
+    height: 400px;
+    width: 500px;
     background-color: lightcyan;
     /* display: flex;
     justify-content: space-evenly; */
