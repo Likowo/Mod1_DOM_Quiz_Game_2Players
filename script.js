@@ -11,7 +11,7 @@
     let welcomeScreen = document.querySelector(".welcomeScreen");
     let gameRuleScreen = document.querySelector(".gameRules");
     let gameBoardContainerScreen = document.querySelector(".gameBoardContainer");
-    console.log(gameRuleScreen,gameBoardContainerScreen);
+    // console.log(gameRuleScreen,gameBoardContainerScreen);
     let startGameButton = document.querySelector(`.startGameButton`);
     let gameScreen =document.querySelector(`.gameScreen`);
     let winLoseState =document.querySelector(`.winLoseState`);
@@ -26,18 +26,60 @@
     let answer3 = document.getElementById(`3`);
     let player1Points = document.querySelector(`.player1Points`);
     let player2Points = document.querySelector(`.player2Points`);
- 
 
 
 // Button Variables
-  const welcomeButton = document.querySelector(`.welcomeButton`);
-  const startQuizButton = document.querySelector(`.startQuizButton`);
-  const quitQuizButton1 = document.querySelector(`.quitQuizButton1`);
-  const round1resultButton = document.querySelector(`.round1resultButton`);
-  const quitQuizButton2 = document.querySelector(`.quitQuizButton2`);
-  const nextQuestionButton = document.querySelector(`.nextQuestionButton`);
-
-  
+let welcomeButton = document.querySelector(`.welcomeButton`);
+let startQuizButton = document.querySelector(`.startQuizButton`);
+let quitQuizButton1 = document.querySelector(`.quitQuizButton1`);
+let round1resultButton = document.querySelector(`.round1resultButton`);
+let quitQuizButton2 = document.querySelector(`.quitQuizButton2`);
+let nextQuestionButton = document.querySelector(`.nextQuestionButton`);
+let questions = [
+    {
+        question: " A git command and function is?", 
+        answer1: "Git Open: Initialize a local Git repository",
+        answer2: "Git Pull: Fetch and download content from a remote repository",
+        answer3: "Git Upload:  Upload content from the local repository to a remote repository ",
+            img: " ",
+        correctAnswer: 2,
+        
+    },{
+        question: " CSS  stands for ?",
+        answer1: "Colorful Style Sheet ",
+        answer2: "Cascading Style Sheet",
+        answer3: "Computer style Sheet", 
+        correctAnswer: "2 ",        
+    },{
+        question: " Which is not a valid data type in Javascript?",
+        answer1: "Undefined ",
+        answer2: "Boolean",
+        answer3: "float",
+        correctAnswer: "3",
+    },{
+        question: " what tag is used to write the Javascript code?",
+        answer1: "<sp> ",
+        answer2: "<script>",
+        answer3: "<javascript>",
+        correctAnswer: "2",
+    }, {
+        question: "Which function removes the last element from an array object and returns that element?",
+       answer1: "pop() ",
+       answer2: "Push() ", 
+       answer3: "Delete() ",
+       correctAnswer: "1",
+    },{
+        question: " HTML stands for?",
+            answer1: " Hypermark language ",
+            answer2: " Hypertext Markup language ",
+            answer3: " Hypertension language",
+        correctAnswer: "2",
+    },
+  ];
+let indexOfLastQuestion = questions.length - 1;
+let indexOfCurrentQuestion = 0;
+let newIndex = indexOfCurrentQuestion+1
+  nextQuestionButton.setAttribute("onclick",`showQuestion(${newIndex})`);
   console.log(welcomeButton,startQuizButton,quitQuizButton1)
 
   // To show the next screens, use an event listener method
@@ -120,16 +162,6 @@
         // document.getElementById(`timer`).innerHTML = milliSeconds
 
 // -	Write a function called nextQuestion that enables player to click and proceed to next question
-    //Event listennerfor nextQuestionButton
-   let newIndex = indexOfCurrentQuestion+1
-    nextQuestionButton.setAttribute(`onclick`,`showQuestion(${newIndex})`)
-
-    // addEventListener(`click`, () => {
-    //   //change question 1 to question 2
-    //       showQuestion[1]
-    // }
-    // )
-    
 
 // -	Write a function called selectAnwser that allows player to click on answer of choice.Next question auto pops up when Ride On button is clicked
                 // use  <input type="checkbox" name="" id=""> to get box to click in
@@ -141,63 +173,36 @@
 
 
 // Creating an array to pass the questions,answer options and correct answer  
-let questions = [
-  {
-      question: " A git command and function is?", 
-      answer1: "Git Open: Initialize a local Git repository",
-      answer2: "Git Pull: Fetch and download content from a remote repository",
-      answer3: "Git Upload:  Upload content from the local repository to a remote repository ",
-          img: " ",
-      correctAnswer: 2,
-      
-  },{
-      question: " CSS  stands for ?",
-      answer1: "Colorful Style Sheet ",
-      answer2: "Cascading Style Sheet",
-      answer3: "Computer style Sheet", 
-      correctAnswer: "2 ",        
-  },{
-      question: " Which is not a valid data type in Javascript?",
-      answer1: "Undefined ",
-      answer2: "Boolean",
-      answer3: "float",
-      correctAnswer: "3",
-  },{
-      question: " what tag is used to write the Javascript code?",
-      answer1: "<sp> ",
-      answer2: "<script>",
-      answer3: "<javascript>",
-      correctAnswer: "2",
-  }, {
-      question: "Which function removes the last element from an array object and returns that element?",
-     answer1: "pop() ",
-     answer2: "Push() ", 
-     answer3: "Delete() ",
-     correctAnswer: "1",
-  },{
-      question: " HTML stands for?",
-          answer1: " Hypermark language ",
-          answer2: " Hypertext Markup language ",
-          answer3: " Hypertension language",
-      correctAnswer: "2",
-  },
-];
 
 // To access the properties in every element of the array, use the dot(.) notation. Remember array begins with index zero(0) i.e. questions[0].question is question number 1.
+// Hide answerIcons
+// const HideAnswerIcons = () => {
+//   let img1 = document.getElementById(`answer1`);
+//   let img2 = document.getElementById(`answer2`);
+//   let img3 = document.getElementById(`answer3`);
+//   img1.setAttribute(`class`,`checkMark hide`);
+//   img2.setAttribute(`class`,`checkMark hide`);
+//   img3.setAttribute(`class`,`checkMark hide`);
+// }
+
+
 
 // To display a question to player: create a variable for the last question using the index of the array i.e. array.length - 1 ( -1 because an array begins with index zero (0). so an array = [a,b,c,d] will have a length of 4 but an index of 3)
-let indexOfLastQuestion = questions.length - 1;
-let indexOfCurrentQuestion = 0;
-
 // write a function called showQuestion that returns current question and answer options.
-function showQuestion(num){
+function showQuestion(){
   let quest = questions[indexOfCurrentQuestion];
   questionDisplay.innerHTML = `<p>` + quest.question + `<p>`;
   answer1.innerHTML = `1. ` + quest.answer1;
   answer2.innerHTML = `2. ` + quest.answer2;
   answer3.innerHTML = `3. ` + quest.answer3;
+  let img1 = document.getElementById(`answer1`);
+  let img2 = document.getElementById(`answer2`);
+  let img3 = document.getElementById(`answer3`);
+  img1.setAttribute(`class`,`checkMark hide`);
+  img2.setAttribute(`class`,`checkMark hide`);
+  img3.setAttribute(`class`,`checkMark hide`);
 }
-indexOfCurrentQuestion = num;
+// indexOfCurrentQuestion = 0;
 showQuestion()
 
  //To switch to next question
@@ -231,24 +236,59 @@ showQuestion()
 
 
 //Timer -- use setInvernal fxn
-let TIMER = setInterval(showTimeCounter,1000); // 1000 milliseconds equals to 1 sec. i.e. the setInterval will call the counter every 1 second
+// let TIMER = setInterval(showTimeCounter,1000); // 1000 milliseconds equals to 1 sec. i.e. the setInterval will call the counter every 1 second
 
 // using the checkAnswer() fxn
 
-function checkAnswer(answer){
-  let score = 0;
-  if(questions[indexOfCurrentQuestion].correctAnswer === answer){
-    score++
-    console.log(`worked`)
-    answerIsCorrect();
-  }else{
-    answerIsWrong();
+const checkAnswer = (num) => {
+  //sets answer value
+  let answer = questions[indexOfCurrentQuestion].correctAnswer;
+
+  //make a new variable and set it to img infor depending on click
+  let displayImg;
+  if(num===1){
+    displayImg = document.getElementById(`answer1`);
+  }else if (num===2){
+    console.log(`test`)
+    displayImg = document.getElementById(`answer2`);
+  }else if (num===3){
+    displayImg = document.getElementById(`answer3`);
   }
+
+  //sets img tag source to whichever image is correct for the click
+  if(answer===num){
+    console.log(`test2`)
+    displayImg.setAttribute(`src`,`https://p7.hiclipart.com/preview/999/840/970/check-mark-computer-icons-symbol-clip-art-green-tick-mark.jpg`);
+    displayImg.setAttribute(`class`,`checkMark`);
+  } else {
+    displayImg.setAttribute(`src`,`https://w7.pngwing.com/pngs/175/854/png-transparent-computer-icons-button-check-mark-cross-red-cross-photography-trademark-logo.png`);
+    displayImg.setAttribute(`class`,`checkMark`)
+  }
+
+
   console.log(`click`)
 }
-checkAnswer()
+// // Hide answerIcons
+// const HideAnswerIcons = () => {
+//   // let img1 = document.getElementById(`answer1`);
+//   // let img2 = document.getElementById(`answer2`);
+//   // let img3 = document.getElementById(`answer3`);
+//   img1.setAttribute(`class`,`checkMark hide`);
+//   img2.setAttribute(`class`,`checkMark hide`);
+//   img3.setAttribute(`class`,`checkMark hide`);
+// }
 
 
+
+
+// let score = 0;
+// if(questions[indexOfCurrentQuestion].correctAnswer === answer){
+//   score++
+//   console.log(`worked`)
+  // answerIsCorrect();
+// }else{
+  // answerIsWrong();
+// }
 
 
 
