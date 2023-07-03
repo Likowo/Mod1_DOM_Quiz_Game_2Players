@@ -47,8 +47,8 @@ let questions = [
         correctAnswer:2
         
     },{
-        question: " CSS  stands for ?",
-        answer1: "Colorful Style Sheet ",
+        question: "CSS  stands for?",
+        answer1: "Colorful Style Sheet",
         answer2: "Cascading Style Sheet",
         answer3: "Computer style Sheet", 
         correctAnswer:2        
@@ -72,9 +72,9 @@ let questions = [
        correctAnswer:1
     },{
         question: " HTML stands for?",
-            answer1: " Hypermark language ",
-            answer2: " Hypertext Markup language ",
-            answer3: " Hypertension language",
+            answer1: "Hypermark language",
+            answer2: "Hypertext Markup language",
+            answer3: "Hypertension language",
         correctAnswer:2
     },
   ];
@@ -103,7 +103,7 @@ let newIndex = indexOfCurrentQuestion+1
     gameScreen.classList.remove(`hidden`)
     })
 
-     // Event listenner for quitQuizButton1
+     // Event listenner for quitQuizButton1 on Start Quiz page
      quitQuizButton1.addEventListener(`click`, () => {
          // Hide  startGameButton, gameRuleScreen and gameBoardContainerScreen (must be hidden in other to go back to the Welcome screen)
      startGameButton.classList.add(`hidden`)
@@ -124,7 +124,7 @@ let newIndex = indexOfCurrentQuestion+1
          //   winLoseState.classList.add(`hidden`)
          // })
 
-   // Event listenner for quitQuizButton2
+   // Event listenner for quitQuizButton2 to show Game over state when Quit Quiz button click during the game.
     quitQuizButton2.addEventListener(`click`, () => {
       //Hide questionBox
     questionBox.classList.add(`hidden`) 
@@ -132,15 +132,17 @@ let newIndex = indexOfCurrentQuestion+1
     gameOver.classList.remove(`hidden`)     
   } )
   //****** */
- // 2nd Event listenner for quitQuizButton2
-    //    quitQuizButton2.addEventListener(`click`, () => {
-      // // Hide  startGameButton, gameRuleScreen and gameBoardContainerScreen (must be hidden in other to go back to the Welcome screen)
-    // startGameButton.classList.add(`hidden`)
-    // gameRuleScreen.classList.add(`hidden`)
-    // gameBoardContainerScreen.classList.add(`hidden`)
-    //     // Show welcomeScreen  ( This takes you back to the Welcome screen!)
-    // welcomeScreen.classList.remove(`hidden`)     
-    // } )
+ // Write a function for quitQuizButton2 (using ondblclick Event in html makes the paragraph clickable) to return to Welcome screen.
+      const returnToWelcomescreen = () => {
+      // Hide  startGameButton, gameRuleScreen and gameBoardContainerScreen (must be hidden in other to go back to the Welcome screen)
+        gameBoardContainerScreen.classList.add(`hidden`)
+        gameRuleScreen.classList.add(`hidden`)
+        quizScreen.classList.add(`hidden`)
+        gameOver.classList.add(`hidden`) 
+   
+    // Show welcomeScreen  ( This takes you back to the Welcome screen!)
+        welcomeScreen.classList.remove(`hidden`)     
+    } 
 //********* */
 // console.log(gameBoardContainerScreen.classList.value)
 
