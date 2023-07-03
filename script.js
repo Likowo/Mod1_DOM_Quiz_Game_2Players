@@ -184,7 +184,7 @@ let newIndex = indexOfCurrentQuestion+1
 // write a function called showQuestion that returns current question and answer options.Then hides the answer Icons.
 function showQuestion(){
   let quest = questions[indexOfCurrentQuestion];
-  questionDisplay.innerHTML = `<p>` + quest.question + ` ` + `Click on Correct Answer` + `<p>`;
+  questionDisplay.innerHTML = quest.question + ` <br> `  + `Click on Correct Answer`;
   answer1.innerHTML = `1. ` + quest.answer1;
   answer2.innerHTML = `2. ` + quest.answer2;
   answer3.innerHTML = `3. ` + quest.answer3;
