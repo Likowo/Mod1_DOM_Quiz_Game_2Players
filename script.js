@@ -59,10 +59,10 @@ let questions = [
         answer3: "float",
         correctAnswer:3
     },{
-        question: " what tag is used to write the Javascript code?",
-        answer1: "<sp> ",
-        answer2: "<script>",
-        answer3: "<javascript>",
+        question: " What does the  = = =  comparison operator do??",
+        answer1:"It sets one variable equal to another in both value and Data type",
+        answer2:"It test for equality of value and data type",
+        answer3:"It test for equality of value only",
         correctAnswer:2
     }, {
         question: "Which function removes the last element from an array object and returns that element?",
