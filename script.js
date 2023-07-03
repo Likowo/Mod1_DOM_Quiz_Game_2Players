@@ -132,14 +132,13 @@ let newIndex = indexOfCurrentQuestion+1
     gameOver.classList.remove(`hidden`)     
   } )
   //****** */
- // Write a function for quitQuizButton2 (using ondblclick Event in html makes the paragraph clickable) to return to Welcome screen.
+ // Write and call a function for quitQuizButton2 (using ondblclick ( double click) Event in html that makes the paragraph clickable) to return to Welcome screen.
       const returnToWelcomescreen = () => {
       // Hide  startGameButton, gameRuleScreen and gameBoardContainerScreen (must be hidden in other to go back to the Welcome screen)
         gameBoardContainerScreen.classList.add(`hidden`)
         gameRuleScreen.classList.add(`hidden`)
         quizScreen.classList.add(`hidden`)
-        gameOver.classList.add(`hidden`) 
-   
+        gameOver.classList.add(`hidden`)   
     // Show welcomeScreen  ( This takes you back to the Welcome screen!)
         welcomeScreen.classList.remove(`hidden`)     
     } 
@@ -185,7 +184,7 @@ let newIndex = indexOfCurrentQuestion+1
 // write a function called showQuestion that returns current question and answer options.Then hides the answer Icons.
 function showQuestion(){
   let quest = questions[indexOfCurrentQuestion];
-  questionDisplay.innerHTML = `<p>` + quest.question + `<p>`;
+  questionDisplay.innerHTML = `<p>` + quest.question + ` ` + `Click on Correct Answer` + `<p>`;
   answer1.innerHTML = `1. ` + quest.answer1;
   answer2.innerHTML = `2. ` + quest.answer2;
   answer3.innerHTML = `3. ` + quest.answer3;
