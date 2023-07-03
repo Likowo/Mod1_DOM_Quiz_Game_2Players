@@ -151,7 +151,7 @@ let newIndex = indexOfCurrentQuestion+1
 // -   Write a gobal fxn called points that allocates points to current player.
 
 
- // show player1 points  ////
+ // show player1  and player2 points  ////
 
  let points1 = 0;
  let points2 = 0;
@@ -163,6 +163,11 @@ let newIndex = indexOfCurrentQuestion+1
     p1Points.innerHTML = "PLAYER 1 POINTS: " + `<br>` + points1;
    }
 
+ //Fxn to display points for player2, when Ride On button clicked NB: Point increase put within displayImg fxn
+ const showPlayer2Point = () => {
+  let p2Points = document.getElementById(`player2`);
+  p2Points.innerHTML = "PLAYER 2 POINTS: " + `<br>` + points2;
+ }
 
 
 // -	Create an array of  5 – 10 questions with multiple choice answers and  Boolean. ( Randomize the array)
@@ -196,7 +201,7 @@ showQuestion();
 // indexOfCurrentQuestion++
 // console.log(showQuestion())
 
-//**  Check is correct answer selected, using the checkAnswer() fxn **  //
+//**  Check if correct answer selected, using the checkAnswer() fxn **  //
 
 const checkAnswer = (selectedAnswer) => {
   //sets answer value
@@ -218,22 +223,34 @@ const checkAnswer = (selectedAnswer) => {
       if(indexOfCurrentQuestion<indexOfLastQuestion){
         indexOfCurrentQuestion++;
       }
-
-
     console.log(`this is the next question`)
   } else{
     clearInterval(TIMER)
   } 
-   //setting img tag source to whichever image is correct upon click
-  if(answer===selectedAnswer){
-    // console.log(`test2`)
-    displayImg.setAttribute(`src`,`https://p7.hiclipart.com/preview/999/840/970/check-mark-computer-icons-symbol-clip-art-green-tick-mark.jpg`);
-    displayImg.setAttribute(`class`,`checkMark`); // This is the check or tick image
-    points1++;
-    showPlayer1Point();
-  } else {
-    displayImg.setAttribute(`src`,`https://w7.pngwing.com/pngs/175/854/png-transparent-computer-icons-button-check-mark-cross-red-cross-photography-trademark-logo.png`);
-    displayImg.setAttribute(`class`,`checkMark`) // This is the cross image
+//setting img tag source to whichever image is correct upon click
+    ///And  switching game to player 2 after 3rd question
+  if(indexOfCurrentQuestion <=3){
+    if(answer===selectedAnswer){
+      // console.log(`test2`)
+      displayImg.setAttribute(`src`,`https://p7.hiclipart.com/preview/999/840/970/check-mark-computer-icons-symbol-clip-art-green-tick-mark.jpg`);
+      displayImg.setAttribute(`class`,`checkMark`); // This is the check or tick image
+      points1++;
+      showPlayer1Point();
+    } else {
+      displayImg.setAttribute(`src`,`https://w7.pngwing.com/pngs/175/854/png-transparent-computer-icons-button-check-mark-cross-red-cross-photography-trademark-logo.png`);
+      displayImg.setAttribute(`class`,`checkMark`) // This is the cross image
+    }
+  } else{
+    if(answer===selectedAnswer){
+      // console.log(`test2`)
+      displayImg.setAttribute(`src`,`https://p7.hiclipart.com/preview/999/840/970/check-mark-computer-icons-symbol-clip-art-green-tick-mark.jpg`);
+      displayImg.setAttribute(`class`,`checkMark`); // This is the check or tick image
+      points2++;
+      showPlayer2Point();
+    } else {
+      displayImg.setAttribute(`src`,`https://w7.pngwing.com/pngs/175/854/png-transparent-computer-icons-button-check-mark-cross-red-cross-photography-trademark-logo.png`);
+      displayImg.setAttribute(`class`,`checkMark`) // This is the cross image
+    }
   }
   console.log(`click`)  
   }
