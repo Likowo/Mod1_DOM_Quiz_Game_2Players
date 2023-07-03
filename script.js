@@ -35,6 +35,7 @@ let quitQuizButton1 = document.querySelector(`.quitQuizButton1`);
 let round1resultButton = document.querySelector(`.round1resultButton`);
 let quitQuizButton2 = document.querySelector(`.quitQuizButton2`);
 let nextQuestionButton = document.querySelector(`.nextQuestionButton`);
+
 // Creating an array to pass the questions,answer options and correct answer  
 let questions = [
     {
@@ -43,38 +44,38 @@ let questions = [
         answer2: "Git Pull: Fetch and download content from a remote repository",
         answer3: "Git Upload:  Upload content from the local repository to a remote repository ",
             img: " ",
-        correctAnswer: 2,
+        correctAnswer:2
         
     },{
         question: " CSS  stands for ?",
         answer1: "Colorful Style Sheet ",
         answer2: "Cascading Style Sheet",
         answer3: "Computer style Sheet", 
-        correctAnswer: "2 ",        
+        correctAnswer:2        
     },{
         question: " Which is not a valid data type in Javascript?",
         answer1: "Undefined ",
         answer2: "Boolean",
         answer3: "float",
-        correctAnswer: "3",
+        correctAnswer:3
     },{
         question: " what tag is used to write the Javascript code?",
         answer1: "<sp> ",
         answer2: "<script>",
         answer3: "<javascript>",
-        correctAnswer: "2",
+        correctAnswer:2
     }, {
         question: "Which function removes the last element from an array object and returns that element?",
        answer1: "pop() ",
        answer2: "Push() ", 
        answer3: "Delete() ",
-       correctAnswer: "1",
+       correctAnswer:1
     },{
         question: " HTML stands for?",
             answer1: " Hypermark language ",
             answer2: " Hypertext Markup language ",
             answer3: " Hypertension language",
-        correctAnswer: "2",
+        correctAnswer:2
     },
   ];
 
@@ -193,8 +194,8 @@ function showQuestion(){
   img2.setAttribute(`class`,`checkMark hide`);
   img3.setAttribute(`class`,`checkMark hide`);
 }
-// indexOfCurrentQuestion = 0;
-showQuestion()
+indexOfCurrentQuestion = 0;
+showQuestion();
 
  //To switch to next question
 // indexOfCurrentQuestion++
@@ -248,13 +249,13 @@ const checkAnswer = (num) => {
   }
    if(indexOfCurrentQuestion < indexOfLastQuestion){
     counter = 0;
-    indexOfCurrentQuestion++;
+    // indexOfCurrentQuestion++;
     showQuestion();
+    indexOfCurrentQuestion++;
     console.log(`this is the next question`)
-  }   
-  }
-
-  //sets img tag source to whichever image is correct for the click
+  } else{
+    clearInterval(TIMER)
+  }  
   if(answer===num){
     console.log(`test2`)
     displayImg.setAttribute(`src`,`https://p7.hiclipart.com/preview/999/840/970/check-mark-computer-icons-symbol-clip-art-green-tick-mark.jpg`);
@@ -264,6 +265,21 @@ const checkAnswer = (num) => {
     displayImg.setAttribute(`class`,`checkMark`)
   }
   console.log(`click`)
+
+
+  }
+
+  //sets img tag source to whichever image is correct for the click
+
+  // if(answer===num){
+  //   console.log(`test2`)
+  //   displayImg.setAttribute(`src`,`https://p7.hiclipart.com/preview/999/840/970/check-mark-computer-icons-symbol-clip-art-green-tick-mark.jpg`);
+  //   displayImg.setAttribute(`class`,`checkMark`);
+  // } else {
+  //   displayImg.setAttribute(`src`,`https://w7.pngwing.com/pngs/175/854/png-transparent-computer-icons-button-check-mark-cross-red-cross-photography-trademark-logo.png`);
+  //   displayImg.setAttribute(`class`,`checkMark`)
+  // }
+  // console.log(`click`)
 
 
 // let score = 0;
