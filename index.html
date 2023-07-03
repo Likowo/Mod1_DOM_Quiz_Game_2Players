@@ -84,8 +84,7 @@ NB: Timer stops when two answers are selected, or time runs out.
                     <div class="quizScreen">
                          
                         <div class="pointsContainer1">
-                            <div class="player1Points"> 
-                                <p> </p>PLAYER 1 POINTS</div>                          
+                            <div class="player1Points" id="player1" onclick="showPlayer1Point()" > PLAYER 1 POINTS </div>                          
                         </div>
 
                         <div class="questionBox">
@@ -114,7 +113,7 @@ NB: Timer stops when two answers are selected, or time runs out.
                     </div>
                     <div class="buttons">
                         <button class="quitQuizButton2"> QUIT QUIZ </button>
-                        <button class="nextQuestionButton" > RIDE ON</button>
+                        <button class="nextQuestionButton" id="player1" onclick="showPlayer1Point()" > RIDE ON</button>
                     </div>
 
                     <div class="keepPlaying hidden">

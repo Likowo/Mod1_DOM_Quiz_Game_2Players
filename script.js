@@ -43,39 +43,39 @@ let questions = [
         answer1: "Git Open: Initialize a local Git repository",
         answer2: "Git Pull: Fetch and download content from a remote repository",
         answer3: "Git Upload:  Upload content from the local repository to a remote repository ",
-            img: " ",
-        correctAnswer:2
-        
+            // img: " ",
+        correctAnswer:2       
     },{
         question: "CSS  stands for?",
         answer1: "Colorful Style Sheet",
         answer2: "Cascading Style Sheet",
         answer3: "Computer style Sheet", 
-        correctAnswer:2        
+        correctAnswer:2
+                      
     },{
         question: " Which is not a valid data type in Javascript?",
-        answer1: "Undefined ",
+        answer1: "Undefined",
         answer2: "Boolean",
         answer3: "float",
         correctAnswer:3
     },{
-        question: " What does the  = = =  comparison operator do??",
-        answer1:"It sets one variable equal to another in both value and Data type",
-        answer2:"It test for equality of value and data type",
-        answer3:"It test for equality of value only",
+        question: " What does the  = = =  comparison operator do?",
+        answer1: "It sets one variable equal to another in both value and Data type",
+        answer2: "It test for equality of value and data type",
+        answer3: "It test for equality of value only",
         correctAnswer:2
     }, {
         question: "Which function removes the last element from an array object and returns that element?",
-       answer1: "pop() ",
-       answer2: "Push() ", 
-       answer3: "Delete() ",
+       answer1: "pop()",
+       answer2: "Push()", 
+       answer3: "Delete()",
        correctAnswer:1
     },{
-        question: " HTML stands for?",
-            answer1: "Hypermark language",
-            answer2: "Hypertext Markup language",
-            answer3: "Hypertension language",
-        correctAnswer:2
+       question: "HTML stands for?",
+       answer1: "Hypermark language",
+       answer2: "Hypertext Markup language",
+       answer3: "Hypertension language",
+      correctAnswer:2
     },
   ];
 
@@ -83,7 +83,7 @@ let questions = [
 let indexOfLastQuestion = questions.length - 1;
 let indexOfCurrentQuestion = 0;
 let newIndex = indexOfCurrentQuestion+1
-  nextQuestionButton.setAttribute("onclick",`showQuestion(${newIndex})`,`showQuestion()`);
+  nextQuestionButton.setAttribute("onclick",`showQuestion(${newIndex})`);
   console.log(welcomeButton,startQuizButton,quitQuizButton1)
 
   // To show the next screens, use an event listener method
@@ -147,31 +147,24 @@ let newIndex = indexOfCurrentQuestion+1
 
 // - Write a function called enterName that enables the player(s) type in their name(s).Then hide prompt . ( This has been done in html using input tags under; <div class="startGameButton hidden"> )
 
-//*** Create TIMER */
-// -  Write a funtion called seconds that sets a count down timer from 15 seconds to 0 seconds. Use Math.floor() or Date.now()
-
-         // set date we are counting down to
-        //    const countDownDate = new Date ().getTime();
-        // Update the count down every 1 second
-        //   const x = setInterval(function(){
-
-        //   })
-        //Time calculation for seconds
-        // const seconds = Math.floor( (distance % (1000 * 60)) / 1000);
-        //Display result in the element with id="Time Left"
-        // document.getElementById("Time left").innerHTML = seconds + "s"
-        //When count down is finished, write some text
-        // if (distance < 0 ){
-        //     clearInterval(x);
-        //     document.getElementById("Time left").innerHTML = "Time Up";
-        // }
-
-        // let milliSeconds = Date.now()
-        // document.getElementById(`timer`).innerHTML = milliSeconds
-//********   End of Create TIMER *****/
-
-// -	Write a function called selectAnwser that allows player to click on answer of choice.Next question pops up when Ride On button is clicked
+// -	Write a function called selectAnwser that allows player to click on answer of choice.Next question shows up when Ride On button is clicked.
 // -   Write a gobal fxn called points that allocates points to current player.
+
+
+ // show player1 points  ////
+
+ let points1 = 0;
+ let points2 = 0;
+ let winner = "";
+
+ //Fxn to display points for player1, when Ride On button clicked NB: Point increase put within displayImg fxn
+   const showPlayer1Point = () => {
+    let p1Points = document.getElementById(`player1`);
+    p1Points.innerHTML = "PLAYER 1 POINTS: " + `<br>` + points1;
+   }
+
+
+
 // -	Create an array of  5 – 10 questions with multiple choice answers and  Boolean. ( Randomize the array)
 // -	Write a function called resetGame  that enables player to restart the game to round One when both rounds are completed with a draw (i.e. players can keep playing until one player wins. - Requirement 4)
 // -    Write a function winOrLose that allows questionBox to be replaced with result of winner, ELSE Game over ( i.e. both players loss - requirement 5)   
@@ -182,9 +175,10 @@ let newIndex = indexOfCurrentQuestion+1
 
 // To display a question to player: create a variable for the last question using the index of the array i.e. array.length - 1 ( -1 because an array begins with index zero (0). so an array = [a,b,c,d] will have a length of 4 but an index of 3)
 // write a function called showQuestion that returns current question and answer options.Then hides the answer Icons.
+
 function showQuestion(){
   let quest = questions[indexOfCurrentQuestion];
-  questionDisplay.innerHTML = quest.question + ` <br> `  + `Click on Correct Answer`;
+  questionDisplay.innerHTML = quest.question + ` <br> ` + `Click on Correct Answer`;
   answer1.innerHTML = `1. ` + quest.answer1;
   answer2.innerHTML = `2. ` + quest.answer2;
   answer3.innerHTML = `3. ` + quest.answer3;
@@ -201,6 +195,50 @@ showQuestion();
  //To switch to next question
 // indexOfCurrentQuestion++
 // console.log(showQuestion())
+
+//**  Check is correct answer selected, using the checkAnswer() fxn **  //
+
+const checkAnswer = (selectedAnswer) => {
+  //sets answer value
+  let answer = questions[indexOfCurrentQuestion].correctAnswer;
+
+  //make a new variable and set it to img infor depending on click
+  let displayImg;
+  if(selectedAnswer===1){
+    displayImg = document.getElementById(`answer1`);
+  }else if (selectedAnswer===2){
+    // console.log(`test`)
+    displayImg = document.getElementById(`answer2`);
+  }else if (selectedAnswer===3){
+    displayImg = document.getElementById(`answer3`);
+  }
+   if(indexOfCurrentQuestion <= indexOfLastQuestion){
+    counter = 0;
+    showQuestion();
+      if(indexOfCurrentQuestion<indexOfLastQuestion){
+        indexOfCurrentQuestion++;
+      }
+
+
+    console.log(`this is the next question`)
+  } else{
+    clearInterval(TIMER)
+  } 
+   //setting img tag source to whichever image is correct upon click
+  if(answer===selectedAnswer){
+    // console.log(`test2`)
+    displayImg.setAttribute(`src`,`https://p7.hiclipart.com/preview/999/840/970/check-mark-computer-icons-symbol-clip-art-green-tick-mark.jpg`);
+    displayImg.setAttribute(`class`,`checkMark`); // This is the check or tick image
+    points1++;
+    showPlayer1Point();
+  } else {
+    displayImg.setAttribute(`src`,`https://w7.pngwing.com/pngs/175/854/png-transparent-computer-icons-button-check-mark-cross-red-cross-photography-trademark-logo.png`);
+    displayImg.setAttribute(`class`,`checkMark`) // This is the cross image
+  }
+  console.log(`click`)  
+  }
+
+
 
 //******* */
 // show time counter
@@ -232,43 +270,30 @@ showQuestion();
 // let TIMER = setInterval(showTimeCounter,1000); // 1000 milliseconds equals to 1 sec. i.e. the setInterval will call the counter every 1 second
 //**** */
 
-// using the checkAnswer() fxn //
-const checkAnswer = (num) => {
-  //sets answer value
+//*** Create TIMER */
+// -  Write a funtion called seconds that sets a count down timer from 15 seconds to 0 seconds. Use Math.floor() or Date.now()
 
-  let answer = questions[indexOfCurrentQuestion].correctAnswer;
+         // set date we are counting down to
+        //    const countDownDate = new Date ().getTime();
+        // Update the count down every 1 second
+        //   const x = setInterval(function(){
 
-  //make a new variable and set it to img infor depending on click
-  let displayImg;
-  if(num===1){
-    displayImg = document.getElementById(`answer1`);
-  }else if (num===2){
-    console.log(`test`)
-    displayImg = document.getElementById(`answer2`);
-  }else if (num===3){
-    displayImg = document.getElementById(`answer3`);
-  }
-   if(indexOfCurrentQuestion < indexOfLastQuestion){
-    counter = 0;
-    // indexOfCurrentQuestion++;
-    showQuestion();
-    indexOfCurrentQuestion++;
-    console.log(`this is the next question`)
-  } else{
-    clearInterval(TIMER)
-  }  
-  if(answer===num){
-    console.log(`test2`)
-    displayImg.setAttribute(`src`,`https://p7.hiclipart.com/preview/999/840/970/check-mark-computer-icons-symbol-clip-art-green-tick-mark.jpg`);
-    displayImg.setAttribute(`class`,`checkMark`);
-  } else {
-    displayImg.setAttribute(`src`,`https://w7.pngwing.com/pngs/175/854/png-transparent-computer-icons-button-check-mark-cross-red-cross-photography-trademark-logo.png`);
-    displayImg.setAttribute(`class`,`checkMark`)
-  }
-  console.log(`click`)
+        //   })
+        //Time calculation for seconds
+        // const seconds = Math.floor( (distance % (1000 * 60)) / 1000);
+        //Display result in the element with id="Time Left"
+        // document.getElementById("Time left").innerHTML = seconds + "s"
+        //When count down is finished, write some text
+        // if (distance < 0 ){
+        //     clearInterval(x);
+        //     document.getElementById("Time left").innerHTML = "Time Up";
+        // }
+
+        // let milliSeconds = Date.now()
+        // document.getElementById(`timer`).innerHTML = milliSeconds
+//********   End of Create TIMER *****/
 
 
-  }
 
   //sets img tag source to whichever image is correct for the click
 
