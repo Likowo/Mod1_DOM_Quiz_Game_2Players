@@ -36,7 +36,8 @@ let round1resultButton = document.querySelector(`.round1resultButton`);
 let quitQuizButton2 = document.querySelector(`.quitQuizButton2`);
 let nextQuestionButton = document.querySelector(`.nextQuestionButton`);
 
-// Creating an array to pass the questions,answer options and correct answer  
+///// -	Create an array of  5 – 10 questions with multiple choice answers and  Boolean. ( Randomize the array)
+    // Creating an array to pass the questions,answer options and correct answer  
 let questions = [
     {
         question: " A git command and function is?", 
@@ -134,13 +135,15 @@ let newIndex = indexOfCurrentQuestion+1
   //****** */
  // Write and call a function for quitQuizButton2 (using ondblclick ( double click) Event in html that makes the paragraph clickable) to return to Welcome screen.
       const returnToWelcomescreen = () => {
-      // Hide  startGameButton, gameRuleScreen and gameBoardContainerScreen (must be hidden in other to go back to the Welcome screen)
-        gameBoardContainerScreen.classList.add(`hidden`)
-        gameRuleScreen.classList.add(`hidden`)
-        quizScreen.classList.add(`hidden`)
-        gameOver.classList.add(`hidden`)   
-    // Show welcomeScreen  ( This takes you back to the Welcome screen!)
-        welcomeScreen.classList.remove(`hidden`)     
+        // To go back to the welcome page .i.e refreshing your page
+    location.reload()
+    //   // Hide  startGameButton, gameRuleScreen and gameBoardContainerScreen (must be hidden in other to go back to the Welcome screen)
+    //     gameBoardContainerScreen.classList.add(`hidden`)
+    //     gameRuleScreen.classList.add(`hidden`)
+    //     quizScreen.classList.add(`hidden`)
+    //     gameOver.classList.add(`hidden`)   
+    // // Show welcomeScreen  ( This takes you back to the Welcome screen!)
+    //     welcomeScreen.classList.remove(`hidden`)     
     } 
 //********* */
 // console.log(gameBoardContainerScreen.classList.value)
@@ -149,31 +152,59 @@ let newIndex = indexOfCurrentQuestion+1
 
 // -	Write a function called selectAnwser that allows player to click on answer of choice.Next question shows up when Ride On button is clicked.
 // -   Write a gobal fxn called points that allocates points to current player.
-
-
- // show player1  and player2 points  ////
-
+    // To show player1  and player2 points  ////
  let points1 = 0;
  let points2 = 0;
  let winner = "";
 
- //Fxn to display points for player1, when Ride On button clicked NB: Point increase put within displayImg fxn
+ //Fxn to display points for player1, when the correct answer is clicked. NB: Point increase put within displayImg fxn
    const showPlayer1Point = () => {
     let p1Points = document.getElementById(`player1`);
     p1Points.innerHTML = "PLAYER 1 POINTS: " + `<br>` + points1;
    }
 
- //Fxn to display points for player2, when Ride On button clicked NB: Point increase put within displayImg fxn
+ //Fxn to display points for player2, when the correct answer is clicked. NB: Point increase put within displayImg fxn
  const showPlayer2Point = () => {
   let p2Points = document.getElementById(`player2`);
   p2Points.innerHTML = "PLAYER 2 POINTS: " + `<br>` + points2;
  }
 
-
-// -	Create an array of  5 – 10 questions with multiple choice answers and  Boolean. ( Randomize the array)
 // -	Write a function called resetGame  that enables player to restart the game to round One when both rounds are completed with a draw (i.e. players can keep playing until one player wins. - Requirement 4)
 // -    Write a function winOrLose that allows questionBox to be replaced with result of winner, ELSE Game over ( i.e. both players loss - requirement 5)   
 // - Write a fxn called winner that allows the questionBox to be replaced with text "WINNER" plus background image applause, if a player has more points at the end of round two.
+    /// Fxn to display winner ***///
+    //display winner
+const showGameWinner = () => {
+  if(points1 > points2){
+      // winner = winner.concat("PLAYER 1");
+      winner = `player1`
+      loser = `player2`
+  }
+  else if (points1 === points2){
+      // winner = winner.concat("Draw Grame! No winner")
+      winner = `Draw Grame! No winner`
+  }
+  else {
+      winner = `player2`
+      loser = `player1`
+  }
+
+      // {winner = winner.concat("PLAYER 2");}
+}
+
+const showWinner = () =>{
+  showGameWinner()
+  let winnerName = document.querySelector(`.winnerName`)
+   winnerName.innerHTML = winner
+  let loserName = document.querySelector(`.loserName`)
+   loserName.innerHTML = loser
+  let winnerPoints = document.querySelector(`.winnerPoints1`)
+   if(winner===`player1`){
+      winnerPoints.innerHTML = points1
+   }else {
+      winnerPoints.innerHeight = points2
+   }
+}
 
 //*** */
 // To access the properties in every element of the array, use the dot(.) notation. Remember array begins with index zero(0) i.e. questions[0].question is question number 1.

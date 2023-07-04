@@ -73,10 +73,10 @@ NB: Timer stops when two answers are selected, or time runs out.
                         </div>
                                     
                         <div class="row1">
-                            <button class="round1resultButton">Round Result</button>
-                            <div class="winLoseState hidden">
-                                <div class="winnerRoundOne"> Winner is player ____, With total points ____</div>
-                                <div class="loserRoundOne"> Sorry player_____ You  lose, but You can bounce back in the next round ! <br> Are you Ready to Ride On?</div>
+                            <button class="round1resultButton" onclick="showWinner()" id ="winner">Round Result</button>
+                            <div class="winLoseState hidden"  onclick="showWinner()" id ="winner">
+                                <div class="winnerRoundOne"> Winner is player <span class="winnerName" >_____</span></div>
+                                <div class="loserRoundOne"> Sorry player <span class="loserName" >_____</span>You lose, but You can bounce back in the next round ! <br> Are you Ready to Ride On?</div>
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@ NB: Timer stops when two answers are selected, or time runs out.
                     </div>
                     <div class="buttons">
                         <button class="quitQuizButton2"> QUIT QUIZ </button>
-                        <button class="nextQuestionButton" id="player1" onclick="showPlayer1Point()" > RIDE ON</button>
+                        <button class="nextQuestionButton"> RIDE ON</button>
                     </div>
 
                     <div class="keepPlaying hidden">
