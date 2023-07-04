@@ -77,7 +77,38 @@ let questions = [
        answer2: "Hypertext Markup language",
        answer3: "Hypertension language",
       correctAnswer:2
-    },
+    },{
+      question: "A function definition expression is known as?",
+      answer1: "Function literal",
+      answer2: "Function calling",
+      answer3: "Function calls ",
+     correctAnswer:1
+   },{
+    question: "Fundamental HTML Block is known as?",
+    answer1: "HTML attribute",
+    answer2: "HTML body",
+    answer3: "HTML Tag",
+   correctAnswer:3
+ },{
+  question: "A person working in front-end development can also be called - a client-side developer, front-end coder, or UI developer?",
+  answer1: "True",
+  answer2: "false",
+  answer3: "None of the above",
+ correctAnswer:1
+},{
+  question: "what tag is used to write the Javascript code?",
+  answer1: "<sp>",
+  answer2: "<script>",
+  answer3: "<javascript>",
+ correctAnswer:2
+},
+{
+  question: "ROUND TWO?",
+  // answer1: "",
+  // answer2: "",
+  // answer3: "",
+ correctAnswer:2
+},
   ];
 
 //* -	Write a function called nextQuestion that enables player to click and proceed to next question,but hides answer icons untill answer clicked.
@@ -215,9 +246,9 @@ const showWinner = () =>{
 function showQuestion(){
   let quest = questions[indexOfCurrentQuestion];
   questionDisplay.innerHTML = quest.question + ` <br> ` + `Click on Correct Answer`;
-  answer1.innerHTML = `1. ` + quest.answer1;
-  answer2.innerHTML = `2. ` + quest.answer2;
-  answer3.innerHTML = `3. ` + quest.answer3;
+  answer1.innerText= `1. ` + quest.answer1;
+  answer2.innerText= `2. ` + quest.answer2;
+  answer3.innerText= `3. ` + quest.answer3;
   let img1 = document.getElementById(`answer1`);
   let img2 = document.getElementById(`answer2`);
   let img3 = document.getElementById(`answer3`);
@@ -227,6 +258,8 @@ function showQuestion(){
 }
 indexOfCurrentQuestion = 0;
 showQuestion();
+// count = 15
+// timeToAnswerQuestion()
 
  //To switch to next question
 // indexOfCurrentQuestion++
@@ -256,11 +289,11 @@ const checkAnswer = (selectedAnswer) => {
       }
     console.log(`this is the next question`)
   } else{
-    clearInterval(TIMER)
+    clearInterval(countdown)
   } 
 //setting img tag source to whichever image is correct upon click
     ///And  switching game to player 2 after 3rd question
-  if(indexOfCurrentQuestion <=3){
+  if(indexOfCurrentQuestion <=5){
     if(answer===selectedAnswer){
       // console.log(`test2`)
       displayImg.setAttribute(`src`,`https://p7.hiclipart.com/preview/999/840/970/check-mark-computer-icons-symbol-clip-art-green-tick-mark.jpg`);
@@ -287,6 +320,21 @@ const checkAnswer = (selectedAnswer) => {
   }
 
 
+  // Count Down Timer
+  let count = 15;
+  let countdown;
+
+  const timeToAnswerQuestion = () => {
+    count = 15
+    countdown = setInterval(()=> {
+    let counter = document.getElementById(`counter`)
+      counter.textContent = count
+      count--;
+      if (count === -1){ //show zero on screen
+        clearInterval(countdown);
+      }
+    }, 1000 )
+  }
 
 //******* */
 // show time counter

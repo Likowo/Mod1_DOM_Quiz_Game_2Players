@@ -33,9 +33,9 @@
 
         <div class="gameBoardContainer hidden">
                 <div class="startGameButton hidden">
-                    <button class="startQuizButton"> START QUIZ </button>
-                    <input type="text" placeholder=" Enter Your Name Player1">
-                    <input type="text" placeholder=" Enter Your Name Player2">
+                    <button class="startQuizButton" onclick="timeToAnswerQuestion()" > START QUIZ </button>
+                    <!-- <input type="text" placeholder=" Enter Your Name Player1">
+                    <input type="text" placeholder=" Enter Your Name Player2"> -->
                     <button class="quitQuizButton1"> QUIT QUIZ </button>
                 </div>                    
 
@@ -65,18 +65,16 @@ NB: Timer stops when two answers are selected, or time runs out.
             <div class="gameScreen hidden">  
                     
                     <div class="resultScreen">
-                        <!-- <div class="timer">
-                            <p id="Time Left"> TIMER : 15 Secs </p>
-                        </div>  -->
+                        <!-- Count Down Timer -->
                         <div id="time">
-                            <div id="counter"> 15 </div>
+                            <div id="counter"> 15 secs </div>
                         </div>
                                     
                         <div class="row1">
                             <button class="round1resultButton" onclick="showWinner()" id ="winner">Round Result</button>
                             <div class="winLoseState hidden"  onclick="showWinner()" id ="winner">
-                                <div class="winnerRoundOne"> Winner is player <span class="winnerName" >_____</span></div>
-                                <div class="loserRoundOne"> Sorry player <span class="loserName" >_____</span>You lose, but You can bounce back in the next round ! <br> Are you Ready to Ride On?</div>
+                                <div class="winnerRoundOne"> Winner is <span class="winnerName" >_____</span></div>
+                                <div class="loserRoundOne hidden"> Sorry <span class="loserName" >_____</span>You lose, but You can bounce back in the next round ! <br> Are you Ready to Ride On?</div>
                             </div>
                         </div>
                     </div>
@@ -115,7 +113,7 @@ NB: Timer stops when two answers are selected, or time runs out.
                     </div>
                     <div class="buttons">
                         <button class="quitQuizButton2"> QUIT QUIZ </button>
-                        <button class="nextQuestionButton"> RIDE ON</button>
+                        <button class="nextQuestionButton" onclick="timeToAnswerQuestion()" > RIDE ON</button>
                     </div>
 
                     <div class="keepPlaying hidden">
