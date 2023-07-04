@@ -40,6 +40,7 @@ let nextQuestionButton = document.querySelector(`.nextQuestionButton`);
     // Creating an array to pass the questions,answer options and correct answer  
 let questions = [
     {
+        questionNum:1,
         question: " A git command and function is?", 
         answer1: "Git Open: Initialize a local Git repository",
         answer2: "Git Pull: Fetch and download content from a remote repository",
@@ -47,6 +48,7 @@ let questions = [
             // img: " ",
         correctAnswer:2       
     },{
+       questionNum:2,
         question: "CSS  stands for?",
         answer1: "Colorful Style Sheet",
         answer2: "Cascading Style Sheet",
@@ -54,48 +56,56 @@ let questions = [
         correctAnswer:2
                       
     },{
+      questionNum:3,
         question: " Which is not a valid data type in Javascript?",
         answer1: "Undefined",
         answer2: "Boolean",
         answer3: "float",
         correctAnswer:3
     },{
+      questionNum:4,
         question: " What does the  = = =  comparison operator do?",
         answer1: "It sets one variable equal to another in both value and Data type",
         answer2: "It test for equality of value and data type",
         answer3: "It test for equality of value only",
         correctAnswer:2
     }, {
+      questionNum:5,
         question: "Which function removes the last element from an array object and returns that element?",
        answer1: "pop()",
        answer2: "Push()", 
        answer3: "Delete()",
        correctAnswer:1
     },{  //player2 questions
+      questionNum:6,
        question: "HTML stands for?",
        answer1: "Hypermark language",
        answer2: "Hypertext Markup language",
        answer3: "Hypertension language",
       correctAnswer:2
     },{
+      questionNum:7,
       question: "A function definition expression is known as?",
       answer1: "Function literal",
       answer2: "Function calling",
       answer3: "Function calls ",
      correctAnswer:1
    },{
+    questionNum:8,
     question: "Fundamental HTML Block is known as?",
     answer1: "HTML attribute",
     answer2: "HTML body",
     answer3: "HTML Tag",
    correctAnswer:3
  },{
+  questionNum:9,
   question: "A person working in front-end development can also be called - a client-side developer, front-end coder, or UI developer?",
   answer1: "True",
   answer2: "false",
   answer3: "None of the above",
  correctAnswer:1
 },{
+  questionNum:10,
   question: "what tag is used to write the Javascript code?",
   answer1: "<sp>",
   answer2: "<script>",
@@ -103,66 +113,77 @@ let questions = [
  correctAnswer:2
 },
 {
+  questionNum:99,
   question: "ROUND TWO ??",
   answer1: "Yes",
   answer2: "No",
   answer3: "No",
  correctAnswer:1
+  },{
+  questionNum:11,
+  question: "A person working in front-end development can also be called - a client-side developer, front-end coder, or UI developer?",
+  answer1: "True",
+  answer2: "false",
+  answer3: "None of the above",
+  correctAnswer:1
+  },{
+  questionNum:12,
+  question: "what tag is used to write the Javascript code?",
+  answer1: "<sp>",
+  answer2: "<script>",
+  answer3: "<javascript>",
+  correctAnswer:2
 },{
-question: "A person working in front-end development can also be called - a client-side developer, front-end coder, or UI developer?",
-answer1: "True",
-answer2: "false",
-answer3: "None of the above",
-correctAnswer:1
-},{
-question: "what tag is used to write the Javascript code?",
-answer1: "<sp>",
-answer2: "<script>",
-answer3: "<javascript>",
-correctAnswer:2
-},{
+  questionNum:13,
   question: "HTML stands for?",
   answer1: "Hypermark language",
   answer2: "Hypertext Markup language",
   answer3: "Hypertension language",
  correctAnswer:2
 },{
+  questionNum:14,
  question: "A function definition expression is known as?",
  answer1: "Function literal",
  answer2: "Function calling",
  answer3: "Function calls ",
 correctAnswer:1
 },{
+  questionNum:15,
   question: "Fundamental HTML Block is known as?",
   answer1: "HTML attribute",
   answer2: "HTML body",
   answer3: "HTML Tag",
  correctAnswer:3
 },{ //player2 questions
+  questionNum:16,
   question: "A person working in front-end development can also be called - a client-side developer, front-end coder, or UI developer?",
   answer1: "True",
   answer2: "false",
   answer3: "None of the above",
  correctAnswer:1
 },{ 
+  questionNum:17,
   question: "what tag is used to write the Javascript code?",
   answer1: "<sp>",
   answer2: "<script>",
   answer3: "<javascript>",
  correctAnswer:2
 },{
+  questionNum:18,
   question: "A function definition expression is known as?",
   answer1: "Function literal",
   answer2: "Function calling",
   answer3: "Function calls ",
  correctAnswer:1
 },{
+questionNum:19,
 question: "Fundamental HTML Block is known as?",
 answer1: "HTML attribute",
 answer2: "HTML body",
 answer3: "HTML Tag",
 correctAnswer:3
-},   {
+},{
+  questionNum:20,
   question: " A git command and function is?", 
   answer1: "Git Open: Initialize a local Git repository",
   answer2: "Git Pull: Fetch and download content from a remote repository",
@@ -176,7 +197,7 @@ correctAnswer:3
 let indexOfLastQuestion = questions.length - 1;
 let indexOfCurrentQuestion = 0;
 let newIndex = indexOfCurrentQuestion+1
-  nextQuestionButton.setAttribute("onclick",`showQuestion(${newIndex})`);
+  // nextQuestionButton.setAttribute("onclick",`showQuestion(${newIndex})`);
   console.log(welcomeButton,startQuizButton,quitQuizButton1)
 
   // To show the next screens, use an event listener method
@@ -303,40 +324,136 @@ const showWinner = () =>{
 
 // To display a question to player: create a variable for the last question using the index of the array i.e. array.length - 1 ( -1 because an array begins with index zero (0). so an array = [a,b,c,d] will have a length of 4 but an index of 3)
 // write a function called showQuestion that returns current question and answer options.Then hides the answer Icons.
-
-function showQuestion(seconds){
-  if(seconds===1){
-    //if (answerchecked==true)
-    clearInterval(countdown);
-    indexOfCurrentQuestion++;
+// ***********************************************
+// function showQuestion(answerNum, qNum){
+//   if (qNum===1){
+//     timeToAnswerQuestion();
+//   } 
+//   if (answerNum===questions[indexOfCurrentQuestion].correctAnswer){
+//       if (answerChecked===true){
+//         clearInterval(countdown);
+//         timeToAnswerQuestion();
+//         answerChecked = false;
+//       }
+//     }
+//   // if(seconds===1){
+//   //   //if (answerchecked==true)
+//   //   clearInterval(countdown);
+//   //   // indexOfCurrentQuestion++;
+//   //   timeToAnswerQuestion();
+//   //   // answerchecked = false
+//   }
+//   nextQuestionButton.setAttribute("onclick",`showQuestion(${newIndex})`);  //questions[indexOfCurrentQuestion].correctAnswer
+//   let quest = questions[indexOfCurrentQuestion];
+//   questionDisplay.innerHTML = quest.question + ` <br> ` + `Click on Correct Answer`;
+//   answer1.innerText= `1. ` + quest.answer1;
+//   answer2.innerText= `2. ` + quest.answer2;
+//   answer3.innerText= `3. ` + quest.answer3;
+//******************************************************************************* */
+let answerChecked = false;
+function showQuestion(answerNum, qNum){
+  if (qNum===1){
     timeToAnswerQuestion();
-    // answerchecked = false
+    qNum++;
+  } 
+  // if (answerNum===questions[indexOfCurrentQuestion].correctAnswer){
+      if (answerChecked===true){
+        clearInterval(countdown);
+        timeToAnswerQuestion();
+        answerChecked = false;
+      }
+    // }
+    if (qNum===11){
+      clearInterval(countdown);
+      timeToAnswerQuestion();
+    }
+if (qNum===20){
+  nextQuestionButton.setAttribute("onclick","");
+} else {
+    nextQuestionButton.setAttribute("onclick",`showQuestion(${questions[indexOfCurrentQuestion].correctAnswer},${questions[indexOfCurrentQuestion+1].questionNum})`);
+}
+    let quest = questions[indexOfCurrentQuestion];
+    questionDisplay.innerHTML = quest.question + ` <br> ` + `Click on Correct Answer`;
+
+    if (qNum===99){
+      answer1.innerText= ""; 
+      answer2.innerText= ""; 
+      answer3.innerText= ""; 
+      answer1.setAttribute('onclick', ``);
+      answer2.setAttribute('onclick', ``);
+      answer3.setAttribute('onclick', ``);
+      indexOfCurrentQuestion++;
+      nextQuestionButton.setAttribute("onclick",`showQuestion(${questions[indexOfCurrentQuestion].correctAnswer},${questions[indexOfCurrentQuestion].questionNum})`);
+        clearInterval(countdown);
+    } else {   
+
+      answer1.innerText= `1. ` + quest.answer1;
+      answer2.innerText= `2. ` + quest.answer2;
+      answer3.innerText= `3. ` + quest.answer3;
   }
-  let quest = questions[indexOfCurrentQuestion];
-  questionDisplay.innerHTML = quest.question + ` <br> ` + `Click on Correct Answer`;
-  answer1.innerText= `1. ` + quest.answer1;
-  answer2.innerText= `2. ` + quest.answer2;
-  answer3.innerText= `3. ` + quest.answer3;
   let img1 = document.getElementById(`answer1`);
   let img2 = document.getElementById(`answer2`);
   let img3 = document.getElementById(`answer3`);
   img1.setAttribute(`class`,`checkMark hide`);
   img2.setAttribute(`class`,`checkMark hide`);
   img3.setAttribute(`class`,`checkMark hide`);
-  
+    //Getting questions to be checked together with answer, so array of questions can be shared between player1 and player2
+  let firstAnswer = document.getElementById(1);
+  let secondAnswer = document.getElementById(2);
+  let thirdAnswer = document.getElementById(3);
+  firstAnswer.setAttribute('onclick',`checkAnswer(${questions[indexOfCurrentQuestion].questionNum},1)`);
+  secondAnswer.setAttribute('onclick',`checkAnswer(${questions[indexOfCurrentQuestion].questionNum},2)`);
+  thirdAnswer.setAttribute('onclick',`checkAnswer(${questions[indexOfCurrentQuestion].questionNum},3)`);
+    answerChecked = false;
 }
 indexOfCurrentQuestion = 0;
 showQuestion();
 // count = 15
 // timeToAnswerQuestion()
-
  //To switch to next question
 // indexOfCurrentQuestion++
 // console.log(showQuestion())
+// function showQuestion(answerNum, qNum){
+//   if (qNum===1){
+//     timeToAnswerQuestion();
+//   } 
+//   if (answerNum===questions[indexOfCurrentQuestion].correctAnswer){
+//       if (answerChecked===true){
+//         clearInterval(countdown);
+//         timeToAnswerQuestion();
+//         answerChecked = false;
+//       }
+//     }
+// if (qNum===20){
+//   nextQuestionButton.setAttribute("onclick","");
+// } else {
+//     nextQuestionButton.setAttribute("onclick",`showQuestion(${questions[indexOfCurrentQuestion].correctAnswer},${questions[indexOfCurrentQuestion+1].questionNum})`);
+// }
+//     let quest = questions[indexOfCurrentQuestion];
+//     questionDisplay.innerHTML = quest.question + ` <br> ` + `Click on Correct Answer`;
+
+//     if (qNum===99){
+//       answer1.innerText= ""; 
+//       answer2.innerText= ""; 
+//       answer3.innerText= ""; 
+//       answer1.setAttribute('onclick', ``);
+//       answer2.setAttribute('onclick', ``);
+//       answer3.setAttribute('onclick', ``);
+//       indexOfCurrentQuestion++;
+//       nextQuestionButton.setAttribute("onclick",`showQuestion(${questions[indexOfCurrentQuestion].correctAnswer},${questions[indexOfCurrentQuestion+1].questionNum})`);
+//     } else {   
+
+//       answer1.innerText= `1. ` + quest.answer1;
+//       answer2.innerText= `2. ` + quest.answer2;
+//       answer3.innerText= `3. ` + quest.answer3;
+//   }
+
+
+
 
 //**  Check if correct answer selected, using the checkAnswer() fxn **  //
 
-const checkAnswer = (selectedAnswer) => {
+const checkAnswer = (questionNumber,selectedAnswer) => {
   //sets answer value
   let answer = questions[indexOfCurrentQuestion].correctAnswer;
 
@@ -352,42 +469,56 @@ const checkAnswer = (selectedAnswer) => {
   }
    if(indexOfCurrentQuestion <= indexOfLastQuestion){
     counter = 0;
-    showQuestion();
+    // showQuestion();
       if(indexOfCurrentQuestion<indexOfLastQuestion){
         indexOfCurrentQuestion++;
       }
     console.log(`this is the next question`)
+    clearInterval(countdown);
   } else{
-    clearInterval(countdown)
+    clearInterval(countdown);
+    // showQuestion();
   } 
 //setting img tag source to whichever image is correct upon click
     ///And  switching game to player 2 after 3rd question
-  if(indexOfCurrentQuestion <=5){
+  if(questionNumber <=5 || (questionNumber>10&&questionNumber<=15)){
     if(answer===selectedAnswer){
       // console.log(`test2`)
       displayImg.setAttribute(`src`,`https://p7.hiclipart.com/preview/999/840/970/check-mark-computer-icons-symbol-clip-art-green-tick-mark.jpg`);
       displayImg.setAttribute(`class`,`checkMark`); // This is the check or tick image
       points1++;
       showPlayer1Point();
-      clearInterval(countdown)
-    } else {
+      clearInterval(countdown);
+      answerChecked = true;
+    } else if(answer!=selectedAnswer){
       displayImg.setAttribute(`src`,`https://w7.pngwing.com/pngs/175/854/png-transparent-computer-icons-button-check-mark-cross-red-cross-photography-trademark-logo.png`);
       displayImg.setAttribute(`class`,`checkMark`) // This is the cross image
-      clearInterval(countdown)
+      // clearInterval(countdown)
+      answerChecked = true;
     }
-  } else{
+  } else if ((questionNumber>5&&questionNumber<=10)||(questionNumber>15&&questionNumber<=20)){
       if(answer===selectedAnswer){
         // console.log(`test2`)
         displayImg.setAttribute(`src`,`https://p7.hiclipart.com/preview/999/840/970/check-mark-computer-icons-symbol-clip-art-green-tick-mark.jpg`);
         displayImg.setAttribute(`class`,`checkMark`); // This is the check or tick image
         points2++;
         showPlayer2Point();
-        clearInterval(countdown)
+        clearInterval(countdown);
+         answerChecked = true;
       } else {
         displayImg.setAttribute(`src`,`https://w7.pngwing.com/pngs/175/854/png-transparent-computer-icons-button-check-mark-cross-red-cross-photography-trademark-logo.png`);
         displayImg.setAttribute(`class`,`checkMark`) // This is the cross image
-        clearInterval(countdown)
+        clearInterval(countdown);
+         answerChecked = true;
       }
+    }
+    if(answerChecked===true){
+      let firstAnswer = document.getElementById(1);
+      let secondAnswer = document.getElementById(2);
+      let thirdAnswer = document.getElementById(3);
+      firstAnswer.setAttribute('onclick', ``);
+      secondAnswer.setAttribute('onclick', ``);
+      thirdAnswer.setAttribute('onclick', ``);
     }
     
   console.log(`click`)  
@@ -410,6 +541,110 @@ const checkAnswer = (selectedAnswer) => {
     }, 1000 )
   }
 
+  //// To display final winner
+  // If player1 points>player2 points, then player1 is the winner
+   //Else if player2 points > player1 points then player2 is the winner
+
+   const finalWinner = (player1Points,player2Points) => {
+    if(player1Points>player2Points){
+      return` Player 1 is the WINNER `
+
+    } else {
+      return ` Player 2 is the WINNER `
+    }
+   }
+   let grandWinner =  finalWinner(player1Points,player2Points)
+  
+
+
+  // Create a switch function to switch from round1 to round2
+    //If index of current question is nine, switch to round2 image  then switch to index 10 on click of Ride On button( i.e. Round2)
+    //OR
+    // If questionNum is 10,  switch to round2 image  then switch to questionNum 11 on click of Ride On button( i.e. Round2)
+    // allRound1Questions Counter
+    // let allRound1Questions = [questionNum1,questionNum2,questionNum3,questionNum4,questionNum5,questionNum6,questionNum7,questionNum8,questionNum9,questionNum10]
+    //    allRound1Questions = questionNum1;
+    // let counter = 0 //counter starting at zero means the first alien is in battle
+
+
+
+
+
+
+
+// //   Alien counter //
+// let allAliens = [alien1,alien2,alien3,alien4,alien5,alien6]
+// let alienAttacking = alien1;
+// let counter = 0 //counter starting at zero means the first alien is in battle
+//  console.log(counter,":Counter")
+//  console.log(`${alienAttacking.name}`, ":Alien in Battle ")
+//  console.log("Current Opponent:",alienAttacking)
+
+
+// const switchAlien = () => {
+//   alienAttacking = allAliens[counter] 
+//   console.log(`%c New Alien is ${alienAttacking.name}`, "color: blue; font-size : 15px");
+//   // let newAlien = document.querySelector(".aliens")
+//   // let newAlienImg = document.createElement("img");
+//   // newAlienImg.setAttribute("src",alienAttacking.image);
+//   // newAlienImg.setAttribute("class","aliens");
+//   // newAlien.replaceWith(newAlienImg)  
+//    let alienShipImg = document.querySelector(".alienShip")
+//    alienShipImg.src = alienAttacking.image  
+// }; 
+
+
+
+
+
+// let points= 0;
+// if(questions[indexOfCurrentQuestion].correctAnswer === answer){
+//   points++
+//   console.log(`worked`)
+  // answerIsCorrect();
+// }else{
+  // answerIsWrong();
+// }
+
+
+
+
+
+ 
+
+//// ********************************* Funtions to check out later  **********************************************/////
+//  - Write a function called startGameButton that makes the start quiz button clickable  
+// let enterNameP1 
+// let enterNameP2 
+//    const startGameButton = () => {
+//         enterNameP1 = window.prompt(`Welcome Player1 to FES-B ! : Enter Name to Start Game`);
+        
+//         enterNameP2 = window.prompt(`Welcome Player2 to FES-B ! : Enter Name to Start Game`);      
+//    }
+//    startGameButton() 
+
+//*** Create TIMER */
+// -  Write a funtion called seconds that sets a count down timer from 15 seconds to 0 seconds. Use Math.floor() or Date.now()
+
+         // set date we are counting down to
+        //    const countDownDate = new Date ().getTime();
+        // Update the count down every 1 second
+        //   const x = setInterval(function(){
+
+        //   })
+        //Time calculation for seconds
+        // const seconds = Math.floor( (distance % (1000 * 60)) / 1000);
+        //Display result in the element with id="Time Left"
+        // document.getElementById("Time left").innerHTML = seconds + "s"
+        //When count down is finished, write some text
+        // if (distance < 0 ){
+        //     clearInterval(x);
+        //     document.getElementById("Time left").innerHTML = "Time Up";
+        // }
+
+        // let milliSeconds = Date.now()
+        // document.getElementById(`timer`).innerHTML = milliSeconds
+//********   End of Create TIMER *****/
 //******* */
 // show time counter
 // const timeToAnswerQuestion = 15; //15 secs for every question
@@ -439,67 +674,3 @@ const checkAnswer = (selectedAnswer) => {
 //Timer -- use setInvernal fxn
 // let TIMER = setInterval(showTimeCounter,1000); // 1000 milliseconds equals to 1 sec. i.e. the setInterval will call the counter every 1 second
 //**** */
-
-//*** Create TIMER */
-// -  Write a funtion called seconds that sets a count down timer from 15 seconds to 0 seconds. Use Math.floor() or Date.now()
-
-         // set date we are counting down to
-        //    const countDownDate = new Date ().getTime();
-        // Update the count down every 1 second
-        //   const x = setInterval(function(){
-
-        //   })
-        //Time calculation for seconds
-        // const seconds = Math.floor( (distance % (1000 * 60)) / 1000);
-        //Display result in the element with id="Time Left"
-        // document.getElementById("Time left").innerHTML = seconds + "s"
-        //When count down is finished, write some text
-        // if (distance < 0 ){
-        //     clearInterval(x);
-        //     document.getElementById("Time left").innerHTML = "Time Up";
-        // }
-
-        // let milliSeconds = Date.now()
-        // document.getElementById(`timer`).innerHTML = milliSeconds
-//********   End of Create TIMER *****/
-
-
-
-  //sets img tag source to whichever image is correct for the click
-
-  // if(answer===num){
-  //   console.log(`test2`)
-  //   displayImg.setAttribute(`src`,`https://p7.hiclipart.com/preview/999/840/970/check-mark-computer-icons-symbol-clip-art-green-tick-mark.jpg`);
-  //   displayImg.setAttribute(`class`,`checkMark`);
-  // } else {
-  //   displayImg.setAttribute(`src`,`https://w7.pngwing.com/pngs/175/854/png-transparent-computer-icons-button-check-mark-cross-red-cross-photography-trademark-logo.png`);
-  //   displayImg.setAttribute(`class`,`checkMark`)
-  // }
-  // console.log(`click`)
-
-
-// let score = 0;
-// if(questions[indexOfCurrentQuestion].correctAnswer === answer){
-//   score++
-//   console.log(`worked`)
-  // answerIsCorrect();
-// }else{
-  // answerIsWrong();
-// }
-
-
-
-
-
- 
-
-//// ********************************* Funtions to check out later  **********************************************/////
-//  - Write a function called startGameButton that makes the start quiz button clickable  
-// let enterNameP1 
-// let enterNameP2 
-//    const startGameButton = () => {
-//         enterNameP1 = window.prompt(`Welcome Player1 to FES-B ! : Enter Name to Start Game`);
-        
-//         enterNameP2 = window.prompt(`Welcome Player2 to FES-B ! : Enter Name to Start Game`);      
-//    }
-//    startGameButton()                                                 
