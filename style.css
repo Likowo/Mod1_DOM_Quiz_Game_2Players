@@ -3,8 +3,10 @@
 }
 
 body{
-    width: 80%;
+    width: 50%;
     margin: auto;
+   background: url("https://i.makeagif.com/media/6-02-2022/LtwJTO.gif");
+background-size: auto;
 }
 
 .welcomeScreen{

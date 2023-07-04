@@ -71,7 +71,7 @@ let questions = [
        answer2: "Push()", 
        answer3: "Delete()",
        correctAnswer:1
-    },{
+    },{  //player2 questions
        question: "HTML stands for?",
        answer1: "Hypermark language",
        answer2: "Hypertext Markup language",
@@ -103,13 +103,74 @@ let questions = [
  correctAnswer:2
 },
 {
-  question: "ROUND TWO?",
-  // answer1: "",
-  // answer2: "",
-  // answer3: "",
+  question: "ROUND TWO ??",
+  answer1: "Yes",
+  answer2: "No",
+  answer3: "No",
+ correctAnswer:1
+},{
+question: "A person working in front-end development can also be called - a client-side developer, front-end coder, or UI developer?",
+answer1: "True",
+answer2: "false",
+answer3: "None of the above",
+correctAnswer:1
+},{
+question: "what tag is used to write the Javascript code?",
+answer1: "<sp>",
+answer2: "<script>",
+answer3: "<javascript>",
+correctAnswer:2
+},{
+  question: "HTML stands for?",
+  answer1: "Hypermark language",
+  answer2: "Hypertext Markup language",
+  answer3: "Hypertension language",
  correctAnswer:2
+},{
+ question: "A function definition expression is known as?",
+ answer1: "Function literal",
+ answer2: "Function calling",
+ answer3: "Function calls ",
+correctAnswer:1
+},{
+  question: "Fundamental HTML Block is known as?",
+  answer1: "HTML attribute",
+  answer2: "HTML body",
+  answer3: "HTML Tag",
+ correctAnswer:3
+},{ //player2 questions
+  question: "A person working in front-end development can also be called - a client-side developer, front-end coder, or UI developer?",
+  answer1: "True",
+  answer2: "false",
+  answer3: "None of the above",
+ correctAnswer:1
+},{ 
+  question: "what tag is used to write the Javascript code?",
+  answer1: "<sp>",
+  answer2: "<script>",
+  answer3: "<javascript>",
+ correctAnswer:2
+},{
+  question: "A function definition expression is known as?",
+  answer1: "Function literal",
+  answer2: "Function calling",
+  answer3: "Function calls ",
+ correctAnswer:1
+},{
+question: "Fundamental HTML Block is known as?",
+answer1: "HTML attribute",
+answer2: "HTML body",
+answer3: "HTML Tag",
+correctAnswer:3
+},   {
+  question: " A git command and function is?", 
+  answer1: "Git Open: Initialize a local Git repository",
+  answer2: "Git Pull: Fetch and download content from a remote repository",
+  answer3: "Git Upload:  Upload content from the local repository to a remote repository ",
+      // img: " ",
+  correctAnswer:2       
 },
-  ];
+  ]; 
 
 //* -	Write a function called nextQuestion that enables player to click and proceed to next question,but hides answer icons untill answer clicked.
 let indexOfLastQuestion = questions.length - 1;
