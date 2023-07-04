@@ -304,7 +304,14 @@ const showWinner = () =>{
 // To display a question to player: create a variable for the last question using the index of the array i.e. array.length - 1 ( -1 because an array begins with index zero (0). so an array = [a,b,c,d] will have a length of 4 but an index of 3)
 // write a function called showQuestion that returns current question and answer options.Then hides the answer Icons.
 
-function showQuestion(){
+function showQuestion(seconds){
+  if(seconds===1){
+    //if (answerchecked==true)
+    clearInterval(countdown);
+    indexOfCurrentQuestion++;
+    timeToAnswerQuestion();
+    // answerchecked = false
+  }
   let quest = questions[indexOfCurrentQuestion];
   questionDisplay.innerHTML = quest.question + ` <br> ` + `Click on Correct Answer`;
   answer1.innerText= `1. ` + quest.answer1;
@@ -316,6 +323,7 @@ function showQuestion(){
   img1.setAttribute(`class`,`checkMark hide`);
   img2.setAttribute(`class`,`checkMark hide`);
   img3.setAttribute(`class`,`checkMark hide`);
+  
 }
 indexOfCurrentQuestion = 0;
 showQuestion();
@@ -361,22 +369,27 @@ const checkAnswer = (selectedAnswer) => {
       displayImg.setAttribute(`class`,`checkMark`); // This is the check or tick image
       points1++;
       showPlayer1Point();
+      clearInterval(countdown)
     } else {
       displayImg.setAttribute(`src`,`https://w7.pngwing.com/pngs/175/854/png-transparent-computer-icons-button-check-mark-cross-red-cross-photography-trademark-logo.png`);
       displayImg.setAttribute(`class`,`checkMark`) // This is the cross image
+      clearInterval(countdown)
     }
   } else{
-    if(answer===selectedAnswer){
-      // console.log(`test2`)
-      displayImg.setAttribute(`src`,`https://p7.hiclipart.com/preview/999/840/970/check-mark-computer-icons-symbol-clip-art-green-tick-mark.jpg`);
-      displayImg.setAttribute(`class`,`checkMark`); // This is the check or tick image
-      points2++;
-      showPlayer2Point();
-    } else {
-      displayImg.setAttribute(`src`,`https://w7.pngwing.com/pngs/175/854/png-transparent-computer-icons-button-check-mark-cross-red-cross-photography-trademark-logo.png`);
-      displayImg.setAttribute(`class`,`checkMark`) // This is the cross image
+      if(answer===selectedAnswer){
+        // console.log(`test2`)
+        displayImg.setAttribute(`src`,`https://p7.hiclipart.com/preview/999/840/970/check-mark-computer-icons-symbol-clip-art-green-tick-mark.jpg`);
+        displayImg.setAttribute(`class`,`checkMark`); // This is the check or tick image
+        points2++;
+        showPlayer2Point();
+        clearInterval(countdown)
+      } else {
+        displayImg.setAttribute(`src`,`https://w7.pngwing.com/pngs/175/854/png-transparent-computer-icons-button-check-mark-cross-red-cross-photography-trademark-logo.png`);
+        displayImg.setAttribute(`class`,`checkMark`) // This is the cross image
+        clearInterval(countdown)
+      }
     }
-  }
+    
   console.log(`click`)  
   }
 
