@@ -44,7 +44,7 @@ background-size:auto;
 .startGameButton{
     border: solid 5px orange;
     background-color: aqua;
-    height: 3%;
+    height: 5%;
     text-align: center; 
     margin: 35%;
     border-radius: 5px;
@@ -57,13 +57,22 @@ background-size:auto;
     text-align: center; 
 }
 
+.startQuizButton{
+    border: solid black 0.1cm;
+    height: 1.1cm;
+}
+.quitQuizButton1{
+    border: solid black 0.1cm;
+    height: 1.1cm;
+}
+
 .gameRules{
     border: solid black 3px;
-    border-radius: 35%;
+    border-radius: 33%;
     background-color: antiquewhite;
     font-size: 20px;
     text-align: center;
-    /* text-indent: 2%; */
+   margin-right: 2.5%;
 }
 
 .gameScreen{
