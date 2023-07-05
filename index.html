@@ -71,10 +71,13 @@ NB: Timer stops when two answers are selected, or time runs out.
                         </div>
                                     
                         <div class="row1">
-                            <button class="round1resultButton" onclick="showWinner()" id ="winner">Round Result</button>
+                            <!-- <button class="round1resultButton" onclick="showWinner()" id ="winner">Round Result</button>
                             <div class="winLoseState hidden"  onclick="showWinner()" id ="winner">
-                                <div class="winnerRoundOne"> Winner is <span class="winnerName" >_____</span></div>
-                                <div class="loserRoundOne"> Sorry <span class="loserName" >_____</span>You lose, but You can bounce back in the next round ! <br> Are you Ready to Ride On?</div>
+                                <div class="winnerRoundOne"> Winner is <span class="winnerName" >_____</span></div> -->
+                                <button class="round1resultButton hidden" onclick="showWinner()" id ="winner">Round Result</button>
+                            <div class="winLoseState hidden"  onclick="showWinner()" id ="winner">
+                                <div class="winnerRoundOne hidden"> Winner is <span class="winnerName hidden" >_____</span></div>
+                                <div class="loserRoundOne hidden"> Sorry <span class="loserName" >_____</span>You lose, but You can bounce back in the next round ! <br> Are you Ready to Ride On?</div>
                             </div>
                         </div>
                     </div>
@@ -124,8 +127,11 @@ NB: Timer stops when two answers are selected, or time runs out.
                         <p ondblclick="returnToWelcomescreen() ">  GAME OVER!! <br> Double Click <b> HERE </b> to Return to Welcome Screen </p>
                     </div>
         
-                    <div class="endOfRoundTwo hidden">
-                        <p> WINNER!! Player.name !! </p>
+                    <div class="endOfRoundTwo hidden"> 
+                        <p class="finalWinner(points1,points2)"> WINNER!! 
+                            <img src="https://media.tenor.com/E6lFjorkDRAAAAAM/winner.gif" alt="">
+                            <img src="https://media.tenor.com/-Yf9G_sGZ-8AAAAM/youre-a-winner-winner.gif" alt="">
+                        </p>
                             <BUtton> TRY AGAIN </BUtton>
                       </div>
 

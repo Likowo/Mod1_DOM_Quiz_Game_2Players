@@ -26,6 +26,8 @@
     let answer3 = document.getElementById(`3`);
     let player1Points = document.querySelector(`.player1Points`);
     let player2Points = document.querySelector(`.player2Points`);
+    let winnerName = document.querySelector(`.winnerName`);
+    let winnerRoundOne = document.querySelector(`.winnerRoundOne`);
 
 
 // Button Variables
@@ -270,13 +272,13 @@ let newIndex = indexOfCurrentQuestion+1
  let points2 = 0;
  let winner = "";
 
- //Fxn to display points for player1, when the correct answer is clicked. NB: Point increase put within displayImg fxn
+ //Fxn to display points for player1, when the correct answer is clicked. NB: Point increase is within displayImg fxn
    const showPlayer1Point = () => {
     let p1Points = document.getElementById(`player1`);
     p1Points.innerHTML = "PLAYER 1 POINTS: " + `<br>` + points1;
    }
 
- //Fxn to display points for player2, when the correct answer is clicked. NB: Point increase put within displayImg fxn
+ //Fxn to display points for player2, when the correct answer is clicked. NB: Point increase is within displayImg fxn
  const showPlayer2Point = () => {
   let p2Points = document.getElementById(`player2`);
   p2Points.innerHTML = "PLAYER 2 POINTS: " + `<br>` + points2;
@@ -285,15 +287,36 @@ let newIndex = indexOfCurrentQuestion+1
 // -	Write a function called resetGame  that enables player to restart the game to round One when both rounds are completed with a draw (i.e. players can keep playing until one player wins. - Requirement 4)
 // -    Write a function winOrLose that allows questionBox to be replaced with result of winner, ELSE Game over ( i.e. both players loss - requirement 5)   
 // - Write a fxn called winner that allows the questionBox to be replaced with text "WINNER" plus background image applause, if a player has more points at the end of round two.
-    /// Fxn to display winner ***///
-    //display winner
-const showGameWinner = () => {
-  if(points1 > points2){
-      // winner = winner.concat("PLAYER 1");
-      winner = `player1`
-      loser = `player2`
+
+///// *********  Fxn to display winner ***///
+      // *  display winner   * ///
+
+// const showGameWinner = () => {
+//   if(points1 > points2){
+//       // winner = winner.concat("PLAYER 1");
+//       winner = `player1`
+//       loser = `player2`
+//   }
+//   else if (points1 === points2){
+//       // winner = winner.concat("Draw Grame! No winner")
+//       winner = `Draw Grame! No winner`
+//   }
+//   else {
+//       winner = `player2`
+//       loser = `player1`
+//   }
+
+//       // {winner = winner.concat("PLAYER 2");}
+// }
+
+const showWinner = (p1, p2) =>{
+  // showGameWinner()
+  if(p1 > p2){
+    // winner = winner.concat("PLAYER 1");
+    winner = `player1`
+    loser = `player2`
   }
-  else if (points1 === points2){
+  else if (p1 === p2){
       // winner = winner.concat("Draw Grame! No winner")
       winner = `Draw Grame! No winner`
   }
@@ -301,23 +324,25 @@ const showGameWinner = () => {
       winner = `player2`
       loser = `player1`
   }
-
-      // {winner = winner.concat("PLAYER 2");}
-}
-
-const showWinner = () =>{
-  showGameWinner()
-  let winnerName = document.querySelector(`.winnerName`)
+  winnerRoundOne.setAttribute('class', 'winnerRoundOne');
+  winnerName.setAttribute('class', 'winnerName');
    winnerName.innerHTML = winner
-  let loserName = document.querySelector(`.loserName`)
-   loserName.innerHTML = loser
-  let winnerPoints = document.querySelector(`.winnerPoints1`)
-   if(winner===`player1`){
-      winnerPoints.innerHTML = points1
-   }else {
-      winnerPoints.innerHeight = points2
-   }
 }
+
+
+// const showWinner = () =>{
+//   showGameWinner()
+//   let winnerName = document.querySelector(`.winnerName`)
+//    winnerName.innerHTML = winner
+//   let loserName = document.querySelector(`.loserName`)
+//    loserName.innerHTML = loser
+//   let winnerPoints = document.querySelector(`.winnerPoints1`)
+//    if(winner===`player1`){
+//       winnerPoints.innerHTML = points1
+//    }else {
+//       winnerPoints.innerHeight = points2
+//    }
+// }
 
 //*** */
 // To access the properties in every element of the array, use the dot(.) notation. Remember array begins with index zero(0) i.e. questions[0].question is question number 1.
@@ -366,9 +391,16 @@ function showQuestion(answerNum, qNum){
     if (qNum===11){
       clearInterval(countdown);
       timeToAnswerQuestion();
+      round1resultButton.setAttribute('class', "round1resultButton hidden");
+      winnerName.setAttribute('class', 'winnerName hidden');
+      winnerRoundOne.setAttribute('class', 'winnerRoundOne hidden');
+      winnerName.innerHTML = "";
     }
+
 if (qNum===20){
   nextQuestionButton.setAttribute("onclick","");
+  round1resultButton.setAttribute('class', "round1resultButton");
+  round1resultButton.setAttribute('onclick', `showWinner(${points1},${points2})`);
 } else {
     nextQuestionButton.setAttribute("onclick",`showQuestion(${questions[indexOfCurrentQuestion].correctAnswer},${questions[indexOfCurrentQuestion+1].questionNum})`);
 }
@@ -384,7 +416,9 @@ if (qNum===20){
       answer3.setAttribute('onclick', ``);
       indexOfCurrentQuestion++;
       nextQuestionButton.setAttribute("onclick",`showQuestion(${questions[indexOfCurrentQuestion].correctAnswer},${questions[indexOfCurrentQuestion].questionNum})`);
-        clearInterval(countdown);
+      clearInterval(countdown)
+      round1resultButton.setAttribute('class', "round1resultButton");
+      round1resultButton.setAttribute('onclick', `showWinner(${points1},${points2})`);
     } else {   
 
       answer1.innerText= `1. ` + quest.answer1;
@@ -545,15 +579,15 @@ const checkAnswer = (questionNumber,selectedAnswer) => {
   // If player1 points>player2 points, then player1 is the winner
    //Else if player2 points > player1 points then player2 is the winner
 
-   const finalWinner = (player1Points,player2Points) => {
-    if(player1Points>player2Points){
+   const finalWinner = (points1,points2) => {
+    if(points1>points2){
       return` Player 1 is the WINNER `
 
     } else {
       return ` Player 2 is the WINNER `
     }
    }
-   let grandWinner =  finalWinner(player1Points,player2Points)
+   let grandWinner =  finalWinner(points1,points2)
   
 
 

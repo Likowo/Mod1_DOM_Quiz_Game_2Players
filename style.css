@@ -6,25 +6,24 @@ body{
     width: 50%;
     margin: auto;
    background: url("https://i.makeagif.com/media/6-02-2022/LtwJTO.gif");
-background-size: auto;
+background-size:auto;
 }
 
 .welcomeScreen{
     border: solid black;
-    height:800px;
+    height:80vh;
     width: 800px;
-    background-color: lemonchiffon;
+    margin-top: 10%;
+    margin-left: 10%;
+    background-color:navy;
 }
 
 .welcomeButton{
     border: solid goldenrod 2px;
     margin-top: 40%;
-    margin-left: 10%;
-    animation-name: welcomeBtn;
-    animation-fill-mode: forwards;
-    animation-duration: 3s;
-    color:navy;
-    font-size: 20px;
+    margin-left: 8%;
+    padding: 2%;
+    font-size: 22px;
 }
 
 .pointingFinger{
@@ -32,10 +31,12 @@ background-size: auto;
 }
 
 .gameBoardContainer{
-    border: solid 1px red;
+    border: solid 5px red;
     background-color: aqua;
-    height:900px;
-    width: 100%;
+    border-radius: 35%;
+    box-shadow: 2px;
+    height:850px;
+    width: 90%;
 }
 
 .startGameButton{
@@ -53,6 +54,7 @@ background-size: auto;
 
 .gameRules{
     border: solid black 3px;
+    border-radius: 35%;
     background-color: antiquewhite;
     font-size: 20px;
     text-align: center;
@@ -79,23 +81,24 @@ background-size: auto;
 }
 
 .timer{
-    border: 5px solid magenta;
-    height: 60px;
+    border: 5px solid orange;
+    height: 80%;
     width: 600px;
     border-radius: 20%;
     margin-left: 11%;
     margin-bottom: 1%;
     margin-top: 1%;
-    font-size: 28px;
+    font-size: 40px;
     font-style: oblique;
     background-color: white;
 }
 
 .row1{
     border: 5px solid magenta;
-    height: 100px;
-    width: 797px;
-    border-radius: 0.5%;
+    height: 111px;
+    width: 795px;
+    border-radius: 15%;
+    margin-top: 5%;
 }
 
 .quizScreen{
@@ -133,13 +136,13 @@ background-size: auto;
     /* display: flex;
     justify-content: space-evenly; */
     font-size: 25px;
-   align-content: auto;
+    margin-right: 30px;
     cursor: pointer;
 }
 
 .winLoseState{
     color: green;
-    font-size: 20px;
+    font-size: 30px;
     font-style: oblique;
 }
 
