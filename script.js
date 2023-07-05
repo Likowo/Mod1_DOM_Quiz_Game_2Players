@@ -116,7 +116,7 @@ let questions = [
 },
 {
   questionNum:99,
-  question: "READY FOR ROUND 2 ?? Click the RIDE ON Button",
+  question: "READY FOR ROUND 2 ?? <br> Click the RIDE ON Button",
   answer1: "Yes",
   answer2: "No",
   answer3: "No",
@@ -315,32 +315,6 @@ const showWinner = (points1, points2) =>{
 
 // To display a question to player: create a variable for the last question using the index of the array i.e. array.length - 1 ( -1 because an array begins with index zero (0). so an array = [a,b,c,d] will have a length of 4 but an index of 3)
 // write a function called showQuestion that returns current question and answer options.Then hides the answer Icons.
-// ***********************************************
-// function showQuestion(answerNum, qNum){
-//   if (qNum===1){
-//     timeToAnswerQuestion();
-//   } 
-//   if (answerNum===questions[indexOfCurrentQuestion].correctAnswer){
-//       if (answerChecked===true){
-//         clearInterval(countdown);
-//         timeToAnswerQuestion();
-//         answerChecked = false;
-//       }
-//     }
-//   // if(seconds===1){
-//   //   //if (answerchecked==true)
-//   //   clearInterval(countdown);
-//   //   // indexOfCurrentQuestion++;
-//   //   timeToAnswerQuestion();
-//   //   // answerchecked = false
-//   }
-//   nextQuestionButton.setAttribute("onclick",`showQuestion(${newIndex})`);  //questions[indexOfCurrentQuestion].correctAnswer
-//   let quest = questions[indexOfCurrentQuestion];
-//   questionDisplay.innerHTML = quest.question + ` <br> ` + `Click on Correct Answer`;
-//   answer1.innerText= `1. ` + quest.answer1;
-//   answer2.innerText= `2. ` + quest.answer2;
-//   answer3.innerText= `3. ` + quest.answer3;
-//******************************************************************************* */
 let answerChecked = false;
 
 function showQuestion(answerNum,qNum){
@@ -361,13 +335,14 @@ function showQuestion(answerNum,qNum){
       round1resultButton.setAttribute('class', "round1resultButton hidden");
       winnerName.setAttribute('class', 'winnerName hidden');
       winnerRoundOne.setAttribute('class', 'winnerRoundOne hidden');
-      loserRoundOne.setAttribute('class', 'loserRoundOne hidden');
+      winLoseState.setAttribute('class', 'winLoseState hidden');
+      // loserRoundOne.setAttribute('class', 'loserRoundOne hidden');
       winnerName.innerHTML = "";
     }
 
 if (qNum===20){
   nextQuestionButton.setAttribute("onclick","");
-  round1resultButton.setAttribute('class', "round1resultButton add");
+  round1resultButton.setAttribute('class', "round1resultButton");
   round1resultButton.setAttribute('onclick', `showWinner(${points1},${points2})`);
 } else {
     nextQuestionButton.setAttribute("onclick",`showQuestion(${questions[indexOfCurrentQuestion].correctAnswer},${questions[indexOfCurrentQuestion+1].questionNum})`);
@@ -388,7 +363,6 @@ if (qNum===20){
       round1resultButton.setAttribute('class', "round1resultButton add");
       round1resultButton.setAttribute('onclick', `showWinner(${points1},${points2})`);
     } else {   
-
       answer1.innerText= `1.` + quest.answer1;
       answer2.innerText= `2.` + quest.answer2;
       answer3.innerText= `3.` + quest.answer3;
