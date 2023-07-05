@@ -11,6 +11,7 @@ background-size:auto;
 
 .welcomeScreen{
     border: solid black;
+   border-radius: 5cm;
     height:80vh;
     width: 800px;
     margin-top: 10%;

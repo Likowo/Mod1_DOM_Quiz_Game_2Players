@@ -43,7 +43,7 @@ let nextQuestionButton = document.querySelector(`.nextQuestionButton`);
 let questions = [
     {
         questionNum:1,
-        question: " A git command and function is?", 
+        question: "1) A git command and function is?", 
         answer1: "Git Open: Initialize a local Git repository",
         answer2: "Git Pull: Fetch and download content from a remote repository",
         answer3: "Git Upload:  Upload content from the local repository to a remote repository ",
@@ -51,7 +51,7 @@ let questions = [
         correctAnswer:2       
     },{
        questionNum:2,
-        question: "CSS  stands for?",
+        question: "2) CSS  stands for?",
         answer1: "Colorful Style Sheet",
         answer2: "Cascading Style Sheet",
         answer3: "Computer style Sheet", 
@@ -59,56 +59,56 @@ let questions = [
                       
     },{
       questionNum:3,
-        question: " Which is not a valid data type in Javascript?",
+        question: "3) Which is not a valid data type in Javascript?",
         answer1: "Undefined",
         answer2: "Boolean",
         answer3: "float",
         correctAnswer:3
     },{
       questionNum:4,
-        question: " What does the  = = =  comparison operator do?",
+        question: "4) What does the === comparison operator do?",
         answer1: "It sets one variable equal to another in both value and Data type",
         answer2: "It test for equality of value and data type",
         answer3: "It test for equality of value only",
         correctAnswer:2
     }, {
       questionNum:5,
-        question: "Which function removes the last element from an array object and returns that element?",
+        question: "5) Which function removes the last element from an array object and returns that element?",
        answer1: "pop()",
        answer2: "Push()", 
        answer3: "Delete()",
        correctAnswer:1
     },{  //player2 questions
       questionNum:6,
-       question: "HTML stands for?",
+       question: "1) HTML stands for?",
        answer1: "Hypermark language",
        answer2: "Hypertext Markup language",
        answer3: "Hypertension language",
       correctAnswer:2
     },{
       questionNum:7,
-      question: "A function definition expression is known as?",
+      question: "2) A function definition expression is known as?",
       answer1: "Function literal",
       answer2: "Function calling",
       answer3: "Function calls ",
      correctAnswer:1
    },{
     questionNum:8,
-    question: "Fundamental HTML Block is known as?",
+    question: "3) Fundamental HTML Block is known as?",
     answer1: "HTML attribute",
     answer2: "HTML body",
     answer3: "HTML Tag",
    correctAnswer:3
  },{
   questionNum:9,
-  question: "A person working in front-end development can also be called - a client-side developer, front-end coder, or UI developer?",
+  question: "4) A person working in front-end development can also be called - a client-side developer, front-end coder, or UI developer?",
   answer1: "True",
   answer2: "false",
   answer3: "None of the above",
  correctAnswer:1
 },{
   questionNum:10,
-  question: "what tag is used to write the Javascript code?",
+  question: "5) What tag is used to write the Javascript code?",
   answer1: "<sp>",
   answer2: "<script>",
   answer3: "<javascript>",
@@ -116,80 +116,80 @@ let questions = [
 },
 {
   questionNum:99,
-  question: "ROUND TWO ??",
+  question: "READY FOR ROUND 2 ?? Click the RIDE ON Button",
   answer1: "Yes",
   answer2: "No",
   answer3: "No",
  correctAnswer:1
   },{
   questionNum:11,
-  question: "A person working in front-end development can also be called - a client-side developer, front-end coder, or UI developer?",
+  question: "1) A person working in front-end development can also be called - a client-side developer, front-end coder, or UI developer?",
   answer1: "True",
   answer2: "false",
   answer3: "None of the above",
   correctAnswer:1
   },{
   questionNum:12,
-  question: "what tag is used to write the Javascript code?",
+  question: "2) what tag is used to write the Javascript code?",
   answer1: "<sp>",
   answer2: "<script>",
   answer3: "<javascript>",
   correctAnswer:2
 },{
   questionNum:13,
-  question: "HTML stands for?",
+  question: "3) HTML stands for?",
   answer1: "Hypermark language",
   answer2: "Hypertext Markup language",
   answer3: "Hypertension language",
  correctAnswer:2
 },{
   questionNum:14,
- question: "A function definition expression is known as?",
+ question: "4) A function definition expression is known as?",
  answer1: "Function literal",
  answer2: "Function calling",
  answer3: "Function calls ",
 correctAnswer:1
 },{
   questionNum:15,
-  question: "Fundamental HTML Block is known as?",
+  question: "5) Fundamental HTML Block is known as?",
   answer1: "HTML attribute",
   answer2: "HTML body",
   answer3: "HTML Tag",
  correctAnswer:3
 },{ //player2 questions
   questionNum:16,
-  question: "A person working in front-end development can also be called - a client-side developer, front-end coder, or UI developer?",
+  question: "1) A person working in front-end development can also be called - a client-side developer, front-end coder, or UI developer?",
   answer1: "True",
   answer2: "false",
   answer3: "None of the above",
  correctAnswer:1
 },{ 
   questionNum:17,
-  question: "what tag is used to write the Javascript code?",
+  question: "2) what tag is used to write the Javascript code?",
   answer1: "<sp>",
   answer2: "<script>",
   answer3: "<javascript>",
  correctAnswer:2
 },{
   questionNum:18,
-  question: "A function definition expression is known as?",
+  question: "3) A function definition expression is known as?",
   answer1: "Function literal",
   answer2: "Function calling",
   answer3: "Function calls ",
  correctAnswer:1
 },{
 questionNum:19,
-question: "Fundamental HTML Block is known as?",
+question: "4) Fundamental HTML Block is known as?",
 answer1: "HTML attribute",
 answer2: "HTML body",
 answer3: "HTML Tag",
 correctAnswer:3
 },{
   questionNum:20,
-  question: " A git command and function is?", 
+  question: "5) A git command and function is?", 
   answer1: "Git Open: Initialize a local Git repository",
   answer2: "Git Pull: Fetch and download content from a remote repository",
-  answer3: "Git Upload:  Upload content from the local repository to a remote repository ",
+  answer3: "Git Upload: Upload content from the local repository to a remote repository ",
       // img: " ",
   correctAnswer:2       
 },
@@ -290,59 +290,25 @@ let newIndex = indexOfCurrentQuestion+1
 
 ///// *********  Fxn to display winner ***///
       // *  display winner   * ///
-
-// const showGameWinner = () => {
-//   if(points1 > points2){
-//       // winner = winner.concat("PLAYER 1");
-//       winner = `player1`
-//       loser = `player2`
-//   }
-//   else if (points1 === points2){
-//       // winner = winner.concat("Draw Grame! No winner")
-//       winner = `Draw Grame! No winner`
-//   }
-//   else {
-//       winner = `player2`
-//       loser = `player1`
-//   }
-
-//       // {winner = winner.concat("PLAYER 2");}
-// }
-
-const showWinner = (p1, p2) =>{
+const showWinner = (points1, points2) =>{
   // showGameWinner()
-  if(p1 > p2){
+  if(points1 > points2){
     // winner = winner.concat("PLAYER 1");
     winner = `player1`
     loser = `player2`
   }
-  else if (p1 === p2){
+  else if (points1 === points2){
       // winner = winner.concat("Draw Grame! No winner")
-      winner = `Draw Grame! No winner`
+      winner = `Draw Grame!! No Winner`
   }
   else {
       winner = `player2`
       loser = `player1`
   }
-  winnerRoundOne.setAttribute('class', 'winnerRoundOne');
-  winnerName.setAttribute('class', 'winnerName');
+  winnerRoundOne.setAttribute('class', 'winnerRoundOne add');
+  winnerName.setAttribute('class', 'winnerName add');
    winnerName.innerHTML = winner
 }
-
-
-// const showWinner = () =>{
-//   showGameWinner()
-//   let winnerName = document.querySelector(`.winnerName`)
-//    winnerName.innerHTML = winner
-//   let loserName = document.querySelector(`.loserName`)
-//    loserName.innerHTML = loser
-//   let winnerPoints = document.querySelector(`.winnerPoints1`)
-//    if(winner===`player1`){
-//       winnerPoints.innerHTML = points1
-//    }else {
-//       winnerPoints.innerHeight = points2
-//    }
-// }
 
 //*** */
 // To access the properties in every element of the array, use the dot(.) notation. Remember array begins with index zero(0) i.e. questions[0].question is question number 1.
@@ -376,7 +342,8 @@ const showWinner = (p1, p2) =>{
 //   answer3.innerText= `3. ` + quest.answer3;
 //******************************************************************************* */
 let answerChecked = false;
-function showQuestion(answerNum, qNum){
+
+function showQuestion(answerNum,qNum){
   if (qNum===1){
     timeToAnswerQuestion();
     qNum++;
@@ -394,12 +361,13 @@ function showQuestion(answerNum, qNum){
       round1resultButton.setAttribute('class', "round1resultButton hidden");
       winnerName.setAttribute('class', 'winnerName hidden');
       winnerRoundOne.setAttribute('class', 'winnerRoundOne hidden');
+      loserRoundOne.setAttribute('class', 'loserRoundOne hidden');
       winnerName.innerHTML = "";
     }
 
 if (qNum===20){
   nextQuestionButton.setAttribute("onclick","");
-  round1resultButton.setAttribute('class', "round1resultButton");
+  round1resultButton.setAttribute('class', "round1resultButton add");
   round1resultButton.setAttribute('onclick', `showWinner(${points1},${points2})`);
 } else {
     nextQuestionButton.setAttribute("onclick",`showQuestion(${questions[indexOfCurrentQuestion].correctAnswer},${questions[indexOfCurrentQuestion+1].questionNum})`);
@@ -417,13 +385,13 @@ if (qNum===20){
       indexOfCurrentQuestion++;
       nextQuestionButton.setAttribute("onclick",`showQuestion(${questions[indexOfCurrentQuestion].correctAnswer},${questions[indexOfCurrentQuestion].questionNum})`);
       clearInterval(countdown)
-      round1resultButton.setAttribute('class', "round1resultButton");
+      round1resultButton.setAttribute('class', "round1resultButton add");
       round1resultButton.setAttribute('onclick', `showWinner(${points1},${points2})`);
     } else {   
 
-      answer1.innerText= `1. ` + quest.answer1;
-      answer2.innerText= `2. ` + quest.answer2;
-      answer3.innerText= `3. ` + quest.answer3;
+      answer1.innerText= `1.` + quest.answer1;
+      answer2.innerText= `2.` + quest.answer2;
+      answer3.innerText= `3.` + quest.answer3;
   }
   let img1 = document.getElementById(`answer1`);
   let img2 = document.getElementById(`answer2`);
@@ -442,48 +410,13 @@ if (qNum===20){
 }
 indexOfCurrentQuestion = 0;
 showQuestion();
+
+
 // count = 15
 // timeToAnswerQuestion()
  //To switch to next question
 // indexOfCurrentQuestion++
 // console.log(showQuestion())
-// function showQuestion(answerNum, qNum){
-//   if (qNum===1){
-//     timeToAnswerQuestion();
-//   } 
-//   if (answerNum===questions[indexOfCurrentQuestion].correctAnswer){
-//       if (answerChecked===true){
-//         clearInterval(countdown);
-//         timeToAnswerQuestion();
-//         answerChecked = false;
-//       }
-//     }
-// if (qNum===20){
-//   nextQuestionButton.setAttribute("onclick","");
-// } else {
-//     nextQuestionButton.setAttribute("onclick",`showQuestion(${questions[indexOfCurrentQuestion].correctAnswer},${questions[indexOfCurrentQuestion+1].questionNum})`);
-// }
-//     let quest = questions[indexOfCurrentQuestion];
-//     questionDisplay.innerHTML = quest.question + ` <br> ` + `Click on Correct Answer`;
-
-//     if (qNum===99){
-//       answer1.innerText= ""; 
-//       answer2.innerText= ""; 
-//       answer3.innerText= ""; 
-//       answer1.setAttribute('onclick', ``);
-//       answer2.setAttribute('onclick', ``);
-//       answer3.setAttribute('onclick', ``);
-//       indexOfCurrentQuestion++;
-//       nextQuestionButton.setAttribute("onclick",`showQuestion(${questions[indexOfCurrentQuestion].correctAnswer},${questions[indexOfCurrentQuestion+1].questionNum})`);
-//     } else {   
-
-//       answer1.innerText= `1. ` + quest.answer1;
-//       answer2.innerText= `2. ` + quest.answer2;
-//       answer3.innerText= `3. ` + quest.answer3;
-//   }
-
-
-
 
 //**  Check if correct answer selected, using the checkAnswer() fxn **  //
 
@@ -571,6 +504,7 @@ const checkAnswer = (questionNumber,selectedAnswer) => {
       count--;
       if (count === -1){ //show zero on screen
         clearInterval(countdown);
+        // showQuestion++;
       }
     }, 1000 )
   }
@@ -579,20 +513,20 @@ const checkAnswer = (questionNumber,selectedAnswer) => {
   // If player1 points>player2 points, then player1 is the winner
    //Else if player2 points > player1 points then player2 is the winner
 
-   const finalWinner = (points1,points2) => {
-    if(points1>points2){
-      return` Player 1 is the WINNER `
+  //  const finalWinner = (points1,points2) => {
+  //   if(points1>points2){
+  //     return` Player 1 is the WINNER `
 
-    } else {
-      return ` Player 2 is the WINNER `
-    }
-   }
-   let grandWinner =  finalWinner(points1,points2)
+  //   } else {
+  //     return ` Player 2 is the WINNER `
+  //   }
+  //  }
+  //  let grandWinner =  finalWinner(points1,points2)
   
 
 
   // Create a switch function to switch from round1 to round2
-    //If index of current question is nine, switch to round2 image  then switch to index 10 on click of Ride On button( i.e. Round2)
+    //If index of current question is nine, switch to round2 image,then switch to index 10 on click of Ride On button( i.e. Round2)
     //OR
     // If questionNum is 10,  switch to round2 image  then switch to questionNum 11 on click of Ride On button( i.e. Round2)
     // allRound1Questions Counter
@@ -626,25 +560,6 @@ const checkAnswer = (questionNumber,selectedAnswer) => {
 //    let alienShipImg = document.querySelector(".alienShip")
 //    alienShipImg.src = alienAttacking.image  
 // }; 
-
-
-
-
-
-// let points= 0;
-// if(questions[indexOfCurrentQuestion].correctAnswer === answer){
-//   points++
-//   console.log(`worked`)
-  // answerIsCorrect();
-// }else{
-  // answerIsWrong();
-// }
-
-
-
-
-
- 
 
 //// ********************************* Funtions to check out later  **********************************************/////
 //  - Write a function called startGameButton that makes the start quiz button clickable  
