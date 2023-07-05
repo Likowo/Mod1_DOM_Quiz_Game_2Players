@@ -84,6 +84,21 @@ background-size:auto;
     background-color: lightblue;
 }
 
+@keyframes roundResult{
+    from {background-color: green; }
+    to {background-color: yellow;}
+}
+.round1resultButton{
+    border: solid black 0.1cm;
+    height: 1.5cm;
+    background-color: green;
+    animation-name: roundResult;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    color: blue;
+    cursor: pointer;
+}
+
 .resultScreen{
     /* border: 5px solid brown; */
     height: 180px;
