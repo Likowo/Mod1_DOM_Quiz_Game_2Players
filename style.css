@@ -34,6 +34,7 @@ background-size:auto;
 .gameBoardContainer{
     border: solid 5px red;
     background-color: aqua;
+    background: url("https://media.istockphoto.com/id/1300888546/vector/html5-css3-and-javascript-program-icons-on-transparent-background.jpg?s=612x612&w=0&k=20&c=FCQzJBrdYvbYpDUpnzphVoPYeNP_3CzbCf1_ZtB9nGk=");
     border-radius: 35%;
     box-shadow: 2px;
     height:850px;
@@ -41,8 +42,11 @@ background-size:auto;
 }
 
 .startGameButton{
+    border: solid 5px orange;
+    background-color: aqua;
+    height: 3%;
     text-align: center; 
-    margin: 25%;
+    margin: 35%;
     border-radius: 5px;
     /* display: none; */
 }
