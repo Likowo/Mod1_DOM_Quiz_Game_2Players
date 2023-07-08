@@ -16,7 +16,7 @@
     let gameScreen =document.querySelector(`.gameScreen`);
     let winLoseState =document.querySelector(`.winLoseState`);
     let quizScreen = document.querySelector(`.quizScreen`);
-    let counter = document.getElementById(`counter`);
+    let counter = document.getElementById(`#counter`);
     let gameOver = document.querySelector(`.gameOver `);
     let questionBox = document.querySelector(`.questionBox`);
     let questionDisplay = document.querySelector(`.questionDisplay`);
@@ -130,11 +130,11 @@ let questions = [
   correctAnswer:1
   },{
   questionNum:12,
-  question: "2) what tag is used to write the Javascript code?",
-  answer1: "<sp>",
-  answer2: "<script>",
-  answer3: "<javascript>",
-  correctAnswer:2
+  question: "2) Empty elements do not have an end tag. Which of the elements below is an empty element ?",
+  answer1: " <p> and <img>",
+  answer2: "<span> and <html>",
+  answer3: "<br> and <hr>",
+  correctAnswer:3
 },{
   questionNum:13,
   question: "3) HTML stands for?",
@@ -144,11 +144,11 @@ let questions = [
  correctAnswer:2
 },{
   questionNum:14,
- question: "4) A function definition expression is known as?",
- answer1: "Function literal",
- answer2: "Function calling",
- answer3: "Function calls ",
-correctAnswer:1
+ question: "4) Examples of web browsers are Chrome,Firefox,Edge,Safari; What is the purpose of a web brower?",
+ answer1: "To browse",
+ answer2: "To read HTML documents and display them correctly",
+ answer3: "To see what is on the internet",
+correctAnswer:2
 },{
   questionNum:15,
   question: "5) Fundamental HTML Block is known as?",
@@ -158,11 +158,11 @@ correctAnswer:1
  correctAnswer:3
 },{ //player2 questions
   questionNum:16,
-  question: "1) A person working in front-end development can also be called - a client-side developer, front-end coder, or UI developer?",
-  answer1: "True",
-  answer2: "false",
-  answer3: "None of the above",
- correctAnswer:1
+  question: "1) Which function removes the last element from an array object and returns that element?",
+  answer1: "pop()",
+  answer2: "Push()", 
+  answer3: "Delete()",
+  correctAnswer:1
 },{ 
   questionNum:17,
   question: "2) what tag is used to write the Javascript code?",
@@ -290,7 +290,10 @@ let newIndex = indexOfCurrentQuestion+1
 
 ///// *********  Fxn to display winner ***///
       // *  display winner   * ///
-const showWinner = (points1, points2) =>{
+  
+      const showWinner = (points1, points2) =>{
+  console.log(points1)
+  console.log(points2)
   // showGameWinner()
   if(points1 > points2){
     // winner = winner.concat("PLAYER 1");
@@ -319,38 +322,44 @@ let answerChecked = false;
 
 function showQuestion(answerNum,qNum){
   if (qNum===1){
+    // Runs timer and increase question number by 1.Accounts for question 1  showing up and timer running upon starting quiz
     timeToAnswerQuestion();
     qNum++;
   } 
-  // if (answerNum===questions[indexOfCurrentQuestion].correctAnswer){
+  // Stops count dowm, restarts timer, and resets if any answer selected to No ( i.e answerChecked = false), for the next question.
       if (answerChecked===true){
         clearInterval(countdown);
         timeToAnswerQuestion();
         answerChecked = false;
       }
-    // }
+   
     if (qNum===11){
+      // Shows next question ones round two is started      
+      
       clearInterval(countdown);
       timeToAnswerQuestion();
       round1resultButton.setAttribute('class', "round1resultButton hidden");
       winnerName.setAttribute('class', 'winnerName hidden');
       winnerRoundOne.setAttribute('class', 'winnerRoundOne hidden');
       winLoseState.setAttribute('class', 'winLoseState hidden');
-      // loserRoundOne.setAttribute('class', 'loserRoundOne hidden');
       winnerName.innerHTML = "";
     }
 
 if (qNum===20){
+  //Functions to perform if question 20 (qNum 20) is the last question
   nextQuestionButton.setAttribute("onclick","");
   round1resultButton.setAttribute('class', "round1resultButton");
   round1resultButton.setAttribute('onclick', `showWinner(${points1},${points2})`);
 } else {
+//Functions to perform if question 20 (qNum 20) is not the last question
     nextQuestionButton.setAttribute("onclick",`showQuestion(${questions[indexOfCurrentQuestion].correctAnswer},${questions[indexOfCurrentQuestion+1].questionNum})`);
 }
+ /// This displays the next question.i.e. Changes the text of innerHTML to current question and display inastruction "Click on Correct Answer"
     let quest = questions[indexOfCurrentQuestion];
     questionDisplay.innerHTML = quest.question + ` <br> ` + `Click on Correct Answer`;
 
     if (qNum===99){
+      //Displays Round Result button and Win or Lose state. Allows player to click Ride On button in to Round Two
       answer1.innerText= ""; 
       answer2.innerText= ""; 
       answer3.innerText= ""; 
@@ -360,20 +369,23 @@ if (qNum===20){
       indexOfCurrentQuestion++;
       nextQuestionButton.setAttribute("onclick",`showQuestion(${questions[indexOfCurrentQuestion].correctAnswer},${questions[indexOfCurrentQuestion].questionNum})`);
       clearInterval(countdown)
-      round1resultButton.setAttribute('class', "round1resultButton add");
+      round1resultButton.setAttribute('class', "round1resultButton");
       round1resultButton.setAttribute('onclick', `showWinner(${points1},${points2})`);
     } else {   
+      // If question number is not qNum99, show next question and answers
       answer1.innerText= `1.` + quest.answer1;
       answer2.innerText= `2.` + quest.answer2;
       answer3.innerText= `3.` + quest.answer3;
   }
+  // Gets each image tag by Id from the DOM and then hides them.
   let img1 = document.getElementById(`answer1`);
   let img2 = document.getElementById(`answer2`);
   let img3 = document.getElementById(`answer3`);
   img1.setAttribute(`class`,`checkMark hide`);
   img2.setAttribute(`class`,`checkMark hide`);
   img3.setAttribute(`class`,`checkMark hide`);
-    //Getting questions to be checked together with answer, so array of questions can be shared between player1 and player2
+    //Gets each element of the answers and sets it to be clickable to go to the checkAnswer function. 
+      //Getting questions to be checked together with answer, so array of questions can be shared between player1 and player2. 
   let firstAnswer = document.getElementById(1);
   let secondAnswer = document.getElementById(2);
   let thirdAnswer = document.getElementById(3);
@@ -421,7 +433,7 @@ const checkAnswer = (questionNumber,selectedAnswer) => {
     // showQuestion();
   } 
 //setting img tag source to whichever image is correct upon click
-    ///And  switching game to player 2 after 3rd question
+    ///And  switching game to player 2 after 5th question using multiple conditions ( && (and); || (or))
   if(questionNumber <=5 || (questionNumber>10&&questionNumber<=15)){
     if(answer===selectedAnswer){
       // console.log(`test2`)
@@ -443,9 +455,10 @@ const checkAnswer = (questionNumber,selectedAnswer) => {
         displayImg.setAttribute(`src`,`https://p7.hiclipart.com/preview/999/840/970/check-mark-computer-icons-symbol-clip-art-green-tick-mark.jpg`);
         displayImg.setAttribute(`class`,`checkMark`); // This is the check or tick image
         points2++;
+        console.log(points2)
         showPlayer2Point();
         clearInterval(countdown);
-         answerChecked = true;
+        answerChecked = true;
       } else {
         displayImg.setAttribute(`src`,`https://w7.pngwing.com/pngs/175/854/png-transparent-computer-icons-button-check-mark-cross-red-cross-photography-trademark-logo.png`);
         displayImg.setAttribute(`class`,`checkMark`) // This is the cross image
@@ -508,32 +521,6 @@ const checkAnswer = (questionNumber,selectedAnswer) => {
     //    allRound1Questions = questionNum1;
     // let counter = 0 //counter starting at zero means the first alien is in battle
 
-
-
-
-
-
-
-// //   Alien counter //
-// let allAliens = [alien1,alien2,alien3,alien4,alien5,alien6]
-// let alienAttacking = alien1;
-// let counter = 0 //counter starting at zero means the first alien is in battle
-//  console.log(counter,":Counter")
-//  console.log(`${alienAttacking.name}`, ":Alien in Battle ")
-//  console.log("Current Opponent:",alienAttacking)
-
-
-// const switchAlien = () => {
-//   alienAttacking = allAliens[counter] 
-//   console.log(`%c New Alien is ${alienAttacking.name}`, "color: blue; font-size : 15px");
-//   // let newAlien = document.querySelector(".aliens")
-//   // let newAlienImg = document.createElement("img");
-//   // newAlienImg.setAttribute("src",alienAttacking.image);
-//   // newAlienImg.setAttribute("class","aliens");
-//   // newAlien.replaceWith(newAlienImg)  
-//    let alienShipImg = document.querySelector(".alienShip")
-//    alienShipImg.src = alienAttacking.image  
-// }; 
 
 //// ********************************* Funtions to check out later  **********************************************/////
 //  - Write a function called startGameButton that makes the start quiz button clickable  

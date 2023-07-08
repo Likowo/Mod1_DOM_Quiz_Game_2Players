@@ -2,6 +2,11 @@
     display: none !important;
 }
 
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
 body{
     width: 50%;
     margin: auto;
@@ -10,7 +15,7 @@ background-size:auto;
 }
 
 .welcomeScreen{
-    border: solid black;
+    border: 5px double black;
    border-radius: 5cm;
     height:80vh;
     width: 800px;
@@ -20,11 +25,14 @@ background-size:auto;
 }
 
 .welcomeButton{
-    border: solid goldenrod 2px;
-    margin-top: 40%;
-    margin-left: 8%;
+    border: solid double goldenrod 8px;
+    margin-top: 50%;
+    margin-left: 4%;
     padding: 2%;
-    font-size: 22px;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-shadow: inset 0px 0px 10px 3px black;
+    cursor: pointer;
 }
 
 .pointingFinger{
@@ -44,10 +52,10 @@ background-size:auto;
 .startGameButton{
     border: solid 5px orange;
     background-color: aqua;
-    height: 5%;
+    height: 8%;
     text-align: center; 
     margin: 32%;
-    border-radius: 5px;
+    border-radius: 10px;
     /* display: none; */
 }
 
@@ -59,11 +67,13 @@ background-size:auto;
 
 .startQuizButton{
     border: solid black 0.1cm;
-    height: 1.1cm;
+    height: 1.8cm;
+    box-shadow: inset 0px 0px 10px 2px black;
 }
 .quitQuizButton1{
     border: solid black 0.1cm;
-    height: 1.1cm;
+    height: 1.8cm;
+    box-shadow: inset 0px 0px 10px 2px black;
 }
 
 .gameRules{
@@ -78,7 +88,7 @@ background-size:auto;
 .gameScreen{
     border: solid 10px navy;
     border-radius: 6%;
-    height: 800px;
+    /* height: 800px; */
     width: 800px;
     margin: auto;
     background-color: lightblue;
@@ -97,6 +107,7 @@ background-size:auto;
     animation-duration: 1s;
     color: blue;
     cursor: pointer;
+    box-shadow: inset 0px 0px 8px 1px black;
 }
 
 .resultScreen{
@@ -111,7 +122,7 @@ background-size:auto;
 
 .timer{
     border: 5px solid orange;
-    height: 80%;
+    height: 800px;
     width: 600px;
     border-radius: 20%;
     margin-left: 11%;
@@ -136,22 +147,26 @@ background-size:auto;
     height: 600px;
     width: 800px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     text-align: center;  
 }
 
+.quizScreenTop{
+    display: flex;
+}
+
 .player1Points{
     /* border: 3px solid black; */
-    height: 508px;
+    /* height: 508px; */
     width: 100px;
     font-size: 20px;
     color: green;
-    padding-top: 20vh;
+    padding-top: 12vh;
 }
 .questionBox{
     border: 5px solid black;
-    height: 508px;
+    height:400px;
     width: 350px;
     font-size: 25px;
   padding-inline: 15%;
@@ -177,11 +192,11 @@ background-size:auto;
 
 .player2Points{
     /* border: 3px solid black; */
-    height: 508px;
+    /* height: 508px; */
     width: 100px;
     font-size: 20px;
     color: red;
-    padding-top: 20vh;
+    padding-top: 12vh;
 }
 
 .keepPlaying{
@@ -221,6 +236,16 @@ background-size:auto;
     background-color:lightcoral;
     cursor: pointer;
     /* color: orange; */
+}
+
+.quitQuizButton2{
+    box-shadow: inset 2px 2px 8px 1px black;
+    cursor: pointer;
+}
+
+.nextQuestionButton{
+    box-shadow: inset 2px 2px 8px 1px black;
+    cursor: pointer;
 }
 
 .checkMark{
