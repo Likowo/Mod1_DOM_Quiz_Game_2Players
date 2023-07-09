@@ -523,7 +523,7 @@ background-size:auto;
 }
 
 /*   ================  mobile */
-@media (min-width:105px) and (max-width: 280px){
+@media (max-width: 768px){
 body{
     width: 50%;
     margin: auto;
