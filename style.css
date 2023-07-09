@@ -7,6 +7,8 @@
     padding: 0;
     box-sizing: border-box;
 } */
+/* ********* TV Screen ******/
+@media (max-width:3040px){
 body{
     width: 50%;
     margin: auto;
@@ -236,7 +238,7 @@ background-size:auto;
     background-color:lightcoral;
     cursor: pointer;
     /* color: orange; */
-}
+} 
 
 .quitQuizButton2{
     box-shadow: inset 2px 2px 8px 1px black;
@@ -260,4 +262,520 @@ background-size:auto;
 .ans{
     display: flex;
 }
+}
 
+/************* desktop    **************************/
+@media (max-width:1800px){
+    body{
+        width: 50%;
+        margin: auto;
+       background: url("https://i.makeagif.com/media/6-02-2022/LtwJTO.gif");
+    background-size:auto;
+    }
+    
+    .welcomeScreen{
+        border: 5px double black;
+       border-radius: 5cm;
+        height:80vh;
+        width: 800px;
+        margin-top: 10%;
+        margin-left: 10%;
+        background-color:navy;
+        background-color: orange;
+    }
+    
+    .welcomeButton{
+        border: solid double goldenrod 8px;
+        margin-top: 50%;
+        margin-left: 4%;
+        padding: 2%;
+        font-size: 25px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        box-shadow: inset 0px 0px 10px 3px black;
+        cursor: pointer;
+    }
+    
+    .pointingFinger{
+        height: 30px;
+    }
+    
+    .gameBoardContainer{
+        border: solid 5px red;
+        background-color: aqua;
+        background: url("https://media.istockphoto.com/id/1300888546/vector/html5-css3-and-javascript-program-icons-on-transparent-background.jpg?s=612x612&w=0&k=20&c=FCQzJBrdYvbYpDUpnzphVoPYeNP_3CzbCf1_ZtB9nGk=");
+        border-radius: 35%;
+        box-shadow: 2px;
+        height:850px;
+        width: 90%;
+    }
+    
+    .startGameButton{
+        border: solid 5px orange;
+        background-color: aqua;
+        height: 8%;
+        text-align: center; 
+        margin: 32%;
+        border-radius: 10px;
+        /* display: none; */
+    }
+    
+    .startGameButton :hover{
+         cursor: pointer;
+         background-color: lightgreen;
+        text-align: center; 
+    }
+    
+    .startQuizButton{
+        border: solid black 0.1cm;
+        height: 1.8cm;
+        box-shadow: inset 0px 0px 10px 2px black;
+    }
+    .quitQuizButton1{
+        border: solid black 0.1cm;
+        height: 1.8cm;
+        box-shadow: inset 0px 0px 10px 2px black;
+    }
+    
+    .gameRules{
+        border: solid black 3px;
+        border-radius: 33%;
+        background-color: antiquewhite;
+        font-size: 20px;
+        text-align: center;
+       margin-right: 2.5%;
+    }
+    
+    .gameScreen{
+        border: solid 10px navy;
+        border-radius: 6%;
+        /* height: 800px; */
+        width: 800px;
+        margin: auto;
+        background-color: lightblue;
+    }
+    
+    @keyframes roundResult{
+        from {background-color: green; }
+        to {background-color: yellow;}
+    }
+    .round1resultButton{
+        border: solid black 0.1cm;
+        height: 1.5cm;
+        background-color: green;
+        animation-name: roundResult;
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
+        color: blue;
+        cursor: pointer;
+        box-shadow: inset 0px 0px 8px 1px black;
+    }
+    
+    .resultScreen{
+        /* border: 5px solid brown; */
+        height: 180px;
+        width: 800px;
+        border-radius: 6%;
+        text-align: center;
+        /* font-size: 28px;
+        font-style: oblique; */
+    }
+    
+    .timer{
+        border: 5px solid orange;
+        height: 800px;
+        width: 600px;
+        border-radius: 20%;
+        margin-left: 11%;
+        margin-bottom: 1%;
+        margin-top: 1%;
+        font-size: 40px;
+        font-style: oblique;
+        background-color: white;
+    }
+    
+    .row1{
+        border: 5px solid magenta;
+        height: 111px;
+        width: 795px;
+        border-radius: 15%;
+        margin-top: 5%;
+    }
+    
+    .quizScreen{
+        /* border: solid 10px yellow; */
+        border-radius: 6%;
+        height: 600px;
+        width: 800px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;  
+    }
+    
+    .quizScreenTop{
+        display: flex;
+    }
+    
+    .player1Points{
+        /* border: 3px solid black; */
+        /* height: 508px; */
+        width: 100px;
+        font-size: 20px;
+        color: green;
+        padding-top: 12vh;
+    }
+    .questionBox{
+        border: 5px solid black;
+        height:400px;
+        width: 350px;
+        font-size: 25px;
+      padding-inline: 15%;
+      background-color: white;
+    }
+    
+    .answerOptions{
+        height: 250px;
+        width: 465px;
+        background-color: lightcyan;
+        /* display: flex;
+        justify-content: space-evenly; */
+        font-size: 25px;
+        margin-right: 30px;
+        cursor: pointer;
+    }
+    
+    .winLoseState{
+        color: green;
+        font-size: 30px;
+        font-style: oblique;
+    }
+    
+    .player2Points{
+        /* border: 3px solid black; */
+        /* height: 508px; */
+        width: 100px;
+        font-size: 20px;
+        color: red;
+        padding-top: 12vh;
+    }
+    
+    .keepPlaying{
+            /* border: solid 10px yellow; */
+            border-radius: 6%;
+            height: 600px;
+            width: 800px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-size: 25px;
+            color: green;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .gameOver{
+            /* border: solid 10px yellow; */
+            border: 5px solid black;
+            height: 508px;
+            width: 500px;
+            font-size: 30px;
+            margin: auto;
+            margin-top: -76.5%;
+            text-align: center;
+            color: red;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;         
+    }
+    
+    .buttons{
+        /* border: 2px solid red; */
+        border-radius: 20%;
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top: -11%;
+        background-color:lightcoral;
+        cursor: pointer;
+        /* color: orange; */
+    } 
+    
+    .quitQuizButton2{
+        box-shadow: inset 2px 2px 8px 1px black;
+        cursor: pointer;
+    }
+    
+    .nextQuestionButton{
+        box-shadow: inset 2px 2px 8px 1px black;
+        cursor: pointer;
+    }
+    
+    .checkMark{
+        height: 30px;
+        width: 30px;
+    }
+    .hide{
+        height: 20px;
+        width: 20px;
+        visibility: hidden;
+    }
+    .ans{
+        display: flex;
+    }
+}
+
+/*   ================  mobile */
+@media (min-width:105px) and (max-width: 280px){
+body{
+    width: 50%;
+    margin: auto;
+   background: url("https://i.makeagif.com/media/6-02-2022/LtwJTO.gif");
+background-size:auto;
+}
+
+.welcomeScreen{
+    border: 5px double black;
+   border-radius: 5cm;
+    height:80vh;
+    width: 800px;
+    margin-top: 10%;
+    margin-left: 10%;
+    background-color:navy;
+    background-color:white;
+}
+
+.welcomeButton{
+    border: solid double goldenrod 8px;
+    margin-top: 50%;
+    margin-left: 4%;
+    padding: 2%;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-shadow: inset 0px 0px 10px 3px black;
+    cursor: pointer;
+}
+
+.pointingFinger{
+    height: 30px;
+}
+
+.gameBoardContainer{
+    border: solid 5px red;
+    background-color: aqua;
+    background: url("https://media.istockphoto.com/id/1300888546/vector/html5-css3-and-javascript-program-icons-on-transparent-background.jpg?s=612x612&w=0&k=20&c=FCQzJBrdYvbYpDUpnzphVoPYeNP_3CzbCf1_ZtB9nGk=");
+    border-radius: 35%;
+    box-shadow: 2px;
+    height:850px;
+    width: 90%;
+}
+
+.startGameButton{
+    border: solid 5px orange;
+    background-color: aqua;
+    height: 8%;
+    text-align: center; 
+    margin: 32%;
+    border-radius: 10px;
+    /* display: none; */
+}
+
+.startGameButton :hover{
+     cursor: pointer;
+     background-color: lightgreen;
+    text-align: center; 
+}
+
+.startQuizButton{
+    border: solid black 0.1cm;
+    height: 1.8cm;
+    box-shadow: inset 0px 0px 10px 2px black;
+}
+.quitQuizButton1{
+    border: solid black 0.1cm;
+    height: 1.8cm;
+    box-shadow: inset 0px 0px 10px 2px black;
+}
+
+.gameRules{
+    border: solid black 3px;
+    border-radius: 33%;
+    background-color: antiquewhite;
+    font-size: 20px;
+    text-align: center;
+   margin-right: 2.5%;
+}
+
+.gameScreen{
+    border: solid 10px navy;
+    border-radius: 6%;
+    /* height: 800px; */
+    width: 800px;
+    margin: auto;
+    background-color: lightblue;
+}
+
+@keyframes roundResult{
+    from {background-color: green; }
+    to {background-color: yellow;}
+}
+.round1resultButton{
+    border: solid black 0.1cm;
+    height: 1.5cm;
+    background-color: green;
+    animation-name: roundResult;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    color: blue;
+    cursor: pointer;
+    box-shadow: inset 0px 0px 8px 1px black;
+}
+
+.resultScreen{
+    /* border: 5px solid brown; */
+    height: 180px;
+    width: 800px;
+    border-radius: 6%;
+    text-align: center;
+    /* font-size: 28px;
+    font-style: oblique; */
+}
+
+.timer{
+    border: 5px solid orange;
+    height: 800px;
+    width: 600px;
+    border-radius: 20%;
+    margin-left: 11%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    font-size: 40px;
+    font-style: oblique;
+    background-color: white;
+}
+
+.row1{
+    border: 5px solid magenta;
+    height: 111px;
+    width: 795px;
+    border-radius: 15%;
+    margin-top: 5%;
+}
+
+.quizScreen{
+    /* border: solid 10px yellow; */
+    border-radius: 6%;
+    height: 600px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;  
+}
+
+.quizScreenTop{
+    display: flex;
+}
+
+.player1Points{
+    /* border: 3px solid black; */
+    /* height: 508px; */
+    width: 100px;
+    font-size: 20px;
+    color: green;
+    padding-top: 12vh;
+}
+.questionBox{
+    border: 5px solid black;
+    height:400px;
+    width: 350px;
+    font-size: 25px;
+  padding-inline: 15%;
+  background-color: white;
+}
+
+.answerOptions{
+    height: 250px;
+    width: 465px;
+    background-color: lightcyan;
+    /* display: flex;
+    justify-content: space-evenly; */
+    font-size: 25px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.winLoseState{
+    color: green;
+    font-size: 30px;
+    font-style: oblique;
+}
+
+.player2Points{
+    /* border: 3px solid black; */
+    /* height: 508px; */
+    width: 100px;
+    font-size: 20px;
+    color: red;
+    padding-top: 12vh;
+}
+
+.keepPlaying{
+        /* border: solid 10px yellow; */
+        border-radius: 6%;
+        height: 600px;
+        width: 800px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 25px;
+        color: green;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.gameOver{
+        /* border: solid 10px yellow; */
+        border: 5px solid black;
+        height: 508px;
+        width: 500px;
+        font-size: 30px;
+        margin: auto;
+        margin-top: -76.5%;
+        text-align: center;
+        color: red;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;         
+}
+
+.buttons{
+    /* border: 2px solid red; */
+    border-radius: 20%;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: -11%;
+    background-color:lightcoral;
+    cursor: pointer;
+    /* color: orange; */
+} 
+
+.quitQuizButton2{
+    box-shadow: inset 2px 2px 8px 1px black;
+    cursor: pointer;
+}
+
+.nextQuestionButton{
+    box-shadow: inset 2px 2px 8px 1px black;
+    cursor: pointer;
+}
+
+.checkMark{
+    height: 30px;
+    width: 30px;
+}
+.hide{
+    height: 20px;
+    width: 20px;
+    visibility: hidden;
+}
+.ans{
+    display: flex;
+}
+}

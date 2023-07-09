@@ -347,9 +347,14 @@ function showQuestion(answerNum,qNum){
 
 if (qNum===20){
   //Functions to perform if question 20 (qNum 20) is the last question
-  nextQuestionButton.setAttribute("onclick","");
-  round1resultButton.setAttribute('class', "round1resultButton");
-  round1resultButton.setAttribute('onclick', `showWinner(${points1},${points2})`);
+  // nextQuestionButton.setAttribute("onclick","");
+  // round1resultButton.setAttribute('class', "round1resultButton ");
+  // round1resultButton.setAttribute('onclick', `showWinner(${points1},${points2})`);
+  // indexOfCurrentQuestion++;
+      nextQuestionButton.setAttribute("onclick",`showQuestion(${questions[indexOfCurrentQuestion].correctAnswer},${questions[indexOfCurrentQuestion].questionNum})`);
+      // clearInterval(countdown)
+      round1resultButton.setAttribute('class', "round1resultButton");
+      round1resultButton.setAttribute('onclick', `showWinner(${points1},${points2})`);
 } else {
 //Functions to perform if question 20 (qNum 20) is not the last question
     nextQuestionButton.setAttribute("onclick",`showQuestion(${questions[indexOfCurrentQuestion].correctAnswer},${questions[indexOfCurrentQuestion+1].questionNum})`);
