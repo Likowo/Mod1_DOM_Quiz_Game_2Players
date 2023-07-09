@@ -130,7 +130,7 @@ let questions = [
   correctAnswer:1
   },{
   questionNum:12,
-  question: "2) Empty elements do not have an end tag. Which of the elements below is an empty element ?",
+  question: "2) Which of the elements below is an empty element ?",
   answer1: " <p> and <img>",
   answer2: "<span> and <html>",
   answer3: "<br> and <hr>",
@@ -144,7 +144,7 @@ let questions = [
  correctAnswer:2
 },{
   questionNum:14,
- question: "4) Examples of web browsers are Chrome,Firefox,Edge,Safari; What is the purpose of a web brower?",
+ question: "4) Examples of web browsers are Chrome,Firefox,etc; What is the purpose of a web brower?",
  answer1: "To browse",
  answer2: "To read HTML documents and display them correctly",
  answer3: "To see what is on the internet",
@@ -158,38 +158,38 @@ correctAnswer:2
  correctAnswer:3
 },{ //player2 questions
   questionNum:16,
-  question: "1) Which function removes the last element from an array object and returns that element?",
-  answer1: "pop()",
-  answer2: "Push()", 
-  answer3: "Delete()",
+  question: "1) what is the difference between (=) and ( == or ===) in Javascript??",
+  answer1: "(=) Used to assign or re-assign varaibles while (== or ===) are used for comparison",
+  answer2: "(=) Used to declare varaibles while (== or ===) are used for comparison", 
+  answer3: " (=) Used to declare varaibles while (== or ===) are used to assign or re-assign varaibles",
   correctAnswer:1
 },{ 
   questionNum:17,
-  question: "2) what tag is used to write the Javascript code?",
-  answer1: "<sp>",
-  answer2: "<script>",
+  question: "2) what tag is used to add content into a web page?",
+  answer1: "<b>",
+  answer2: "<body>",
   answer3: "<javascript>",
  correctAnswer:2
 },{
   questionNum:18,
-  question: "3) A function definition expression is known as?",
-  answer1: "Function literal",
-  answer2: "Function calling",
-  answer3: "Function calls ",
+  question: "3) What does the lang attribute of the html tag do?",
+  answer1: "It declares the language of the Web page",
+  answer2: "It specifies the URL of the page the link goes to",
+  answer3: "It provides an alternate text for an image ",
  correctAnswer:1
 },{
 questionNum:19,
-question: "4) Fundamental HTML Block is known as?",
-answer1: "HTML attribute",
-answer2: "HTML body",
-answer3: "HTML Tag",
+question: "4) Which function/method adds new items to the end an array and returns the new length?",
+answer1: "pop()",
+answer2: "shift()",
+answer3: "push()",
 correctAnswer:3
 },{
   questionNum:20,
   question: "5) A git command and function is?", 
-  answer1: "Git Open: Initialize a local Git repository",
-  answer2: "Git Pull: Fetch and download content from a remote repository",
-  answer3: "Git Upload: Upload content from the local repository to a remote repository ",
+  answer1: "git Open: Initialize a local Git repository",
+  answer2: "git-rm[1]: removes files from the working tree and the index,before using the commit command",
+  answer3: "git origin master: Upload content from the local repository to a remote repository ",
       // img: " ",
   correctAnswer:2       
 },
